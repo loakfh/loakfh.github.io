@@ -1,0 +1,163 @@
+{
+  "meta": {
+    "title": "Bakir — Produkte und Websites mit KI",
+    "description": "Bakir: Product Owner im EdTech-Startup Foundation Lab, baut Websites für kleine Unternehmen mit einer Agenten-Pipeline auf Claude Code. Sechs Sprachen. Schreib mir auf Telegram.",
+    "ogTagline": "Produkte und Websites mit KI"
+  },
+  "ui": {
+    "skipLink": "Zum Inhalt",
+    "menu": "Abschnitte",
+    "langSwitch": "Sprache der Website",
+    "placeholder": "Platzhalter",
+    "introSkip": "tippen zum Überspringen",
+    "floatCta": "Schreiben",
+    "copied": "Kopiert",
+    "copyFailed": "Kopieren fehlgeschlagen",
+    "nav": {
+      "about": "Über mich",
+      "projects": "Projekte",
+      "achievements": "Erfolge",
+      "ai": "KI",
+      "contact": "Kontakt"
+    }
+  },
+  "hero": {
+    "status": "Offen für Projekte",
+    "name": "Bakir",
+    "tagline": "Ich baue Produkte und Websites mit KI — vom Nutzerinterview bis zum Launch.",
+    "cta": "Auf Telegram schreiben",
+    "secondary": "Projekte ansehen",
+    "stats": ["Sprachen", "[ЗАГЛУШКА] Websites gebaut", "[ЗАГЛУШКА] Interviews geführt"],
+    "photoAlt": "Porträt von Bakir",
+    "badges": ["Kapitän · KLJUTSCH 2026/27", "SKOLKOVO Start", "6 Sprachen"]
+  },
+  "about": {
+    "title": "Über mich",
+    "paragraphs": [
+      "Ich spreche selbst mit Nutzern, formuliere Hypothesen und bringe eine Idee bis zum Launch.",
+      "Bei Foundation Lab verantworte ich das Produkt „Personal Brand mit KI“. Daneben baue ich Websites für kleine Unternehmen in Moskau — die Arbeit erledigt meine Agenten-Pipeline auf Claude Code."
+    ],
+    "facts": [
+      { "k": "Rolle", "v": "Product Owner, Foundation Lab" },
+      { "k": "Team", "v": "Kapitän bei der Fallstudien-Meisterschaft KLJUTSCH 2026/27" },
+      { "k": "Programm", "v": "Teilnehmer von SKOLKOVO Start" },
+      { "k": "Sprachen", "v": "Russisch, Englisch, Tatarisch, Türkisch, Japanisch, Deutsch" },
+      { "k": "Ausbildung", "v": "[ЗАГЛУШКА] wo ich lerne, Jahrgang" },
+      { "k": "Stadt", "v": "[ЗАГЛУШКА] Stadt" }
+    ]
+  },
+  "projects": {
+    "title": "Projekte",
+    "task": "Aufgabe",
+    "did": "Mein Beitrag",
+    "result": "Ergebnis",
+    "items": [
+      {
+        "name": "Personal Brand mit KI",
+        "tag": "Foundation Lab · EdTech",
+        "task": "Herausfinden, wer eine Personal Brand mit KI braucht und wozu — und das Produkt starten.",
+        "did": "Ich führe das Produkt als Owner: Nutzerinterviews, Hypothesen, Launch.",
+        "result": "[ЗАГЛУШКА] Ergebnis in Zahlen: Interviews, Nutzer, Stand.",
+        "links": []
+      },
+      {
+        "name": "Trajektorie",
+        "tag": "Eigenes Projekt",
+        "task": "[ЗАГЛУШКА] welches Nutzerproblem die Trajektorie löst.",
+        "did": "Idee, Kundeninterviews und die gesamte technische Entwicklung stammen von mir.",
+        "result": "[ЗАГЛУШКА] Ergebnis: Stand, Nutzer.",
+        "links": ["MVP öffnen"]
+      },
+      {
+        "name": "Websites für kleine Unternehmen",
+        "tag": "Moskau · Agenten-Pipeline",
+        "task": "Ein kleines Unternehmen braucht eine Website, die auf dem Handy auf einem Bildschirm verständlich ist.",
+        "did": "Ich habe eine Multi-Agenten-Pipeline auf Claude Code gebaut: Audit → Texte → Aufbau → Kritik. Deployment auf GitHub Pages und Vercel.",
+        "result": "Drei Live-Demos — öffnen und selbst prüfen.",
+        "links": ["Demo: KI-Schule", "Demo: Lernzentrum", "Demo: Werbeartikelfirma"]
+      }
+    ]
+  },
+  "achievements": {
+    "title": "Erfolge",
+    "items": [
+      {
+        "badge": "Qualifiziert",
+        "label": "Teamkapitän",
+        "title": "Fallstudien-Meisterschaft KLJUTSCH 2026/27",
+        "text": "Business-Track, Thema: Agrar- und Lebensmitteltechnologie."
+      },
+      {
+        "badge": "Teilnehmer",
+        "label": "Programm",
+        "title": "SKOLKOVO Start",
+        "text": "[ЗАГЛУШКА] Jahr und Track."
+      },
+      {
+        "badge": "[ЗАГЛУШКА]",
+        "label": "Olympiade",
+        "title": "[ЗАГЛУШКА] Name der Olympiade",
+        "text": "[ЗАГЛУШКА] Fach, Stufe, Jahr."
+      },
+      {
+        "badge": "[ЗАГЛУШКА]",
+        "label": "Meisterschaft",
+        "title": "[ЗАГЛУШКА] Name der Meisterschaft",
+        "text": "[ЗАГЛУШКА] Rolle, Ergebnis, Jahr."
+      }
+    ]
+  },
+  "ai": {
+    "title": "Wie ich mit KI arbeite",
+    "lead": "Eine Website entsteht nicht aus einem Prompt, sondern durch vier Agenten nacheinander. Jeder prüft den vorherigen.",
+    "steps": [
+      { "name": "Audit", "text": "Findet, was den Kunden auf der alten Website stört.", "log": "Auditor: winziger Text, drei Buttons, kein Angebot." },
+      { "name": "Texte", "text": "Schreibt ein Angebot und einen Button — aus geprüften Fakten.", "log": "Autor: eine Überschrift, eine Handlung." },
+      { "name": "Aufbau", "text": "Baut die Seite: zuerst fürs Handy, schnell, ohne Ballast.", "log": "Builder: Seite fürs Handy gebaut." },
+      { "name": "Kritik", "text": "Schaut mit den Augen des Kunden und schickt zur Überarbeitung zurück.", "log": "Kritiker: Angebot sichtbar, ein Button, lesbar." }
+    ],
+    "run": "Pipeline starten",
+    "rerun": "Noch einmal starten",
+    "idle": "Drücken — und die Website entsteht vor deinen Augen.",
+    "mockCaption": "Ein fiktives Beispiel, kein echter Kunde.",
+    "note": "Ich nehme die Website selbst ab, am Handy: „fertig“ vom Agenten ist noch keine Abnahme.",
+    "mock": {
+      "oldTitle": "Willkommen auf unserer Website!",
+      "oldText": "Wir sind ein sich dynamisch entwickelndes Unternehmen mit individuellem Ansatz für jeden Kunden und langjähriger Erfahrung auf dem Dienstleistungsmarkt.",
+      "oldButtons": ["Mehr", "Infos", "Anfrage"],
+      "newTitle": "Kurse in deiner Nähe",
+      "newText": "Die erste Stunde ist gratis",
+      "newButton": "Anmelden",
+      "checks": ["Ein Angebot", "Ein Button", "Am Handy lesbar"]
+    }
+  },
+  "beyond": {
+    "title": "Neben der Arbeit",
+    "items": [
+      { "title": "Fitnessstudio", "text": "[ЗАГЛУШКА] ein Satz zum Training.", "alt": "Fitnessstudio" },
+      { "title": "Wandern", "text": "[ЗАГЛУШКА] wo ich war und wohin ich will.", "alt": "Wanderung" },
+      { "title": "Fahrrad", "text": "[ЗАГЛУШКА] Lieblingsroute.", "alt": "Fahrrad" },
+      { "title": "Reisen", "text": "[ЗАГЛУШКА] Länder und Städte.", "alt": "Reise" }
+    ]
+  },
+  "contact": {
+    "title": "Schreib mir",
+    "lead": "Auf Telegram antworte ich am schnellsten.",
+    "telegram": "Telegram",
+    "github": "GitHub",
+    "email": "E-Mail",
+    "card": {
+      "role": "Produkte und Websites mit KI",
+      "flip": "Visitenkarte umdrehen",
+      "flipHint": "tippen zum Umdrehen",
+      "flipBack": "Zurück",
+      "qrAlt": "QR-Code mit Link zu dieser Website",
+      "copy": "Kontakt kopieren",
+      "share": "Teilen",
+      "vcard": "vCard herunterladen"
+    }
+  },
+  "footer": {
+    "text": "Entwurf: Ein Teil des Textes sind Platzhalter."
+  }
+}

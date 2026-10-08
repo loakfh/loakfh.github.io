@@ -1,0 +1,163 @@
+{
+  "meta": {
+    "title": "Bakir — yapay zekâ ile ürünler ve web siteleri",
+    "description": "Bakir: EdTech girişimi Foundation Lab'de ürün sahibi; küçük işletmelere Claude Code üzerinde ajan hattıyla web siteleri kuruyor. Altı dil. Telegram'dan yazın.",
+    "ogTagline": "Yapay zekâ ile ürünler ve web siteleri"
+  },
+  "ui": {
+    "skipLink": "İçeriğe geç",
+    "menu": "Bölümler",
+    "langSwitch": "Site dili",
+    "placeholder": "taslak",
+    "introSkip": "geçmek için dokunun",
+    "floatCta": "Yaz",
+    "copied": "Kopyalandı",
+    "copyFailed": "Kopyalanamadı",
+    "nav": {
+      "about": "Hakkımda",
+      "projects": "Projeler",
+      "achievements": "Başarılar",
+      "ai": "YZ",
+      "contact": "İletişim"
+    }
+  },
+  "hero": {
+    "status": "Projelere açığım",
+    "name": "Bakir",
+    "tagline": "Yapay zekâ ile ürünler ve web siteleri yapıyorum — kullanıcı görüşmesinden lansmana kadar.",
+    "cta": "Telegram'dan yaz",
+    "secondary": "Projelere bak",
+    "stats": ["dil", "[ЗАГЛУШКА] site kuruldu", "[ЗАГЛУШКА] görüşme yapıldı"],
+    "photoAlt": "Bakir'in portresi",
+    "badges": ["Kaptan · KLYUÇ 2026/27", "SKOLKOVO Start", "6 dil"]
+  },
+  "about": {
+    "title": "Hakkımda",
+    "paragraphs": [
+      "Kullanıcılarla kendim konuşurum, hipotezleri kurarım ve fikri lansmana kadar götürürüm.",
+      "Foundation Lab'de “Yapay Zekâ ile Kişisel Marka” ürününün sahibiyim. Bunun yanında Moskova'daki küçük işletmelere web siteleri kuruyorum — işi Claude Code üzerindeki ajan hattım yapıyor."
+    ],
+    "facts": [
+      { "k": "Rol", "v": "Ürün sahibi, Foundation Lab" },
+      { "k": "Takım", "v": "KLYUÇ 2026/27 vaka şampiyonasında kaptan" },
+      { "k": "Program", "v": "SKOLKOVO Start katılımcısı" },
+      { "k": "Diller", "v": "Rusça, İngilizce, Tatarca, Türkçe, Japonca, Almanca" },
+      { "k": "Eğitim", "v": "[ЗАГЛУШКА] nerede okuyorum, sınıf" },
+      { "k": "Şehir", "v": "[ЗАГЛУШКА] şehir" }
+    ]
+  },
+  "projects": {
+    "title": "Projeler",
+    "task": "Görev",
+    "did": "Ne yaptım",
+    "result": "Sonuç",
+    "items": [
+      {
+        "name": "Yapay Zekâ ile Kişisel Marka",
+        "tag": "Foundation Lab · EdTech",
+        "task": "Yapay zekâ ile kişisel markaya kimin, neden ihtiyaç duyduğunu anlamak ve ürünü başlatmak.",
+        "did": "Ürünü sahibi olarak yürütüyorum: kullanıcı görüşmeleri, hipotezler, lansman.",
+        "result": "[ЗАГЛУШКА] rakamlarla sonuç: görüşmeler, kullanıcılar, aşama.",
+        "links": []
+      },
+      {
+        "name": "Trayektoriya",
+        "tag": "Kendi projem",
+        "task": "[ЗАГЛУШКА] Trayektoriya kullanıcının hangi sorununu çözüyor.",
+        "did": "Fikir, müşteri görüşmeleri ve tüm teknik geliştirme bana ait.",
+        "result": "[ЗАГЛУШКА] sonuç: aşama, kullanıcılar.",
+        "links": ["MVP'yi aç"]
+      },
+      {
+        "name": "Küçük işletmeler için web siteleri",
+        "tag": "Moskova · ajan hattı",
+        "task": "Küçük işletmenin, telefonda tek ekranda anlaşılan bir siteye ihtiyacı var.",
+        "did": "Claude Code üzerinde çok ajanlı bir hat kurdum: denetim → metinler → kurulum → eleştiri. Yayın: GitHub Pages ve Vercel.",
+        "result": "Üç canlı demo — açın ve kendiniz görün.",
+        "links": ["Demo: YZ okulu", "Demo: eğitim merkezi", "Demo: promosyon firması"]
+      }
+    ]
+  },
+  "achievements": {
+    "title": "Başarılar",
+    "items": [
+      {
+        "badge": "Elemeyi geçti",
+        "label": "Takım kaptanı",
+        "title": "KLYUÇ 2026/27 vaka şampiyonası",
+        "text": "İş kolu, konu: tarım ve gıda teknolojileri."
+      },
+      {
+        "badge": "Katılımcı",
+        "label": "Program",
+        "title": "SKOLKOVO Start",
+        "text": "[ЗАГЛУШКА] yıl ve kol."
+      },
+      {
+        "badge": "[ЗАГЛУШКА]",
+        "label": "Olimpiyat",
+        "title": "[ЗАГЛУШКА] olimpiyatın adı",
+        "text": "[ЗАГЛУШКА] ders, düzey, yıl."
+      },
+      {
+        "badge": "[ЗАГЛУШКА]",
+        "label": "Şampiyona",
+        "title": "[ЗАГЛУШКА] şampiyonanın adı",
+        "text": "[ЗАГЛУШКА] rol, sonuç, yıl."
+      }
+    ]
+  },
+  "ai": {
+    "title": "Yapay zekâ ile nasıl çalışıyorum",
+    "lead": "Siteyi tek bir komut değil, sırayla dört ajan kurar. Her biri bir öncekini denetler.",
+    "steps": [
+      { "name": "Denetim", "text": "Eski sitede müşteriyi neyin engellediğini bulur.", "log": "Denetçi: küçük yazı, üç düğme, teklif yok." },
+      { "name": "Metinler", "text": "Tek teklif ve tek düğme yazar — doğrulanmış bilgilerle.", "log": "Yazar: tek başlık, tek eylem." },
+      { "name": "Kurulum", "text": "Sayfayı kurar: önce telefon, hızlı, fazlalıksız.", "log": "Kurucu: sayfa telefona göre kuruldu." },
+      { "name": "Eleştiri", "text": "Müşterinin gözüyle bakar ve düzeltmeye geri gönderir.", "log": "Eleştirmen: teklif görünür, tek düğme, okunaklı." }
+    ],
+    "run": "Hattı çalıştır",
+    "rerun": "Yeniden çalıştır",
+    "idle": "Basın — site gözünüzün önünde kurulsun.",
+    "mockCaption": "Temsili bir örnek, gerçek müşteri değil.",
+    "note": "Siteyi kendim, telefondan teslim alırım: ajanın “hazır” demesi henüz teslim değildir.",
+    "mock": {
+      "oldTitle": "Sitemize hoş geldiniz!",
+      "oldText": "Her müşteriye özel yaklaşımı ve hizmet sektöründe uzun yıllara dayanan deneyimi olan, dinamik biçimde gelişen bir şirketiz.",
+      "oldButtons": ["Detay", "Bilgi", "Talep"],
+      "newTitle": "Evinizin yanında kurslar",
+      "newText": "İlk ders ücretsiz",
+      "newButton": "Kaydol",
+      "checks": ["Tek teklif", "Tek düğme", "Telefonda okunur"]
+    }
+  },
+  "beyond": {
+    "title": "İş dışında",
+    "items": [
+      { "title": "Spor salonu", "text": "[ЗАГЛУШКА] antrenman hakkında bir cümle.", "alt": "Spor salonu" },
+      { "title": "Doğa yürüyüşü", "text": "[ЗАГЛУШКА] nerelere gittim, nereye gitmek istiyorum.", "alt": "Doğa yürüyüşü" },
+      { "title": "Bisiklet", "text": "[ЗАГЛУШКА] en sevdiğim rota.", "alt": "Bisiklet" },
+      { "title": "Seyahat", "text": "[ЗАГЛУШКА] ülkeler ve şehirler.", "alt": "Seyahat" }
+    ]
+  },
+  "contact": {
+    "title": "Bana yazın",
+    "lead": "En hızlı Telegram'dan yanıt veririm.",
+    "telegram": "Telegram",
+    "github": "GitHub",
+    "email": "E-posta",
+    "card": {
+      "role": "Yapay zekâ ile ürünler ve siteler",
+      "flip": "Kartviziti çevir",
+      "flipHint": "çevirmek için dokunun",
+      "flipBack": "Geri",
+      "qrAlt": "Bu siteye bağlantı içeren QR kodu",
+      "copy": "Kişiyi kopyala",
+      "share": "Paylaş",
+      "vcard": "vCard indir"
+    }
+  },
+  "footer": {
+    "text": "Taslak: metnin bir kısmı geçicidir."
+  }
+}

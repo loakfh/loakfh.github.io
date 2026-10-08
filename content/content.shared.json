@@ -1,0 +1,36 @@
+{
+  "site": {
+    "url": "https://loakfh.github.io",
+    "noindex": true,
+    "defaultLang": "en"
+  },
+  "person": {
+    "nameLatin": "Bakir",
+    "telegram": "Loakfh2",
+    "github": "loakfh",
+    "email": ""
+  },
+  "stats": [
+    { "value": 6, "placeholder": false },
+    { "value": null, "placeholder": true },
+    { "value": null, "placeholder": true }
+  ],
+  "photos": {
+    "hero": { "src": "/assets/photos/hero.svg", "width": 960, "height": 1200 },
+    "beyond": [
+      { "src": "/assets/photos/beyond-gym.svg", "width": 800, "height": 600 },
+      { "src": "/assets/photos/beyond-hiking.svg", "width": 800, "height": 600 },
+      { "src": "/assets/photos/beyond-bike.svg", "width": 800, "height": 600 },
+      { "src": "/assets/photos/beyond-travel.svg", "width": 800, "height": 600 }
+    ]
+  },
+  "projectLinks": [
+    [],
+    ["https://trajectoria-mvp.vercel.app/"],
+    [
+      "https://loakfh.github.io/neuron-kurkino/",
+      "https://loakfh.github.io/alternativa-himki/",
+      "https://loakfh.github.io/merch-demo/"
+    ]
+  ]
+}

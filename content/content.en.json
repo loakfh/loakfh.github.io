@@ -1,0 +1,163 @@
+{
+  "meta": {
+    "title": "Bakir — products and websites built with AI",
+    "description": "Bakir: product owner at EdTech startup Foundation Lab, building websites for small businesses with an agent pipeline on Claude Code. Six languages. Message me on Telegram.",
+    "ogTagline": "Products and websites built with AI"
+  },
+  "ui": {
+    "skipLink": "Skip to content",
+    "menu": "Sections",
+    "langSwitch": "Site language",
+    "placeholder": "placeholder",
+    "introSkip": "tap to skip",
+    "floatCta": "Message me",
+    "copied": "Copied",
+    "copyFailed": "Could not copy",
+    "nav": {
+      "about": "About",
+      "projects": "Projects",
+      "achievements": "Achievements",
+      "ai": "AI",
+      "contact": "Contact"
+    }
+  },
+  "hero": {
+    "status": "Open to projects",
+    "name": "Bakir",
+    "tagline": "I build products and websites with AI — from user interviews to launch.",
+    "cta": "Message me on Telegram",
+    "secondary": "See projects",
+    "stats": ["languages", "[ЗАГЛУШКА] websites built", "[ЗАГЛУШКА] interviews run"],
+    "photoAlt": "Portrait of Bakir",
+    "badges": ["Captain · KLYUCH 2026/27", "SKOLKOVO Start", "6 languages"]
+  },
+  "about": {
+    "title": "About",
+    "paragraphs": [
+      "I talk to users myself, shape hypotheses and take an idea all the way to launch.",
+      "At Foundation Lab I own the product “Personal Brand with AI”. Alongside that I build websites for small businesses in Moscow — my agent pipeline on Claude Code does the work."
+    ],
+    "facts": [
+      { "k": "Role", "v": "Product owner, Foundation Lab" },
+      { "k": "Team", "v": "Captain in the KLYUCH 2026/27 case championship" },
+      { "k": "Programme", "v": "SKOLKOVO Start participant" },
+      { "k": "Languages", "v": "Russian, English, Tatar, Turkish, Japanese, German" },
+      { "k": "Studies", "v": "[ЗАГЛУШКА] where I study, year" },
+      { "k": "City", "v": "[ЗАГЛУШКА] city" }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "task": "Task",
+    "did": "What I did",
+    "result": "Result",
+    "items": [
+      {
+        "name": "Personal Brand with AI",
+        "tag": "Foundation Lab · EdTech",
+        "task": "Find out who needs a personal brand built with AI, and why — then launch the product.",
+        "did": "I run the product as its owner: user interviews, hypotheses, launch.",
+        "result": "[ЗАГЛУШКА] result in numbers: interviews, users, stage.",
+        "links": []
+      },
+      {
+        "name": "Trajectory",
+        "tag": "My own project",
+        "task": "[ЗАГЛУШКА] which user problem Trajectory solves.",
+        "did": "The idea, the customer discovery and all the engineering are mine.",
+        "result": "[ЗАГЛУШКА] result: stage, users.",
+        "links": ["Open the MVP"]
+      },
+      {
+        "name": "Websites for small businesses",
+        "tag": "Moscow · agent pipeline",
+        "task": "A small business needs a site that makes sense on a phone within one screen.",
+        "did": "I built a multi-agent pipeline on Claude Code: audit → copy → build → critique. Deployed to GitHub Pages and Vercel.",
+        "result": "Three live demos — open them and check.",
+        "links": ["Demo: AI school", "Demo: learning centre", "Demo: merch company"]
+      }
+    ]
+  },
+  "achievements": {
+    "title": "Achievements",
+    "items": [
+      {
+        "badge": "Qualified",
+        "label": "Team captain",
+        "title": "KLYUCH 2026/27 case championship",
+        "text": "Business track, topic: agriculture and food tech."
+      },
+      {
+        "badge": "Participant",
+        "label": "Programme",
+        "title": "SKOLKOVO Start",
+        "text": "[ЗАГЛУШКА] year and track."
+      },
+      {
+        "badge": "[ЗАГЛУШКА]",
+        "label": "Olympiad",
+        "title": "[ЗАГЛУШКА] olympiad name",
+        "text": "[ЗАГЛУШКА] subject, level, year."
+      },
+      {
+        "badge": "[ЗАГЛУШКА]",
+        "label": "Championship",
+        "title": "[ЗАГЛУШКА] championship name",
+        "text": "[ЗАГЛУШКА] role, result, year."
+      }
+    ]
+  },
+  "ai": {
+    "title": "How I work with AI",
+    "lead": "A site is built not by one prompt but by four agents in turn. Each one checks the one before.",
+    "steps": [
+      { "name": "Audit", "text": "Finds what gets in the customer's way on the old site.", "log": "Auditor: tiny text, three buttons, no offer." },
+      { "name": "Copy", "text": "Writes one offer and one button — from verified facts.", "log": "Writer: one headline, one action." },
+      { "name": "Build", "text": "Assembles the page: phone first, fast, nothing extra.", "log": "Builder: page assembled for phones." },
+      { "name": "Critique", "text": "Looks with the customer's eyes and sends it back for fixes.", "log": "Critic: offer visible, one button, readable." }
+    ],
+    "run": "Run the pipeline",
+    "rerun": "Run again",
+    "idle": "Press it and watch the site come together.",
+    "mockCaption": "An illustrative example, not a real client.",
+    "note": "I accept the site myself, on a phone: an agent saying “done” is not sign-off.",
+    "mock": {
+      "oldTitle": "Welcome to our website!",
+      "oldText": "We are a dynamically developing company with an individual approach to every client and many years of experience in the services market.",
+      "oldButtons": ["More", "Learn", "Request"],
+      "newTitle": "Clubs close to home",
+      "newText": "First class is free",
+      "newButton": "Sign up",
+      "checks": ["One offer", "One button", "Readable on a phone"]
+    }
+  },
+  "beyond": {
+    "title": "Beyond work",
+    "items": [
+      { "title": "Gym", "text": "[ЗАГЛУШКА] one line about training.", "alt": "Gym" },
+      { "title": "Hiking", "text": "[ЗАГЛУШКА] where I've been and where next.", "alt": "Hiking" },
+      { "title": "Cycling", "text": "[ЗАГЛУШКА] favourite route.", "alt": "Bicycle" },
+      { "title": "Travel", "text": "[ЗАГЛУШКА] countries and cities.", "alt": "Travel" }
+    ]
+  },
+  "contact": {
+    "title": "Message me",
+    "lead": "Telegram is where I reply fastest.",
+    "telegram": "Telegram",
+    "github": "GitHub",
+    "email": "Email",
+    "card": {
+      "role": "Products and websites with AI",
+      "flip": "Flip the card",
+      "flipHint": "tap to flip",
+      "flipBack": "Back",
+      "qrAlt": "QR code linking to this site",
+      "copy": "Copy contact",
+      "share": "Share",
+      "vcard": "Download vCard"
+    }
+  },
+  "footer": {
+    "text": "Draft: some of the text is placeholder."
+  }
+}

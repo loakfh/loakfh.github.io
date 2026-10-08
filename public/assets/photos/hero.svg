@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1200" width="960" height="1200" role="img" aria-label="placeholder">
+<rect width="960" height="1200" fill="#181915"/>
+<g stroke="#2c2d27" stroke-width="2"><path d="M0 0L960 1200M960 0L0 1200"/><rect x="1" y="1" width="958" height="1198" fill="none"/></g>
+<rect x="310.0" y="548.0" width="340" height="104" rx="14" fill="#0E0F0C" stroke="#2c2d27" stroke-width="2"/>
+<text x="480.0" y="594.0" fill="#EDEAE0" font-family="ui-monospace,Menlo,monospace" font-size="30" text-anchor="middle">hero</text>
+<text x="480.0" y="630.0" fill="#9a988b" font-family="ui-monospace,Menlo,monospace" font-size="24" text-anchor="middle">960 × 1200</text>
+</svg>

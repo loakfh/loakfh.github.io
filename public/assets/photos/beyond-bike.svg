@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="placeholder">
+<rect width="800" height="600" fill="#181915"/>
+<g stroke="#2c2d27" stroke-width="2"><path d="M0 0L800 600M800 0L0 600"/><rect x="1" y="1" width="798" height="598" fill="none"/></g>
+<rect x="230.0" y="248.0" width="340" height="104" rx="14" fill="#0E0F0C" stroke="#2c2d27" stroke-width="2"/>
+<text x="400.0" y="294.0" fill="#EDEAE0" font-family="ui-monospace,Menlo,monospace" font-size="30" text-anchor="middle">beyond-bike</text>
+<text x="400.0" y="330.0" fill="#9a988b" font-family="ui-monospace,Menlo,monospace" font-size="24" text-anchor="middle">800 × 600</text>
+</svg>
