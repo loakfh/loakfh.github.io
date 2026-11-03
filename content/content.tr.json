@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Bakir — yapay zekâ ile ürünler ve web siteleri",
-    "description": "Bakir: EdTech girişimi Foundation Lab'de ürün sahibi; küçük işletmelere Claude Code üzerinde ajan hattıyla web siteleri kuruyor. Altı dil. Telegram'dan yazın.",
+    "description": "Bakir: kendi iki girişimi Trayektoriya ve Teya; SKOLKOVO Start'ta birincilik; 200'den fazla kullanıcı görüşmesi. Yapay zekâ ile ürünler ve web siteleri yapıyorum. Telegram'dan yazın.",
     "ogTagline": "Yapay zekâ ile ürünler ve web siteleri"
   },
   "ui": {
@@ -27,23 +27,50 @@
     "tagline": "Yapay zekâ ile ürünler ve web siteleri yapıyorum — kullanıcı görüşmesinden lansmana kadar.",
     "cta": "Telegram'dan yaz",
     "secondary": "Projelere bak",
-    "stats": ["dil", "[ЗАГЛУШКА] site kuruldu", "[ЗАГЛУШКА] görüşme yapıldı"],
+    "stats": [
+      "SKOLKOVO Start'ta sıralama",
+      "kullanıcı görüşmesi",
+      "dil"
+    ],
     "photoAlt": "Bakir'in portresi",
-    "badges": ["Kaptan · KLYUÇ 2026/27", "SKOLKOVO Start", "6 dil"]
+    "badges": [
+      "Birincilik · SKOLKOVO Start",
+      "Startup Village 2026",
+      "IELTS 8.0"
+    ]
   },
   "about": {
     "title": "Hakkımda",
     "paragraphs": [
-      "Kullanıcılarla kendim konuşurum, hipotezleri kurarım ve fikri lansmana kadar götürürüm.",
-      "Foundation Lab'de “Yapay Zekâ ile Kişisel Marka” ürününün sahibiyim. Bunun yanında Moskova'daki küçük işletmelere web siteleri kuruyorum — işi Claude Code üzerindeki ajan hattım yapıyor."
+      "11. sınıftayım ve Viyana'da üniversiteye başvuruyorum. İlk projemi Türkiye'de başlattım: bir kafede akşamları açık hava film gösterimleri düzenledim.",
+      "Rusya'da kendi iki projemi, Trayektoriya ve Teya'yı başlattım ve bir EdTech girişiminde ürün yöneticisi olarak çalıştım. 200'den fazla kullanıcı görüşmesi yaptım.",
+      "Takımı içeriden yönetirim: müşteri görüşmesinden koda kadar bir girişimin neredeyse her alanını anlarım. Şu an kendi nişimi arıyorum."
     ],
     "facts": [
-      { "k": "Rol", "v": "Ürün sahibi, Foundation Lab" },
-      { "k": "Takım", "v": "KLYUÇ 2026/27 vaka şampiyonasında kaptan" },
-      { "k": "Program", "v": "SKOLKOVO Start katılımcısı" },
-      { "k": "Diller", "v": "Rusça, İngilizce, Tatarca, Türkçe, Japonca, Almanca" },
-      { "k": "Eğitim", "v": "[ЗАГЛУШКА] nerede okuyorum, sınıf" },
-      { "k": "Şehir", "v": "[ЗАГЛУШКА] şehir" }
+      {
+        "k": "Eğitim",
+        "v": "11. sınıf, Viyana'ya başvuru"
+      },
+      {
+        "k": "İngilizce",
+        "v": "IELTS 8.0"
+      },
+      {
+        "k": "Diller",
+        "v": "Rusça, İngilizce, Tatarca, Türkçe, Japonca, Almanca"
+      },
+      {
+        "k": "Kod",
+        "v": "Python, HTML, veritabanları, YZ destekli kodlama"
+      },
+      {
+        "k": "Müşteri görüşmesi",
+        "v": "200'den fazla görüşme"
+      },
+      {
+        "k": "Şehir",
+        "v": "Moskova"
+      }
     ]
   },
   "projects": {
@@ -53,20 +80,32 @@
     "result": "Sonuç",
     "items": [
       {
-        "name": "Yapay Zekâ ile Kişisel Marka",
-        "tag": "Foundation Lab · EdTech",
-        "task": "Yapay zekâ ile kişisel markaya kimin, neden ihtiyaç duyduğunu anlamak ve ürünü başlatmak.",
-        "did": "Ürünü sahibi olarak yürütüyorum: kullanıcı görüşmeleri, hipotezler, lansman.",
-        "result": "[ЗАГЛУШКА] rakamlarla sonuç: görüşmeler, kullanıcılar, aşama.",
-        "links": []
+        "name": "Trayektoriya",
+        "tag": "Kendi projem · EdTech",
+        "task": "Öğrenciyi, ebeveyni, şirketleri ve üniversiteleri “Dijital DNA” ile buluşturmak: ilgi alanlarının, becerilerin ve güçlü yönlerin canlı profili.",
+        "did": "Fikir, müşteri görüşmeleri ve tüm teknik geliştirme. Ekibi kurdum ve projeyi Startup Village 2026'da sundum.",
+        "result": "Okullar, şirketler ve Tümen belediye başkanı ile yazılı iş birliği anlaşmaları.",
+        "links": [
+          "MVP'yi aç"
+        ]
       },
       {
-        "name": "Trayektoriya",
-        "tag": "Kendi projem",
-        "task": "[ЗАГЛУШКА] Trayektoriya kullanıcının hangi sorununu çözüyor.",
-        "did": "Fikir, müşteri görüşmeleri ve tüm teknik geliştirme bana ait.",
-        "result": "[ЗАГЛУШКА] sonuç: aşama, kullanıcılar.",
-        "links": ["MVP'yi aç"]
+        "name": "Teya",
+        "tag": "Kendi projem · psikologlar için YZ",
+        "task": "Psikoloğun seanstan sonra vakayı hızlıca kaydetmesi ve üzerine düşünmesi gerekir.",
+        "did": "Psikologlarla derinlemesine görüşmeler yaptım ve ürünü başlattım: psikolog düşüncelerini sesli anlatır, Teya bunları yapılandırılmış bir nota ve vaka hafızasına dönüştürür.",
+        "result": "[ЗАГЛУШКА] sonuç: pilot, kullanıcılar.",
+        "links": [
+          "Teya'yı aç"
+        ]
+      },
+      {
+        "name": "Foundation Lab",
+        "tag": "EdTech girişimi · ürün yöneticisi",
+        "task": "Eğitim için yapay zekâ ürünleri başlatmak.",
+        "did": "YZ özel öğretmen ve YZ ile kişisel marka projelerini yürüttüm: kullanıcı görüşmeleri, hipotezler, lansman.",
+        "result": "[ЗАГЛУШКА] rakamlarla sonuç.",
+        "links": []
       },
       {
         "name": "Küçük işletmeler için web siteleri",
@@ -74,7 +113,19 @@
         "task": "Küçük işletmenin, telefonda tek ekranda anlaşılan bir siteye ihtiyacı var.",
         "did": "Claude Code üzerinde çok ajanlı bir hat kurdum: denetim → metinler → kurulum → eleştiri. Yayın: GitHub Pages ve Vercel.",
         "result": "Üç canlı demo — açın ve kendiniz görün.",
-        "links": ["Demo: YZ okulu", "Demo: eğitim merkezi", "Demo: promosyon firması"]
+        "links": [
+          "Demo: YZ okulu",
+          "Demo: eğitim merkezi",
+          "Demo: promosyon firması"
+        ]
+      },
+      {
+        "name": "Açık hava sineması",
+        "tag": "Türkiye · ilk proje",
+        "task": "Kendi ilk projemi başlatmak.",
+        "did": "Bir kafede akşamları açık hava film gösterimleri düzenledim.",
+        "result": "[ЗАГЛУШКА] gösterim ve izleyici sayısı.",
+        "links": []
       }
     ]
   },
@@ -82,28 +133,28 @@
     "title": "Başarılar",
     "items": [
       {
+        "badge": "Birincilik",
+        "label": "Vaka şampiyonası",
+        "title": "SKOLKOVO Start",
+        "text": "Rusya çapında vaka şampiyonası."
+      },
+      {
+        "badge": "Özel ödül",
+        "label": "Olimpiyat",
+        "title": "Tüm Rusya Girişimcilik Olimpiyatı",
+        "text": "Hayatımdaki ilk olimpiyat. Takım kaptanıydım."
+      },
+      {
+        "badge": "Sunum",
+        "label": "Trayektoriya",
+        "title": "Startup Village 2026",
+        "text": "SKOLKOVO, Mayıs 2026."
+      },
+      {
         "badge": "Elemeyi geçti",
         "label": "Takım kaptanı",
         "title": "KLYUÇ 2026/27 vaka şampiyonası",
-        "text": "İş kolu, konu: tarım ve gıda teknolojileri."
-      },
-      {
-        "badge": "Katılımcı",
-        "label": "Program",
-        "title": "SKOLKOVO Start",
-        "text": "[ЗАГЛУШКА] yıl ve kol."
-      },
-      {
-        "badge": "[ЗАГЛУШКА]",
-        "label": "Olimpiyat",
-        "title": "[ЗАГЛУШКА] olimpiyatın adı",
-        "text": "[ЗАГЛУШКА] ders, düzey, yıl."
-      },
-      {
-        "badge": "[ЗАГЛУШКА]",
-        "label": "Şampiyona",
-        "title": "[ЗАГЛУШКА] şampiyonanın adı",
-        "text": "[ЗАГЛУШКА] rol, sonuç, yıl."
+        "text": "HSE Üniversitesi, iş kolu, tarım ve gıda teknolojileri."
       }
     ]
   },
@@ -111,10 +162,26 @@
     "title": "Yapay zekâ ile nasıl çalışıyorum",
     "lead": "Siteyi tek bir komut değil, sırayla dört ajan kurar. Her biri bir öncekini denetler.",
     "steps": [
-      { "name": "Denetim", "text": "Eski sitede müşteriyi neyin engellediğini bulur.", "log": "Denetçi: küçük yazı, üç düğme, teklif yok." },
-      { "name": "Metinler", "text": "Tek teklif ve tek düğme yazar — doğrulanmış bilgilerle.", "log": "Yazar: tek başlık, tek eylem." },
-      { "name": "Kurulum", "text": "Sayfayı kurar: önce telefon, hızlı, fazlalıksız.", "log": "Kurucu: sayfa telefona göre kuruldu." },
-      { "name": "Eleştiri", "text": "Müşterinin gözüyle bakar ve düzeltmeye geri gönderir.", "log": "Eleştirmen: teklif görünür, tek düğme, okunaklı." }
+      {
+        "name": "Denetim",
+        "text": "Eski sitede müşteriyi neyin engellediğini bulur.",
+        "log": "Denetçi: küçük yazı, üç düğme, teklif yok."
+      },
+      {
+        "name": "Metinler",
+        "text": "Tek teklif ve tek düğme yazar — doğrulanmış bilgilerle.",
+        "log": "Yazar: tek başlık, tek eylem."
+      },
+      {
+        "name": "Kurulum",
+        "text": "Sayfayı kurar: önce telefon, hızlı, fazlalıksız.",
+        "log": "Kurucu: sayfa telefona göre kuruldu."
+      },
+      {
+        "name": "Eleştiri",
+        "text": "Müşterinin gözüyle bakar ve düzeltmeye geri gönderir.",
+        "log": "Eleştirmen: teklif görünür, tek düğme, okunaklı."
+      }
     ],
     "run": "Hattı çalıştır",
     "rerun": "Yeniden çalıştır",
@@ -124,20 +191,44 @@
     "mock": {
       "oldTitle": "Sitemize hoş geldiniz!",
       "oldText": "Her müşteriye özel yaklaşımı ve hizmet sektöründe uzun yıllara dayanan deneyimi olan, dinamik biçimde gelişen bir şirketiz.",
-      "oldButtons": ["Detay", "Bilgi", "Talep"],
+      "oldButtons": [
+        "Detay",
+        "Bilgi",
+        "Talep"
+      ],
       "newTitle": "Evinizin yanında kurslar",
       "newText": "İlk ders ücretsiz",
       "newButton": "Kaydol",
-      "checks": ["Tek teklif", "Tek düğme", "Telefonda okunur"]
+      "checks": [
+        "Tek teklif",
+        "Tek düğme",
+        "Telefonda okunur"
+      ]
     }
   },
   "beyond": {
     "title": "İş dışında",
     "items": [
-      { "title": "Spor salonu", "text": "[ЗАГЛУШКА] antrenman hakkında bir cümle.", "alt": "Spor salonu" },
-      { "title": "Doğa yürüyüşü", "text": "[ЗАГЛУШКА] nerelere gittim, nereye gitmek istiyorum.", "alt": "Doğa yürüyüşü" },
-      { "title": "Bisiklet", "text": "[ЗАГЛУШКА] en sevdiğim rota.", "alt": "Bisiklet" },
-      { "title": "Seyahat", "text": "[ЗАГЛУШКА] ülkeler ve şehirler.", "alt": "Seyahat" }
+      {
+        "title": "Basketbol",
+        "text": "Basketbol kulübünde takım kaptanıydım. Çocukluğumdan beri spor yapıyorum.",
+        "alt": "Basketbol"
+      },
+      {
+        "title": "Kitaplar",
+        "text": "Psikoloji, iş dünyası, davranış bilimleri, ekonomi.",
+        "alt": "Kitaplar"
+      },
+      {
+        "title": "Diller",
+        "text": "Altı dil konuşuyorum ve yenilerini öğrenmeye devam ediyorum.",
+        "alt": "Diller"
+      },
+      {
+        "title": "LEGO",
+        "text": "LEGO'ya bayılıyorum.",
+        "alt": "LEGO"
+      }
     ]
   },
   "contact": {

@@ -95,7 +95,7 @@ h3,
 }
 
 /* длинные немецкие слова переносим по слогам и в заголовках */
-:lang(de) :is(h2, h3, .tagline, .big) {
+:lang(de) :is(h2, h3, .tagline, .big, .stat dt, .fact dd) {
   hyphens: auto;
 }
 
@@ -396,7 +396,8 @@ a {
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* у средней цифры самая длинная подпись, у «языков» самая короткая */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) minmax(0, 0.7fr);
   gap: 12px;
   margin-top: 34px;
   padding-top: 20px;
@@ -424,7 +425,6 @@ a {
   color: var(--muted);
   font-size: 13.5px;
   line-height: 1.35;
-  hyphens: auto;
 }
 
 .stat dt .ph {
@@ -608,7 +608,6 @@ h3 {
 .fact dd {
   font-size: 16px;
   line-height: 1.35;
-  hyphens: auto;
 }
 
 /* projects */
@@ -1447,11 +1446,9 @@ h3 {
   .projects .project:last-child {
     grid-column: auto;
   }
-  .achievements {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
+  /* 2 × 2: в четырёх колонках длинные слова («Спецноминация») рвутся посередине */
   .achievement .big {
-    font-size: 34px;
+    font-size: 40px;
   }
   .pipe {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);

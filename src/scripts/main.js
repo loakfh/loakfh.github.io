@@ -86,7 +86,7 @@ const countUp = (el) => {
   const start = performance.now();
   const tick = (now) => {
     const t = Math.min(1, (now - start) / 900);
-    el.textContent = String(Math.round(target * (1 - Math.pow(1 - t, 3))));
+    el.textContent = Math.round(target * (1 - Math.pow(1 - t, 3))) + (el.dataset.suffix || '');
     if (t < 1) requestAnimationFrame(tick);
   };
   requestAnimationFrame(tick);

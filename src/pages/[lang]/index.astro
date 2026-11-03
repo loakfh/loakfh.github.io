@@ -102,8 +102,8 @@ const hellos = [...LANGS.filter((l) => l.code !== lang), meta].map((l) => ({ tex
             stats.map((s, i) => (
               <div class="stat">
                 <dt set:html={f(c.hero.stats[i])} />
-                <dd class="stat-num" data-count={s.placeholder ? undefined : s.value}>
-                  {s.placeholder ? '00' : s.value}
+                <dd class="stat-num" data-count={s.placeholder ? undefined : s.value} data-suffix={s.suffix}>
+                  {s.placeholder ? '00' : `${s.value}${s.suffix ?? ''}`}
                 </dd>
               </div>
             ))

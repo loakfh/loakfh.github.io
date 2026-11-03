@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Bakir — Produkte und Websites mit KI",
-    "description": "Bakir: Product Owner im EdTech-Startup Foundation Lab, baut Websites für kleine Unternehmen mit einer Agenten-Pipeline auf Claude Code. Sechs Sprachen. Schreib mir auf Telegram.",
+    "description": "Bakir: Gründer von zwei Startups, Trajektorie und Teya; 1. Platz bei SKOLKOVO Start; über 200 Nutzerinterviews. Ich baue Produkte und Websites mit KI. Schreib mir auf Telegram.",
     "ogTagline": "Produkte und Websites mit KI"
   },
   "ui": {
@@ -27,23 +27,50 @@
     "tagline": "Ich baue Produkte und Websites mit KI — vom Nutzerinterview bis zum Launch.",
     "cta": "Auf Telegram schreiben",
     "secondary": "Projekte ansehen",
-    "stats": ["Sprachen", "[ЗАГЛУШКА] Websites gebaut", "[ЗАГЛУШКА] Interviews geführt"],
+    "stats": [
+      "Platz bei SKOLKOVO Start",
+      "Nutzerinterviews",
+      "Sprachen"
+    ],
     "photoAlt": "Porträt von Bakir",
-    "badges": ["Kapitän · KLJUTSCH 2026/27", "SKOLKOVO Start", "6 Sprachen"]
+    "badges": [
+      "1. Platz · SKOLKOVO Start",
+      "Startup Village 2026",
+      "IELTS 8.0"
+    ]
   },
   "about": {
     "title": "Über mich",
     "paragraphs": [
-      "Ich spreche selbst mit Nutzern, formuliere Hypothesen und bringe eine Idee bis zum Launch.",
-      "Bei Foundation Lab verantworte ich das Produkt „Personal Brand mit KI“. Daneben baue ich Websites für kleine Unternehmen in Moskau — die Arbeit erledigt meine Agenten-Pipeline auf Claude Code."
+      "Ich gehe in die 11. Klasse und bewerbe mich an einer Universität in Wien. Mein erstes Projekt habe ich in der Türkei gestartet: abendliche Open-Air-Kinovorführungen in einem Café.",
+      "In Russland habe ich zwei eigene Projekte gestartet, Trajektorie und Teya, und als Produktmanager in einem EdTech-Startup gearbeitet. Ich habe über 200 Nutzerinterviews geführt.",
+      "Ich führe Teams von innen: Ich verstehe fast jeden Bereich eines Startups, von Kundeninterviews bis zum Code. Gerade suche ich meine Nische."
     ],
     "facts": [
-      { "k": "Rolle", "v": "Product Owner, Foundation Lab" },
-      { "k": "Team", "v": "Kapitän bei der Fallstudien-Meisterschaft KLJUTSCH 2026/27" },
-      { "k": "Programm", "v": "Teilnehmer von SKOLKOVO Start" },
-      { "k": "Sprachen", "v": "Russisch, Englisch, Tatarisch, Türkisch, Japanisch, Deutsch" },
-      { "k": "Ausbildung", "v": "[ЗАГЛУШКА] wo ich lerne, Jahrgang" },
-      { "k": "Stadt", "v": "[ЗАГЛУШКА] Stadt" }
+      {
+        "k": "Ausbildung",
+        "v": "11. Klasse, Bewerbung in Wien"
+      },
+      {
+        "k": "Englisch",
+        "v": "IELTS 8.0"
+      },
+      {
+        "k": "Sprachen",
+        "v": "Russisch, Englisch, Tatarisch, Türkisch, Japanisch, Deutsch"
+      },
+      {
+        "k": "Code",
+        "v": "Python, HTML, Datenbanken, KI-gestütztes Programmieren"
+      },
+      {
+        "k": "Kundeninterviews",
+        "v": "Über 200 Interviews"
+      },
+      {
+        "k": "Stadt",
+        "v": "Moskau"
+      }
     ]
   },
   "projects": {
@@ -53,20 +80,32 @@
     "result": "Ergebnis",
     "items": [
       {
-        "name": "Personal Brand mit KI",
-        "tag": "Foundation Lab · EdTech",
-        "task": "Herausfinden, wer eine Personal Brand mit KI braucht und wozu — und das Produkt starten.",
-        "did": "Ich führe das Produkt als Owner: Nutzerinterviews, Hypothesen, Launch.",
-        "result": "[ЗАГЛУШКА] Ergebnis in Zahlen: Interviews, Nutzer, Stand.",
-        "links": []
+        "name": "Trajektorie",
+        "tag": "Eigenes Projekt · EdTech",
+        "task": "Schüler, Eltern, Unternehmen und Hochschulen über eine „Digitale DNA“ verbinden — ein lebendiges Profil aus Interessen, Fähigkeiten und Stärken.",
+        "did": "Idee, Kundeninterviews und die gesamte technische Entwicklung. Ich habe das Team aufgebaut und das Projekt bei Startup Village 2026 gepitcht.",
+        "result": "Schriftliche Kooperationsvereinbarungen mit Schulen, Unternehmen und dem Bürgermeister von Tjumen.",
+        "links": [
+          "MVP öffnen"
+        ]
       },
       {
-        "name": "Trajektorie",
-        "tag": "Eigenes Projekt",
-        "task": "[ЗАГЛУШКА] welches Nutzerproblem die Trajektorie löst.",
-        "did": "Idee, Kundeninterviews und die gesamte technische Entwicklung stammen von mir.",
-        "result": "[ЗАГЛУШКА] Ergebnis: Stand, Nutzer.",
-        "links": ["MVP öffnen"]
+        "name": "Teya",
+        "tag": "Eigenes Projekt · KI für Psychologen",
+        "task": "Nach einer Sitzung muss ein Psychologe den Fall schnell festhalten und durchdenken.",
+        "did": "Ich habe Tiefeninterviews mit Psychologen geführt und das Produkt gestartet: Der Psychologe diktiert seine Gedanken, Teya macht daraus eine strukturierte Notiz und ein Fallgedächtnis.",
+        "result": "[ЗАГЛУШКА] Ergebnis: Pilot, Nutzer.",
+        "links": [
+          "Teya öffnen"
+        ]
+      },
+      {
+        "name": "Foundation Lab",
+        "tag": "EdTech-Startup · Produktmanager",
+        "task": "KI-Produkte für Bildung starten.",
+        "did": "Ich habe die Projekte KI-Tutor und Personal Brand mit KI geführt: Nutzerinterviews, Hypothesen, Launch.",
+        "result": "[ЗАГЛУШКА] Ergebnis in Zahlen.",
+        "links": []
       },
       {
         "name": "Websites für kleine Unternehmen",
@@ -74,7 +113,19 @@
         "task": "Ein kleines Unternehmen braucht eine Website, die auf dem Handy auf einem Bildschirm verständlich ist.",
         "did": "Ich habe eine Multi-Agenten-Pipeline auf Claude Code gebaut: Audit → Texte → Aufbau → Kritik. Deployment auf GitHub Pages und Vercel.",
         "result": "Drei Live-Demos — öffnen und selbst prüfen.",
-        "links": ["Demo: KI-Schule", "Demo: Lernzentrum", "Demo: Werbeartikelfirma"]
+        "links": [
+          "Demo: KI-Schule",
+          "Demo: Lernzentrum",
+          "Demo: Werbeartikelfirma"
+        ]
+      },
+      {
+        "name": "Open-Air-Kino",
+        "tag": "Türkei · erstes Projekt",
+        "task": "Mein erstes eigenes Projekt starten.",
+        "did": "Ich habe abendliche Open-Air-Kinovorführungen in einem Café organisiert.",
+        "result": "[ЗАГЛУШКА] Zahl der Vorführungen und Zuschauer.",
+        "links": []
       }
     ]
   },
@@ -82,28 +133,28 @@
     "title": "Erfolge",
     "items": [
       {
+        "badge": "1. Platz",
+        "label": "Fallstudien-Meisterschaft",
+        "title": "SKOLKOVO Start",
+        "text": "Landesweite Fallstudien-Meisterschaft in Russland."
+      },
+      {
+        "badge": "Sonderpreis",
+        "label": "Olympiade",
+        "title": "Allrussische Olympiade für Unternehmertum",
+        "text": "Meine erste Olympiade überhaupt. Ich war Teamkapitän."
+      },
+      {
+        "badge": "Pitch",
+        "label": "Trajektorie",
+        "title": "Startup Village 2026",
+        "text": "SKOLKOVO, Mai 2026."
+      },
+      {
         "badge": "Qualifiziert",
         "label": "Teamkapitän",
         "title": "Fallstudien-Meisterschaft KLJUTSCH 2026/27",
-        "text": "Business-Track, Thema: Agrar- und Lebensmitteltechnologie."
-      },
-      {
-        "badge": "Teilnehmer",
-        "label": "Programm",
-        "title": "SKOLKOVO Start",
-        "text": "[ЗАГЛУШКА] Jahr und Track."
-      },
-      {
-        "badge": "[ЗАГЛУШКА]",
-        "label": "Olympiade",
-        "title": "[ЗАГЛУШКА] Name der Olympiade",
-        "text": "[ЗАГЛУШКА] Fach, Stufe, Jahr."
-      },
-      {
-        "badge": "[ЗАГЛУШКА]",
-        "label": "Meisterschaft",
-        "title": "[ЗАГЛУШКА] Name der Meisterschaft",
-        "text": "[ЗАГЛУШКА] Rolle, Ergebnis, Jahr."
+        "text": "HSE-Universität, Business-Track, Agrar- und Lebensmitteltechnologie."
       }
     ]
   },
@@ -111,10 +162,26 @@
     "title": "Wie ich mit KI arbeite",
     "lead": "Eine Website entsteht nicht aus einem Prompt, sondern durch vier Agenten nacheinander. Jeder prüft den vorherigen.",
     "steps": [
-      { "name": "Audit", "text": "Findet, was den Kunden auf der alten Website stört.", "log": "Auditor: winziger Text, drei Buttons, kein Angebot." },
-      { "name": "Texte", "text": "Schreibt ein Angebot und einen Button — aus geprüften Fakten.", "log": "Autor: eine Überschrift, eine Handlung." },
-      { "name": "Aufbau", "text": "Baut die Seite: zuerst fürs Handy, schnell, ohne Ballast.", "log": "Builder: Seite fürs Handy gebaut." },
-      { "name": "Kritik", "text": "Schaut mit den Augen des Kunden und schickt zur Überarbeitung zurück.", "log": "Kritiker: Angebot sichtbar, ein Button, lesbar." }
+      {
+        "name": "Audit",
+        "text": "Findet, was den Kunden auf der alten Website stört.",
+        "log": "Auditor: winziger Text, drei Buttons, kein Angebot."
+      },
+      {
+        "name": "Texte",
+        "text": "Schreibt ein Angebot und einen Button — aus geprüften Fakten.",
+        "log": "Autor: eine Überschrift, eine Handlung."
+      },
+      {
+        "name": "Aufbau",
+        "text": "Baut die Seite: zuerst fürs Handy, schnell, ohne Ballast.",
+        "log": "Builder: Seite fürs Handy gebaut."
+      },
+      {
+        "name": "Kritik",
+        "text": "Schaut mit den Augen des Kunden und schickt zur Überarbeitung zurück.",
+        "log": "Kritiker: Angebot sichtbar, ein Button, lesbar."
+      }
     ],
     "run": "Pipeline starten",
     "rerun": "Noch einmal starten",
@@ -124,20 +191,44 @@
     "mock": {
       "oldTitle": "Willkommen auf unserer Website!",
       "oldText": "Wir sind ein sich dynamisch entwickelndes Unternehmen mit individuellem Ansatz für jeden Kunden und langjähriger Erfahrung auf dem Dienstleistungsmarkt.",
-      "oldButtons": ["Mehr", "Infos", "Anfrage"],
+      "oldButtons": [
+        "Mehr",
+        "Infos",
+        "Anfrage"
+      ],
       "newTitle": "Kurse in deiner Nähe",
       "newText": "Die erste Stunde ist gratis",
       "newButton": "Anmelden",
-      "checks": ["Ein Angebot", "Ein Button", "Am Handy lesbar"]
+      "checks": [
+        "Ein Angebot",
+        "Ein Button",
+        "Am Handy lesbar"
+      ]
     }
   },
   "beyond": {
     "title": "Neben der Arbeit",
     "items": [
-      { "title": "Fitnessstudio", "text": "[ЗАГЛУШКА] ein Satz zum Training.", "alt": "Fitnessstudio" },
-      { "title": "Wandern", "text": "[ЗАГЛУШКА] wo ich war und wohin ich will.", "alt": "Wanderung" },
-      { "title": "Fahrrad", "text": "[ЗАГЛУШКА] Lieblingsroute.", "alt": "Fahrrad" },
-      { "title": "Reisen", "text": "[ЗАГЛУШКА] Länder und Städte.", "alt": "Reise" }
+      {
+        "title": "Basketball",
+        "text": "Ich war Kapitän meiner Mannschaft im Basketballverein. Sport mache ich seit meiner Kindheit.",
+        "alt": "Basketball"
+      },
+      {
+        "title": "Bücher",
+        "text": "Psychologie, Business, Verhaltenswissenschaften, Wirtschaft.",
+        "alt": "Bücher"
+      },
+      {
+        "title": "Sprachen",
+        "text": "Ich spreche sechs und lerne ständig neue.",
+        "alt": "Sprachen"
+      },
+      {
+        "title": "LEGO",
+        "text": "Ich liebe LEGO einfach.",
+        "alt": "LEGO"
+      }
     ]
   },
   "contact": {

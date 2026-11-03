@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Bakir — products and websites built with AI",
-    "description": "Bakir: product owner at EdTech startup Foundation Lab, building websites for small businesses with an agent pipeline on Claude Code. Six languages. Message me on Telegram.",
+    "description": "Bakir: founder of two startups, Trajectory and Teya; 1st place at SKOLKOVO Start; 200+ user interviews. I build products and websites with AI. Message me on Telegram.",
     "ogTagline": "Products and websites built with AI"
   },
   "ui": {
@@ -27,23 +27,50 @@
     "tagline": "I build products and websites with AI — from user interviews to launch.",
     "cta": "Message me on Telegram",
     "secondary": "See projects",
-    "stats": ["languages", "[ЗАГЛУШКА] websites built", "[ЗАГЛУШКА] interviews run"],
+    "stats": [
+      "place at SKOLKOVO Start",
+      "user interviews",
+      "languages"
+    ],
     "photoAlt": "Portrait of Bakir",
-    "badges": ["Captain · KLYUCH 2026/27", "SKOLKOVO Start", "6 languages"]
+    "badges": [
+      "1st place · SKOLKOVO Start",
+      "Startup Village 2026",
+      "IELTS 8.0"
+    ]
   },
   "about": {
     "title": "About",
     "paragraphs": [
-      "I talk to users myself, shape hypotheses and take an idea all the way to launch.",
-      "At Foundation Lab I own the product “Personal Brand with AI”. Alongside that I build websites for small businesses in Moscow — my agent pipeline on Claude Code does the work."
+      "I'm in my final year of school (11th grade) and applying to university in Vienna. I launched my first project in Turkey: evening open-air film screenings at a café.",
+      "In Russia I launched two projects of my own, Trajectory and Teya, and worked as a product manager at an EdTech startup. I've run more than 200 user interviews.",
+      "I lead teams from the inside: I understand almost every part of a startup, from customer discovery to code. Right now I'm looking for my niche."
     ],
     "facts": [
-      { "k": "Role", "v": "Product owner, Foundation Lab" },
-      { "k": "Team", "v": "Captain in the KLYUCH 2026/27 case championship" },
-      { "k": "Programme", "v": "SKOLKOVO Start participant" },
-      { "k": "Languages", "v": "Russian, English, Tatar, Turkish, Japanese, German" },
-      { "k": "Studies", "v": "[ЗАГЛУШКА] where I study, year" },
-      { "k": "City", "v": "[ЗАГЛУШКА] city" }
+      {
+        "k": "Studies",
+        "v": "11th grade, applying to Vienna"
+      },
+      {
+        "k": "English",
+        "v": "IELTS 8.0"
+      },
+      {
+        "k": "Languages",
+        "v": "Russian, English, Tatar, Turkish, Japanese, German"
+      },
+      {
+        "k": "Code",
+        "v": "Python, HTML, databases, AI-assisted coding"
+      },
+      {
+        "k": "Discovery",
+        "v": "200+ interviews"
+      },
+      {
+        "k": "City",
+        "v": "Moscow"
+      }
     ]
   },
   "projects": {
@@ -53,20 +80,32 @@
     "result": "Result",
     "items": [
       {
-        "name": "Personal Brand with AI",
-        "tag": "Foundation Lab · EdTech",
-        "task": "Find out who needs a personal brand built with AI, and why — then launch the product.",
-        "did": "I run the product as its owner: user interviews, hypotheses, launch.",
-        "result": "[ЗАГЛУШКА] result in numbers: interviews, users, stage.",
-        "links": []
+        "name": "Trajectory",
+        "tag": "My own project · EdTech",
+        "task": "Connect a student, their parents, companies and universities through a “Digital DNA” — a living profile of interests, skills and strengths.",
+        "did": "The idea, customer discovery and all the engineering. I built the team and pitched the project at Startup Village 2026.",
+        "result": "Written cooperation agreements with schools, companies and the mayor of Tyumen.",
+        "links": [
+          "Open the MVP"
+        ]
       },
       {
-        "name": "Trajectory",
-        "tag": "My own project",
-        "task": "[ЗАГЛУШКА] which user problem Trajectory solves.",
-        "did": "The idea, the customer discovery and all the engineering are mine.",
-        "result": "[ЗАГЛУШКА] result: stage, users.",
-        "links": ["Open the MVP"]
+        "name": "Teya",
+        "tag": "My own project · AI for psychologists",
+        "task": "After a session, a psychologist needs to record and make sense of the case quickly.",
+        "did": "I ran in-depth interviews with psychologists and launched the product: the psychologist dictates their thoughts, and Teya turns them into a structured note and a running case memory.",
+        "result": "[ЗАГЛУШКА] result: pilot, users.",
+        "links": [
+          "Open Teya"
+        ]
+      },
+      {
+        "name": "Foundation Lab",
+        "tag": "EdTech startup · product manager",
+        "task": "Launch AI products for education.",
+        "did": "I ran the AI tutor and the AI personal-brand projects: user interviews, hypotheses, launch.",
+        "result": "[ЗАГЛУШКА] result in numbers.",
+        "links": []
       },
       {
         "name": "Websites for small businesses",
@@ -74,7 +113,19 @@
         "task": "A small business needs a site that makes sense on a phone within one screen.",
         "did": "I built a multi-agent pipeline on Claude Code: audit → copy → build → critique. Deployed to GitHub Pages and Vercel.",
         "result": "Three live demos — open them and check.",
-        "links": ["Demo: AI school", "Demo: learning centre", "Demo: merch company"]
+        "links": [
+          "Demo: AI school",
+          "Demo: learning centre",
+          "Demo: merch company"
+        ]
+      },
+      {
+        "name": "Open-air cinema",
+        "tag": "Turkey · first project",
+        "task": "Launch my first project of my own.",
+        "did": "I organised evening open-air film screenings at a café.",
+        "result": "[ЗАГЛУШКА] number of screenings and viewers.",
+        "links": []
       }
     ]
   },
@@ -82,28 +133,28 @@
     "title": "Achievements",
     "items": [
       {
+        "badge": "1st place",
+        "label": "Case championship",
+        "title": "SKOLKOVO Start",
+        "text": "Nationwide case championship in Russia."
+      },
+      {
+        "badge": "Special award",
+        "label": "Olympiad",
+        "title": "All-Russian Entrepreneurship Olympiad",
+        "text": "My first olympiad ever. I was team captain."
+      },
+      {
+        "badge": "Pitch",
+        "label": "Trajectory",
+        "title": "Startup Village 2026",
+        "text": "SKOLKOVO, May 2026."
+      },
+      {
         "badge": "Qualified",
         "label": "Team captain",
         "title": "KLYUCH 2026/27 case championship",
-        "text": "Business track, topic: agriculture and food tech."
-      },
-      {
-        "badge": "Participant",
-        "label": "Programme",
-        "title": "SKOLKOVO Start",
-        "text": "[ЗАГЛУШКА] year and track."
-      },
-      {
-        "badge": "[ЗАГЛУШКА]",
-        "label": "Olympiad",
-        "title": "[ЗАГЛУШКА] olympiad name",
-        "text": "[ЗАГЛУШКА] subject, level, year."
-      },
-      {
-        "badge": "[ЗАГЛУШКА]",
-        "label": "Championship",
-        "title": "[ЗАГЛУШКА] championship name",
-        "text": "[ЗАГЛУШКА] role, result, year."
+        "text": "HSE University, business track, agriculture and food tech."
       }
     ]
   },
@@ -111,10 +162,26 @@
     "title": "How I work with AI",
     "lead": "A site is built not by one prompt but by four agents in turn. Each one checks the one before.",
     "steps": [
-      { "name": "Audit", "text": "Finds what gets in the customer's way on the old site.", "log": "Auditor: tiny text, three buttons, no offer." },
-      { "name": "Copy", "text": "Writes one offer and one button — from verified facts.", "log": "Writer: one headline, one action." },
-      { "name": "Build", "text": "Assembles the page: phone first, fast, nothing extra.", "log": "Builder: page assembled for phones." },
-      { "name": "Critique", "text": "Looks with the customer's eyes and sends it back for fixes.", "log": "Critic: offer visible, one button, readable." }
+      {
+        "name": "Audit",
+        "text": "Finds what gets in the customer's way on the old site.",
+        "log": "Auditor: tiny text, three buttons, no offer."
+      },
+      {
+        "name": "Copy",
+        "text": "Writes one offer and one button — from verified facts.",
+        "log": "Writer: one headline, one action."
+      },
+      {
+        "name": "Build",
+        "text": "Assembles the page: phone first, fast, nothing extra.",
+        "log": "Builder: page assembled for phones."
+      },
+      {
+        "name": "Critique",
+        "text": "Looks with the customer's eyes and sends it back for fixes.",
+        "log": "Critic: offer visible, one button, readable."
+      }
     ],
     "run": "Run the pipeline",
     "rerun": "Run again",
@@ -124,20 +191,44 @@
     "mock": {
       "oldTitle": "Welcome to our website!",
       "oldText": "We are a dynamically developing company with an individual approach to every client and many years of experience in the services market.",
-      "oldButtons": ["More", "Learn", "Request"],
+      "oldButtons": [
+        "More",
+        "Learn",
+        "Request"
+      ],
       "newTitle": "Clubs close to home",
       "newText": "First class is free",
       "newButton": "Sign up",
-      "checks": ["One offer", "One button", "Readable on a phone"]
+      "checks": [
+        "One offer",
+        "One button",
+        "Readable on a phone"
+      ]
     }
   },
   "beyond": {
     "title": "Beyond work",
     "items": [
-      { "title": "Gym", "text": "[ЗАГЛУШКА] one line about training.", "alt": "Gym" },
-      { "title": "Hiking", "text": "[ЗАГЛУШКА] where I've been and where next.", "alt": "Hiking" },
-      { "title": "Cycling", "text": "[ЗАГЛУШКА] favourite route.", "alt": "Bicycle" },
-      { "title": "Travel", "text": "[ЗАГЛУШКА] countries and cities.", "alt": "Travel" }
+      {
+        "title": "Basketball",
+        "text": "Captain of my basketball club team. I've done sport since I was a kid.",
+        "alt": "Basketball"
+      },
+      {
+        "title": "Books",
+        "text": "Psychology, business, behavioural science, economics.",
+        "alt": "Books"
+      },
+      {
+        "title": "Languages",
+        "text": "I speak six and keep learning new ones.",
+        "alt": "Languages"
+      },
+      {
+        "title": "LEGO",
+        "text": "I just love LEGO.",
+        "alt": "LEGO"
+      }
     ]
   },
   "contact": {
