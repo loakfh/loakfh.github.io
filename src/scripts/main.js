@@ -182,29 +182,28 @@ if ('IntersectionObserver' in window) {
   });
 })();
 
-/* ---------- курсор: точка и кольцо, без свечения ---------- */
-(function cursor() {
-  const box = $('cursor');
-  if (!box || !fineHover || calm) return;
-  const root = document.documentElement;
-  const ring = box.querySelector('.cursor-ring');
-  const dot = box.querySelector('.cursor-dot');
-  const HOT = 'a, button, .pc, .book, [role="button"]';
-  let x = innerWidth / 2;
-  let y = innerHeight / 2;
-  let rx = x;
-  let ry = y;
+/* ---------- мягкий свет за стрелкой курсора ---------- */
+(function glow() {
+  const el = $('glow');
+  if (!el || !fineHover || calm) return;
+  const HOT = 'a, button, .pc, .book, .medal, .fact, .gallery li, [role="button"]';
+  let x = 0;
+  let y = 0;
+  let gx = 0;
+  let gy = 0;
   let running = false;
-
-  root.classList.add('has-cursor');
   addEventListener(
     'pointermove',
     (e) => {
       if (e.pointerType !== 'mouse') return;
       x = e.clientX;
       y = e.clientY;
-      box.classList.add('is-on');
-      box.classList.toggle('is-hot', !!(e.target.closest && e.target.closest(HOT)));
+      if (!el.classList.contains('is-on')) {
+        gx = x;
+        gy = y;
+        el.classList.add('is-on');
+      }
+      el.classList.toggle('is-hot', !!(e.target.closest && e.target.closest(HOT)));
       if (!running) {
         running = true;
         requestAnimationFrame(tick);
@@ -212,18 +211,14 @@ if ('IntersectionObserver' in window) {
     },
     { passive: true },
   );
-  document.addEventListener('pointerleave', () => box.classList.remove('is-on'));
-  addEventListener('blur', () => box.classList.remove('is-on'));
-  addEventListener('pointerdown', () => box.classList.add('is-down'));
-  addEventListener('pointerup', () => box.classList.remove('is-down'));
-
-  // кадры рисуем, только пока кольцо догоняет точку — без вечного цикла
+  document.addEventListener('pointerleave', () => el.classList.remove('is-on'));
+  addEventListener('blur', () => el.classList.remove('is-on'));
+  // свет догоняет стрелку с задержкой — получается мягкий след; кадры только пока догоняет
   function tick() {
-    rx += (x - rx) * 0.25;
-    ry += (y - ry) * 0.25;
-    dot.style.transform = `translate(${x}px, ${y}px)`;
-    ring.style.transform = `translate(${rx}px, ${ry}px)`;
-    if (Math.abs(x - rx) > 0.3 || Math.abs(y - ry) > 0.3) {
+    gx += (x - gx) * 0.16;
+    gy += (y - gy) * 0.16;
+    el.style.transform = `translate(${gx}px, ${gy}px)`;
+    if (Math.abs(x - gx) > 0.4 || Math.abs(y - gy) > 0.4) {
       requestAnimationFrame(tick);
     } else {
       running = false;

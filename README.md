@@ -45,9 +45,13 @@ npm run preview    # посмотреть собранный сайт
 | Где | Что вписать |
 |---|---|
 | `projects.items[1].result` | Результат Теи: пилот, пользователи |
-| `projects.items[2].result` | Результат в Foundation Lab в цифрах |
-| `projects.items[4].result` | Кино в Турции: сколько показов и зрителей |
-| Фото | Портрет и четыре фото «Помимо работы» — см. ниже |
+| `projects.items[3].result` | Результат в Foundation Lab в цифрах |
+| `projects.items[5].result` | Кино в Турции: сколько показов и зрителей |
+| `books.note` | Пометка «список проверить» — уберите, когда проверите полку |
+
+Фото лежат в `public/assets/photos/` и `public/assets/projects/` (WebP); пути — в
+`content.shared.json` → `photos` и `projects`. Обложки книг — `public/assets/books/`,
+поле `cover` у книги; без него обложка рисуется из названия и цвета.
 
 Цифры первого экрана — `hero.stats` в каждом языковом файле: `value` (число, к нему идёт
 анимация счёта), `unit` (мелкая подпись рядом: «млн ₽», «+»), `label` (подпись снизу).

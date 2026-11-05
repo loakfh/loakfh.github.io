@@ -27,7 +27,7 @@
       "Customer discovery",
       "Launch"
     ],
-    "langLabel": "I speak all 6",
+    "langLabel": "I speak",
     "theme": "Switch theme"
   },
   "hero": {
@@ -63,8 +63,8 @@
   "about": {
     "title": "About",
     "paragraphs": [
-      "I'm in my final year of school (11th grade) and applying to university in Vienna. I launched my first project in Turkey: evening open-air film screenings at a café.",
-      "In Russia I launched two projects of my own, Trajectory and Teya, and worked as a product manager at an EdTech startup. I've run more than 200 user interviews.",
+      "I'm in 11th grade and applying to university in Vienna. I launched my first project in Turkey at 15: evening open-air film screenings.",
+      "Since then I've launched five projects of my own, worked as a product manager at an EdTech startup and recently captained a basketball team. I've run more than 200 user interviews.",
       "I lead teams from the inside: I understand almost every part of a startup, from customer discovery to code. Right now I'm looking for my niche."
     ],
     "facts": [
@@ -73,12 +73,20 @@
         "v": "11th grade, applying to Vienna"
       },
       {
+        "k": "Projects",
+        "v": "5 of my own launched"
+      },
+      {
+        "k": "Languages",
+        "v": "6 languages · IELTS 8.0"
+      },
+      {
         "k": "Code",
         "v": "Python, HTML, databases, AI-assisted coding"
       },
       {
         "k": "Discovery",
-        "v": "200+ user interviews"
+        "v": "200+ interviews"
       },
       {
         "k": "City",
@@ -98,8 +106,11 @@
         "task": "Connect a student, their parents, companies and universities through a “Digital DNA” — a living profile of interests, skills and strengths.",
         "did": "The idea, customer discovery and all the engineering. I built the team and pitched the project at Startup Village 2026.",
         "result": "6 written cooperation agreements with schools, companies and a senator.",
-        "links": [
-          "Open the MVP"
+        "links": [],
+        "results": [
+          "Special award at the All-Russian Entrepreneurship Olympiad",
+          "6 written cooperation agreements: schools, companies, a senator",
+          "Pitch at Startup Village 2026"
         ]
       },
       {
@@ -114,11 +125,17 @@
       },
       {
         "name": "Bakir OS",
-        "tag": "My own project · AI twin",
-        "task": "Keep ideas, finances, projects and messages in one place without losing context.",
-        "did": "I built a Telegram bot on Claude with a set of tools: it records ideas, tracks finances, transcribes voice messages, finds olympiads and grants, and remembers project context. The bot decides which tool to call.",
-        "result": "Running 24/7 since April 2026. I'm its user and its developer.",
-        "links": []
+        "tag": "My own operating system · AI agent",
+        "task": "My own operating system: a second brain in Telegram.",
+        "did": "A Claude-based bot that decides which tool to call: it records ideas, tracks finances, transcribes voice messages and remembers project context.",
+        "result": "Running 24/7 since April 2026.",
+        "links": [],
+        "chips": [
+          "Claude API",
+          "Tool use",
+          "Agents",
+          "Claude Code"
+        ]
       },
       {
         "name": "Foundation Lab",
@@ -126,7 +143,9 @@
         "task": "Launch AI products for education.",
         "did": "I ran the AI tutor and the AI personal-brand projects: user interviews, hypotheses, launch.",
         "result": "[ЗАГЛУШКА] result in numbers.",
-        "links": []
+        "links": [
+          "Open LabF"
+        ]
       },
       {
         "name": "Websites for small businesses",
@@ -141,10 +160,10 @@
         ]
       },
       {
-        "name": "Open-air cinema",
+        "name": "Twilight Cinema",
         "tag": "Turkey · first project, at 15",
         "task": "Launch my first project of my own.",
-        "did": "I organised evening open-air film screenings at a café.",
+        "did": "Evening open-air screenings in Altınkum with Croissant Atelier café: “The Little Prince”, “Up”, free entry.",
         "result": "[ЗАГЛУШКА] number of screenings and viewers.",
         "links": []
       }
@@ -160,22 +179,22 @@
         "text": "Nationwide case championship in Russia."
       },
       {
+        "badge": "Lecture at HSE",
+        "label": "October 2026 · aged 17",
+        "title": "“AI for creativity: from idea to launch”",
+        "text": "A workshop in the “Creative Environment” series, co-hosted with Daria Mingalieva."
+      },
+      {
         "badge": "Special award",
-        "label": "Olympiad",
+        "label": "Olympiad · Trajectory",
         "title": "All-Russian Entrepreneurship Olympiad",
         "text": "My first olympiad ever. I was team captain."
       },
       {
-        "badge": "Pitch",
+        "badge": "Participant",
         "label": "Trajectory",
         "title": "Startup Village 2026",
-        "text": "SKOLKOVO, May 2026."
-      },
-      {
-        "badge": "Qualified",
-        "label": "Team captain",
-        "title": "KLYUCH 2026/27 case championship",
-        "text": "HSE University, business track, agriculture and food tech."
+        "text": "Project pitch, SKOLKOVO, May 2026."
       }
     ]
   },
@@ -183,11 +202,12 @@
     "title": "Beyond work",
     "sport": {
       "title": "Sport",
-      "text": "Into sport since childhood. Captain of my basketball club team.",
+      "text": "Into sport since childhood. Recently captained a basketball team.",
       "chips": [
         "Hiking",
         "Cycling",
         "Basketball",
+        "SUP",
         "Gym"
       ]
     },
@@ -203,17 +223,9 @@
     "telegram": "Message me on Telegram",
     "copy": "Copy contact",
     "share": "Share",
-    "vcard": "Download vCard",
     "github": "GitHub",
     "role": "Products and websites with AI",
-    "passenger": "Passenger",
     "gate": "Gate",
-    "route": [
-      "Kazan",
-      "Antalya",
-      "Moscow",
-      "Vienna"
-    ],
     "qrAlt": "QR code linking to this site"
   },
   "footer": {

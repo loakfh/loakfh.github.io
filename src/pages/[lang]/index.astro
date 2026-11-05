@@ -36,17 +36,16 @@ const contactText = [
 
 const sections = ['about', 'projects', 'achievements', 'books', 'contact'] as const;
 const num = (i: number) => String(i).padStart(2, '0');
-// Большие японские слова на фоне секций — декорация, скрыта от скринридеров.
-const bgWords: Record<string, string> = {
-  about: '自己紹介',
-  projects: 'プロジェクト',
-  achievements: '実績',
-  beyond: '趣味',
-  books: '本棚',
-  contact: '連絡',
+// Большие слова на фоне секций — на разных языках из шести; декорация, скрыта от скринридеров.
+const bgWords: Record<string, { text: string; lang: string }> = {
+  about: { text: 'ÜBER MICH', lang: 'de' },
+  projects: { text: 'PROJELER', lang: 'tr' },
+  achievements: { text: '実績', lang: 'ja' },
+  beyond: { text: 'HOBBIES', lang: 'en' },
+  books: { text: 'КИТАПЛАР', lang: 'tt' },
+  contact: { text: '連絡', lang: 'ja' },
 };
-const codes = ['KZN', 'AYT', 'MOW', 'VIE'];
-const route = c.contact.route.map((city: string, i: number) => ({ code: codes[i], city }));
+const achPhotos = photos.achievements;
 const sep = '  ✦  ';
 const tapeHello = Array(6).fill(LANGS.map((l) => l.hello).join(sep)).join(sep) + sep;
 // Приветствия для интро: текущий язык — последним.
@@ -173,7 +172,8 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
     <div class="tape-wrap" aria-hidden="true"><div class="tape"><span>{tapeHello}</span></div></div>
 
     <section class="wrap sec" id="about">
-      <span class="bg-word" aria-hidden="true" lang="ja">{bgWords.about}</span>
+      <span class="bg-word" aria-hidden="true" lang={bgWords.about.lang}>{bgWords.about.text}</span>
+      <svg class="doodle doodle-bike" viewBox="0 0 220 130" aria-hidden="true"><circle cx="45" cy="88" r="36" /><circle cx="175" cy="88" r="36" /><path d="M45 88 82 30h68l25 58M82 30l38 58H45M150 30l-30 58M70 18h26M140 12h22" /><circle cx="120" cy="88" r="6" /></svg>
       <header class="sec-head reveal">
         <span class="idx" aria-hidden="true">{num(1)}</span>
         <h2>{c.about.title}</h2>
@@ -196,7 +196,7 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
     </section>
 
     <section class="wrap sec" id="projects">
-      <span class="bg-word" aria-hidden="true" lang="ja">{bgWords.projects}</span>
+      <span class="bg-word" aria-hidden="true" lang={bgWords.projects.lang}>{bgWords.projects.text}</span>
       <header class="sec-head reveal">
         <span class="idx" aria-hidden="true">{num(2)}</span>
         <h2>{c.projects.title}</h2>
@@ -204,12 +204,15 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
       <div class="bento">
         <article class="pc p-traj reveal">
           <p class="pc-chip"><img class="pc-ico" src={traj.icon} width="40" height="40" alt="" loading="lazy" />{traj.tag}</p>
-          {traj.links.map((url: string, j: number) => <a class="pc-go" href={url} target="_blank" rel="noopener">{traj.labels[j]} ↗</a>)}
           <h3><img class="pc-logotype" src={traj.logotype} width="280" height="80" alt={traj.name} loading="lazy" /></h3>
           <p class="pc-text" set:html={f(traj.task)} />
+          <div class="traj-body">
+            <ul class="wins">
+              {traj.results.map((r: string, j: number) => <li><span class="win-n" aria-hidden="true">{j === 0 ? '🏆' : `0${j + 1}`}</span><span set:html={f(r)} /></li>)}
+            </ul>
+            <div class="pc-shot"><img src={traj.shot} width="1100" height="619" alt="" loading="lazy" /></div>
+          </div>
           <p class="pc-did" set:html={f(traj.did)} />
-          <div class="pc-shot"><img src={traj.shot} width="640" height="400" alt="" loading="lazy" /></div>
-          <p class="pc-res" set:html={f(traj.result)} />
         </article>
 
         <article class="pc p-teya reveal">
@@ -217,7 +220,6 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
           <h3>{teya.name}</h3>
           <p class="pc-text" set:html={f(teya.task)} />
           <div class="pc-shot"><img src={teya.shot} width="640" height="400" alt="" loading="lazy" /></div>
-          <p class="pc-did" set:html={f(teya.did)} />
           {teya.links.map((url: string, j: number) => <a class="pc-go" href={url} target="_blank" rel="noopener">{teya.labels[j]} ↗</a>)}
           <p class="pc-res" set:html={f(teya.result)} />
         </article>
@@ -226,12 +228,7 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
           <p class="pc-chip"><span class="pc-ico pc-ico-os" aria-hidden="true">OS</span>{os.tag}</p>
           <h3>{os.name}</h3>
           <p class="pc-text" set:html={f(os.task)} />
-          <div class="chat" aria-hidden="true">
-            <span class="b me">💡 + 1</span>
-            <span class="b bot">✓</span>
-            <span class="b me">🎙 0:42</span>
-            <span class="b bot">✍ …</span>
-          </div>
+<ul class="ai-chips">{os.chips.map((t: string) => <li>{t}</li>)}</ul>
           <p class="pc-did" set:html={f(os.did)} />
           <p class="pc-res" set:html={f(os.result)} />
         </article>
@@ -254,28 +251,34 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
           <p class="pc-chip">{flab.tag}</p>
           <h3 class="wordmark">Foundation<i>Lab</i></h3>
           <p class="pc-text" set:html={f(flab.did)} />
+          <div class="pc-shot"><img src={flab.shot} width="1000" height="559" alt="" loading="lazy" /></div>
+          {flab.links.map((url: string, j: number) => <a class="pc-go" href={url} target="_blank" rel="noopener">{flab.labels[j]} ↗</a>)}
           <p class="pc-res" set:html={f(flab.result)} />
         </article>
 
         <article class="pc p-kino reveal">
-          <p class="pc-chip">{kino.tag}</p>
+          <p class="pc-chip"><img class="pc-ico" src={kino.icon} width="40" height="40" alt="" loading="lazy" />{kino.tag}</p>
           <h3>{kino.name}</h3>
           <p class="pc-text" set:html={f(kino.did)} />
+          <div class="fan fan-posters" aria-hidden="true">
+            {kino.shots.map((src: string) => <span><img src={src} width="420" height="700" alt="" loading="lazy" /></span>)}
+          </div>
           <p class="pc-res" set:html={f(kino.result)} />
         </article>
       </div>
     </section>
 
     <section class="wrap sec" id="achievements">
-      <span class="bg-word" aria-hidden="true" lang="ja">{bgWords.achievements}</span>
+      <span class="bg-word" aria-hidden="true" lang={bgWords.achievements.lang}>{bgWords.achievements.text}</span>
       <header class="sec-head reveal">
         <span class="idx" aria-hidden="true">{num(3)}</span>
         <h2>{c.achievements.title}</h2>
       </header>
       <div class="achievements">
         {
-          c.achievements.items.map((a: any) => (
+          c.achievements.items.map((a: any, i: number) => (
             <article class="medal reveal">
+              {achPhotos[i] && <img class="medal-photo" src={achPhotos[i].src} width="900" height="675" alt="" loading="lazy" />}
               <p class="big" set:html={f(a.badge)} />
               <p class="tag">{a.label}</p>
               <h3 set:html={f(a.title)} />
@@ -287,14 +290,17 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
     </section>
 
     <section class="wrap sec" id="beyond">
-      <span class="bg-word" aria-hidden="true" lang="ja">{bgWords.beyond}</span>
+      <span class="bg-word" aria-hidden="true" lang={bgWords.beyond.lang}>{bgWords.beyond.text}</span>
+      <svg class="doodle doodle-mtn" viewBox="0 0 600 160" preserveAspectRatio="none" aria-hidden="true"><path d="M0 150 L90 60 L150 110 L250 20 L330 100 L400 50 L480 120 L540 80 L600 140" /><path d="M235 34 L250 20 L265 34 M392 58 L400 50 L408 58" /></svg>
       <header class="sec-head reveal">
         <span class="idx" aria-hidden="true">{num(4)}</span>
         <h2>{c.beyond.title}</h2>
       </header>
       <div class="beyond">
         <article class="sport reveal">
-          <img src={photos.beyond.sport.src} width={photos.beyond.sport.width} height={photos.beyond.sport.height} alt="" loading="lazy" />
+          <ul class="gallery" tabindex="0" aria-label={c.beyond.sport.title}>
+            {photos.beyond.sport.map((ph: any, j: number) => <li><img src={ph.src} width="640" height="800" alt={c.beyond.sport.chips[j] ?? ''} loading="lazy" /></li>)}
+          </ul>
           <div class="sport-text">
             <h3>{c.beyond.sport.title}</h3>
             <p>{c.beyond.sport.text}</p>
@@ -302,7 +308,7 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
           </div>
         </article>
         <article class="lego reveal">
-          <img src={photos.beyond.lego.src} width={photos.beyond.lego.width} height={photos.beyond.lego.height} alt="" loading="lazy" />
+          <img src={photos.beyond.lego.src} width={photos.beyond.lego.width} height={photos.beyond.lego.height} alt="LEGO" loading="lazy" />
           <h3>{c.beyond.lego.title}</h3>
           <p>{c.beyond.lego.text}</p>
         </article>
@@ -311,7 +317,7 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
 
     <section class="sec books-sec" id="books">
       <div class="wrap books-head">
-        <span class="bg-word" aria-hidden="true" lang="ja">{bgWords.books}</span>
+        <span class="bg-word" aria-hidden="true" lang={bgWords.books.lang}>{bgWords.books.text}</span>
         <header class="sec-head reveal">
           <span class="idx" aria-hidden="true">{num(5)}</span>
           <h2>{c.books.title}</h2>
@@ -325,7 +331,8 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
       <ul class="shelf" id="shelf" tabindex="0" aria-label={c.books.title}>
         {
           books.map((b: any) => (
-            <li class="book" style={`--book:${b.color};--book-ink:${ink(b.color)}`}>
+            <li class={`book${b.cover ? ' has-cover' : ''}`} style={`--book:${b.color};--book-ink:${ink(b.color)}`}>
+              {b.cover && <img src={b.cover} width="330" height="500" alt="" loading="lazy" />}
               <span class="book-title">{cyrillic ? b.ru : b.orig}</span>
               <span class="book-author">{cyrillic ? b.author : b.authorEn}</span>
             </li>
@@ -335,7 +342,7 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
     </section>
 
     <section class="wrap sec contact" id="contact">
-      <span class="bg-word" aria-hidden="true" lang="ja">{bgWords.contact}</span>
+      <span class="bg-word" aria-hidden="true" lang={bgWords.contact.lang}>{bgWords.contact.text}</span>
       <header class="sec-head reveal">
         <span class="idx" aria-hidden="true">{num(6)}</span>
         <h2>{c.contact.title}</h2>
@@ -344,33 +351,14 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
 
       <div class="ticket reveal" id="vc" data-copy={contactText} data-url={pageUrl} data-title={c.meta.title}>
         <div class="tk-main">
-          <p class="tk-route" aria-hidden="true">
-            {route.map((r, i) => (
-              <>
-                {i > 0 && <i class="tk-dash" />}
-                <span><b>{r.code}</b> {r.city}</span>
-              </>
-            ))}
-          </p>
-          <div class="tk-row">
-            <div>
-              <p class="tk-lbl">{c.contact.passenger}</p>
-              <p class="tk-name">{c.hero.name}</p>
-              <p class="tk-cta">{c.contact.cta}</p>
-            </div>
-            <dl class="tk-fields">
-              {c.hero.stats.map((st: any) => (
-                <div><dt>{plain(st.label)}</dt><dd><b>{st.value}<small>{st.unit}</small></b></dd></div>
-              ))}
-            </dl>
-          </div>
+          <p class="tk-lbl">{c.hero.name} · {c.contact.role}</p>
+          <a class="tk-mail" href={`mailto:${person.email}`}>{person.email.split('@')[0]}@<wbr />{person.email.split('@')[1]}</a>
+          <p class="tk-cta">{c.contact.cta}</p>
           <div class="tk-btns">
             <a class="tk-btn tk-btn-main" href={tgUrl} rel="me noopener">{c.contact.telegram}<span class="mono">@{person.telegram}</span></a>
             <button class="tk-btn" type="button" id="vcCopy">{c.contact.copy}</button>
             <button class="tk-btn" type="button" id="vcShare">{c.contact.share}</button>
-            <a class="tk-btn tk-btn-line" href="/bakir.vcf" download="bakir.vcf">{c.contact.vcard}</a>
             <a class="tk-btn tk-btn-line" href={ghUrl} rel="me noopener" target="_blank">{c.contact.github}</a>
-            {person.email && <a class="tk-btn tk-btn-line" href={`mailto:${person.email}`}>{person.email}</a>}
           </div>
           <p class="vc-toast" id="vcToast" role="status" data-ok={c.ui.copied} data-fail={c.ui.copyFailed}></p>
         </div>
@@ -393,7 +381,7 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
     {c.ui.floatCta}
   </a>
 
-  <div class="cursor" id="cursor" aria-hidden="true"><i class="cursor-ring"></i><i class="cursor-dot"></i></div>
+  <i class="glow" id="glow" aria-hidden="true"></i>
 
   <script>
     import '../../scripts/main.js';

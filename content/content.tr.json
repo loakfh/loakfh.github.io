@@ -27,7 +27,7 @@
       "Müşteri görüşmesi",
       "Lansman"
     ],
-    "langLabel": "Altısını da konuşuyorum",
+    "langLabel": "Konuştuğum diller",
     "theme": "Temayı değiştir"
   },
   "hero": {
@@ -63,14 +63,22 @@
   "about": {
     "title": "Hakkımda",
     "paragraphs": [
-      "11. sınıftayım ve Viyana'da üniversiteye başvuruyorum. İlk projemi Türkiye'de başlattım: bir kafede akşamları açık hava film gösterimleri düzenledim.",
-      "Rusya'da kendi iki projemi, Trayektoriya ve Teya'yı başlattım ve bir EdTech girişiminde ürün yöneticisi olarak çalıştım. 200'den fazla kullanıcı görüşmesi yaptım.",
+      "11. sınıftayım ve Viyana'da üniversiteye başvuruyorum. İlk projemi 15 yaşında Türkiye'de başlattım: akşamları açık hava film gösterimleri.",
+      "O zamandan beri kendi beş projemi başlattım, bir EdTech girişiminde ürün yöneticisi olarak çalıştım ve yakın zamanda bir basketbol takımının kaptanlığını yaptım. 200'den fazla kullanıcı görüşmesi yaptım.",
       "Takımı içeriden yönetirim: müşteri görüşmesinden koda kadar bir girişimin neredeyse her alanını anlarım. Şu an kendi nişimi arıyorum."
     ],
     "facts": [
       {
         "k": "Eğitim",
         "v": "11. sınıf, Viyana'ya başvuru"
+      },
+      {
+        "k": "Projeler",
+        "v": "5 kendi projem"
+      },
+      {
+        "k": "Diller",
+        "v": "6 dil · IELTS 8.0"
       },
       {
         "k": "Kod",
@@ -98,8 +106,11 @@
         "task": "Öğrenciyi, ebeveyni, şirketleri ve üniversiteleri “Dijital DNA” ile buluşturmak: ilgi alanlarının, becerilerin ve güçlü yönlerin canlı profili.",
         "did": "Fikir, müşteri görüşmeleri ve tüm teknik geliştirme. Ekibi kurdum ve projeyi Startup Village 2026'da sundum.",
         "result": "Okullar, şirketler ve bir senatörle 6 yazılı iş birliği anlaşması.",
-        "links": [
-          "MVP'yi aç"
+        "links": [],
+        "results": [
+          "Tüm Rusya Girişimcilik Olimpiyatı'nda özel ödül",
+          "6 yazılı iş birliği anlaşması: okullar, şirketler, bir senatör",
+          "Startup Village 2026'da sunum"
         ]
       },
       {
@@ -114,11 +125,17 @@
       },
       {
         "name": "Bakir OS",
-        "tag": "Kendi projem · YZ ikizi",
-        "task": "Fikirleri, finansları, projeleri ve yazışmaları tek yerde tutmak, bağlamı kaybetmemek.",
-        "did": "Claude üzerinde araç setine sahip bir Telegram botu kurdum: fikirleri kaydeder, finansları tutar, sesli mesajları yazıya döker, olimpiyat ve hibe bulur, proje bağlamını hatırlar. Hangi aracı kullanacağına bot kendisi karar verir.",
-        "result": "Nisan 2026'dan beri 7/24 çalışıyor. Hem kullanıcısı hem geliştiricisiyim.",
-        "links": []
+        "tag": "Kendi işletim sistemim · YZ ajanı",
+        "task": "Kendi işletim sistemim: Telegram'da ikinci beyin.",
+        "did": "Claude tabanlı bot hangi aracı kullanacağına kendisi karar verir: fikirleri kaydeder, finansları tutar, sesli mesajları yazıya döker, proje bağlamını hatırlar.",
+        "result": "Nisan 2026'dan beri 7/24 çalışıyor.",
+        "links": [],
+        "chips": [
+          "Claude API",
+          "Tool use",
+          "Ajanlar",
+          "Claude Code"
+        ]
       },
       {
         "name": "Foundation Lab",
@@ -126,7 +143,9 @@
         "task": "Eğitim için yapay zekâ ürünleri başlatmak.",
         "did": "YZ özel öğretmen ve YZ ile kişisel marka projelerini yürüttüm: kullanıcı görüşmeleri, hipotezler, lansman.",
         "result": "[ЗАГЛУШКА] rakamlarla sonuç.",
-        "links": []
+        "links": [
+          "LabF'yi aç"
+        ]
       },
       {
         "name": "Küçük işletmeler için web siteleri",
@@ -141,10 +160,10 @@
         ]
       },
       {
-        "name": "Açık hava sineması",
+        "name": "Twilight Cinema",
         "tag": "Türkiye · ilk proje, 15 yaşında",
         "task": "Kendi ilk projemi başlatmak.",
-        "did": "Bir kafede akşamları açık hava film gösterimleri düzenledim.",
+        "did": "Altınkum'da Croissant Atelier kafesiyle akşam açık hava film gösterimleri: “Küçük Prens”, “Yukarı Bak”, giriş ücretsiz.",
         "result": "[ЗАГЛУШКА] gösterim ve izleyici sayısı.",
         "links": []
       }
@@ -160,22 +179,22 @@
         "text": "Rusya çapında vaka şampiyonası."
       },
       {
+        "badge": "HSE'de ders",
+        "label": "Ekim 2026 · 17 yaşında",
+        "title": "“Yaratıcılık için YZ: fikirden uygulamaya”",
+        "text": "“Yaratıcı Ortam” serisinde Darya Mingalieva ile atölye."
+      },
+      {
         "badge": "Özel ödül",
-        "label": "Olimpiyat",
+        "label": "Olimpiyat · Trayektoriya",
         "title": "Tüm Rusya Girişimcilik Olimpiyatı",
         "text": "Hayatımdaki ilk olimpiyat. Takım kaptanıydım."
       },
       {
-        "badge": "Sunum",
+        "badge": "Katılımcı",
         "label": "Trayektoriya",
         "title": "Startup Village 2026",
-        "text": "SKOLKOVO, Mayıs 2026."
-      },
-      {
-        "badge": "Elemeyi geçti",
-        "label": "Takım kaptanı",
-        "title": "KLYUÇ 2026/27 vaka şampiyonası",
-        "text": "HSE Üniversitesi, iş kolu, tarım ve gıda teknolojileri."
+        "text": "Proje sunumu, SKOLKOVO, Mayıs 2026."
       }
     ]
   },
@@ -183,11 +202,12 @@
     "title": "İş dışında",
     "sport": {
       "title": "Spor",
-      "text": "Çocukluğumdan beri spor yapıyorum. Basketbol kulübünde takım kaptanıydım.",
+      "text": "Çocukluğumdan beri spor yapıyorum. Yakın zamanda bir basketbol takımının kaptanıydım.",
       "chips": [
         "Doğa yürüyüşü",
         "Bisiklet",
         "Basketbol",
+        "SUP",
         "Spor salonu"
       ]
     },
@@ -203,17 +223,9 @@
     "telegram": "Telegram'dan yaz",
     "copy": "Kişiyi kopyala",
     "share": "Paylaş",
-    "vcard": "vCard indir",
     "github": "GitHub",
     "role": "Yapay zekâ ile ürünler ve siteler",
-    "passenger": "Yolcu",
     "gate": "Kapı",
-    "route": [
-      "Kazan",
-      "Antalya",
-      "Moskova",
-      "Viyana"
-    ],
     "qrAlt": "Bu siteye bağlantı içeren QR kodu"
   },
   "footer": {

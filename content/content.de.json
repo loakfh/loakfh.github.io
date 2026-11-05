@@ -27,7 +27,7 @@
       "Kundeninterviews",
       "Launch"
     ],
-    "langLabel": "Ich spreche alle 6",
+    "langLabel": "Ich spreche",
     "theme": "Design wechseln"
   },
   "hero": {
@@ -63,14 +63,22 @@
   "about": {
     "title": "Über mich",
     "paragraphs": [
-      "Ich gehe in die 11. Klasse und bewerbe mich an einer Universität in Wien. Mein erstes Projekt habe ich in der Türkei gestartet: abendliche Open-Air-Kinovorführungen in einem Café.",
-      "In Russland habe ich zwei eigene Projekte gestartet, Trajektorie und Teya, und als Produktmanager in einem EdTech-Startup gearbeitet. Ich habe über 200 Nutzerinterviews geführt.",
+      "Ich gehe in die 11. Klasse und bewerbe mich an einer Universität in Wien. Mein erstes Projekt habe ich mit 15 in der Türkei gestartet: abendliche Open-Air-Kinovorführungen.",
+      "Seitdem habe ich fünf eigene Projekte gestartet, als Produktmanager in einem EdTech-Startup gearbeitet und zuletzt ein Basketballteam angeführt. Ich habe über 200 Nutzerinterviews geführt.",
       "Ich führe Teams von innen: Ich verstehe fast jeden Bereich eines Startups, von Kundeninterviews bis zum Code. Gerade suche ich meine Nische."
     ],
     "facts": [
       {
         "k": "Ausbildung",
         "v": "11. Klasse, Bewerbung in Wien"
+      },
+      {
+        "k": "Projekte",
+        "v": "5 eigene gestartet"
+      },
+      {
+        "k": "Sprachen",
+        "v": "6 Sprachen · IELTS 8.0"
       },
       {
         "k": "Code",
@@ -98,8 +106,11 @@
         "task": "Schüler, Eltern, Unternehmen und Hochschulen über eine „Digitale DNA“ verbinden — ein lebendiges Profil aus Interessen, Fähigkeiten und Stärken.",
         "did": "Idee, Kundeninterviews und die gesamte technische Entwicklung. Ich habe das Team aufgebaut und das Projekt bei Startup Village 2026 gepitcht.",
         "result": "6 schriftliche Kooperationsvereinbarungen mit Schulen, Unternehmen und einem Senator.",
-        "links": [
-          "MVP öffnen"
+        "links": [],
+        "results": [
+          "Sonderpreis bei der Allrussischen Olympiade für Unternehmertum",
+          "6 schriftliche Kooperationsvereinbarungen: Schulen, Unternehmen, ein Senator",
+          "Pitch bei Startup Village 2026"
         ]
       },
       {
@@ -114,11 +125,17 @@
       },
       {
         "name": "Bakir OS",
-        "tag": "Eigenes Projekt · KI-Zwilling",
-        "task": "Ideen, Finanzen, Projekte und Nachrichten an einem Ort halten, ohne den Kontext zu verlieren.",
-        "did": "Ich habe einen Telegram-Bot auf Claude mit einer Reihe von Werkzeugen gebaut: Er notiert Ideen, führt Finanzen, transkribiert Sprachnachrichten, findet Olympiaden und Förderungen und merkt sich den Projektkontext. Welches Werkzeug er nutzt, entscheidet der Bot selbst.",
-        "result": "Läuft seit April 2026 rund um die Uhr. Ich bin Nutzer und Entwickler zugleich.",
-        "links": []
+        "tag": "Eigenes Betriebssystem · KI-Agent",
+        "task": "Mein eigenes Betriebssystem: ein zweites Gehirn in Telegram.",
+        "did": "Ein Bot auf Claude entscheidet selbst, welches Werkzeug er nutzt: Er notiert Ideen, führt Finanzen, transkribiert Sprachnachrichten und merkt sich den Projektkontext.",
+        "result": "Läuft seit April 2026 rund um die Uhr.",
+        "links": [],
+        "chips": [
+          "Claude API",
+          "Tool use",
+          "Agenten",
+          "Claude Code"
+        ]
       },
       {
         "name": "Foundation Lab",
@@ -126,7 +143,9 @@
         "task": "KI-Produkte für Bildung starten.",
         "did": "Ich habe die Projekte KI-Tutor und Personal Brand mit KI geführt: Nutzerinterviews, Hypothesen, Launch.",
         "result": "[ЗАГЛУШКА] Ergebnis in Zahlen.",
-        "links": []
+        "links": [
+          "LabF öffnen"
+        ]
       },
       {
         "name": "Websites für kleine Unternehmen",
@@ -141,10 +160,10 @@
         ]
       },
       {
-        "name": "Open-Air-Kino",
+        "name": "Twilight Cinema",
         "tag": "Türkei · erstes Projekt, mit 15",
         "task": "Mein erstes eigenes Projekt starten.",
-        "did": "Ich habe abendliche Open-Air-Kinovorführungen in einem Café organisiert.",
+        "did": "Abendliche Open-Air-Kinovorführungen in Altınkum mit dem Café Croissant Atelier: „Der kleine Prinz“, „Oben“, Eintritt frei.",
         "result": "[ЗАГЛУШКА] Zahl der Vorführungen und Zuschauer.",
         "links": []
       }
@@ -160,22 +179,22 @@
         "text": "Landesweite Fallstudien-Meisterschaft in Russland."
       },
       {
+        "badge": "Vortrag an der HSE",
+        "label": "Oktober 2026 · mit 17",
+        "title": "„KI für Kreativität: von der Idee zur Umsetzung“",
+        "text": "Workshop der Reihe „Kreative Umgebung“, gemeinsam mit Darja Mingalijewa."
+      },
+      {
         "badge": "Sonderpreis",
-        "label": "Olympiade",
+        "label": "Olympiade · Trajektorie",
         "title": "Allrussische Olympiade für Unternehmertum",
         "text": "Meine erste Olympiade überhaupt. Ich war Teamkapitän."
       },
       {
-        "badge": "Pitch",
+        "badge": "Teilnehmer",
         "label": "Trajektorie",
         "title": "Startup Village 2026",
-        "text": "SKOLKOVO, Mai 2026."
-      },
-      {
-        "badge": "Qualifiziert",
-        "label": "Teamkapitän",
-        "title": "Fallstudien-Meisterschaft KLJUTSCH 2026/27",
-        "text": "HSE-Universität, Business-Track, Agrar- und Lebensmitteltechnologie."
+        "text": "Projektpitch, SKOLKOVO, Mai 2026."
       }
     ]
   },
@@ -183,11 +202,12 @@
     "title": "Neben der Arbeit",
     "sport": {
       "title": "Sport",
-      "text": "Sport seit meiner Kindheit. Ich war Kapitän meiner Mannschaft im Basketballverein.",
+      "text": "Sport seit meiner Kindheit. Zuletzt habe ich ein Basketballteam angeführt.",
       "chips": [
         "Wandern",
         "Radfahren",
         "Basketball",
+        "SUP",
         "Fitnessstudio"
       ]
     },
@@ -203,17 +223,9 @@
     "telegram": "Auf Telegram schreiben",
     "copy": "Kontakt kopieren",
     "share": "Teilen",
-    "vcard": "vCard herunterladen",
     "github": "GitHub",
     "role": "Produkte und Websites mit KI",
-    "passenger": "Passagier",
     "gate": "Gate",
-    "route": [
-      "Kasan",
-      "Antalya",
-      "Moskau",
-      "Wien"
-    ],
     "qrAlt": "QR-Code mit Link zu dieser Website"
   },
   "footer": {

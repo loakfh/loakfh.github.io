@@ -53,14 +53,14 @@ for (const view of VIEWS) {
     const report = await page.evaluate(() => {
       const vw = document.documentElement.clientWidth;
       const wide = [...document.querySelectorAll('body *')]
-        .filter((el) => !el.closest('.intro, .badges, .cursor, .stage-fx, .tape, .bg-word, .shelf') && el.getClientRects().length)
+        .filter((el) => !el.closest('.intro, .badges, .glow, .stage-fx, .tape, .bg-word, .shelf, .doodle, .gallery, .fan') && el.getClientRects().length)
         .filter((el) => {
           const r = el.getBoundingClientRect();
           return r.right > vw + 1 || r.left < -1;
         })
         .map((el) => `${el.tagName.toLowerCase()}.${el.className}`.slice(0, 60));
       const clipped = [...document.querySelectorAll('.key, .btn, .tk-btn, .pc-go, .badges li, h2, h3, .stat dt, .book-title')]
-        .filter((el) => el.scrollWidth > el.clientWidth + 1)
+        .filter((el) => !el.closest('.has-cover') && el.scrollWidth > el.clientWidth + 1)
         .map((el) => `${el.tagName.toLowerCase()}.${el.className}: ${el.textContent.trim().slice(0, 30)}`);
       const small = [...document.querySelectorAll('a, button')]
         .filter((el) => el.getClientRects().length && !el.closest('[inert]') && !el.classList.contains('skip'))
