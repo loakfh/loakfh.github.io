@@ -35,7 +35,8 @@
       {
         "src": "/assets/photos/beyond-lego.svg",
         "width": 800,
-        "height": 600
+        "height": 600,
+        "style": "lego"
       }
     ]
   },

@@ -19,7 +19,14 @@
       "achievements": "Achievements",
       "ai": "AI",
       "contact": "Contact"
-    }
+    },
+    "tape": [
+      "Products",
+      "Websites",
+      "AI",
+      "Customer discovery",
+      "Launch"
+    ]
   },
   "hero": {
     "status": "Open to projects",
@@ -265,7 +272,15 @@
       "qrAlt": "QR code linking to this site",
       "copy": "Copy contact",
       "share": "Share",
-      "vcard": "Download vCard"
+      "vcard": "Download vCard",
+      "passenger": "Passenger",
+      "gate": "Gate",
+      "route": [
+        "Kazan",
+        "Antalya",
+        "Moscow",
+        "Vienna"
+      ]
     }
   },
   "footer": {

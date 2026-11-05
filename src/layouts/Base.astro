@@ -1,8 +1,13 @@
 ---
 import '@fontsource-variable/golos-text/index.css';
 import '@fontsource-variable/jetbrains-mono/wght.css';
+import '@fontsource-variable/unbounded/wght.css';
 import '../styles/global.css';
 import { LANGS, shared, siteUrl } from '../lib/i18n';
+import unbCyr from '@fontsource-variable/unbounded/files/unbounded-cyrillic-wght-normal.woff2?url';
+import unbLat from '@fontsource-variable/unbounded/files/unbounded-latin-wght-normal.woff2?url';
+import golosCyr from '@fontsource-variable/golos-text/files/golos-text-cyrillic-wght-normal.woff2?url';
+import golosLat from '@fontsource-variable/golos-text/files/golos-text-latin-wght-normal.woff2?url';
 
 interface Props {
   lang: string;
@@ -15,6 +20,13 @@ interface Props {
 }
 const { lang, locale, title, description, path, ogImage, ogAlt } = Astro.props;
 const canonical = siteUrl(path);
+// Предзагрузка шрифтов первого экрана: имя (Unbounded) и текст (Golos) нужной письменности.
+// На татарском имя тоже в Golos — в Unbounded нет татарских букв.
+const cyr = ['ru', 'tt'].includes(lang);
+const preload = [
+  lang === 'tt' ? null : cyr ? unbCyr : unbLat,
+  cyr ? golosCyr : golosLat,
+].filter(Boolean);
 ---
 <!doctype html>
 <html lang={lang}>
@@ -27,8 +39,9 @@ const canonical = siteUrl(path);
     <link rel="canonical" href={canonical} />
     {LANGS.map((l) => <link rel="alternate" hreflang={l.code} href={siteUrl(`/${l.code}/`)} />)}
     <link rel="alternate" hreflang="x-default" href={siteUrl(`/${shared.site.defaultLang}/`)} />
-    <meta name="theme-color" content="#0E0F0C" />
+    <meta name="theme-color" content="#06081C" />
     <meta name="color-scheme" content="dark" />
+    {preload.map((href) => <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />)}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta property="og:type" content="website" />

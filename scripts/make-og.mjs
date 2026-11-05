@@ -26,25 +26,33 @@ const fontFace =
     .replaceAll('url(./files/', `url(${golos.href}files/`) +
   `@font-face{font-family:G;font-weight:400 900;src:url(${new URL('../src/fonts/onest-gbreve.woff2', import.meta.url).href});unicode-range:U+011E-011F}`;
 
-const page = (lang, c) => `<!doctype html><html lang="${lang}"><meta charset="utf-8"><style>
-${fontFace}
-*{margin:0;box-sizing:border-box}
-body{width:1200px;height:630px;padding:64px 72px;background:#0E0F0C;color:#EDEAE0;display:flex;flex-direction:column;
-font-family:G,'Hiragino Sans',sans-serif}
-.keys{display:flex;gap:10px}
-.keys i{display:grid;place-items:center;width:64px;height:68px;border:2px solid #2f302a;border-bottom-width:7px;border-radius:14px;
-background:#181915;font:600 28px/1 G,'Hiragino Sans',sans-serif;font-style:normal;color:#a3a194}
-.keys i.on{background:#FF5A36;border-color:#B93A1E;color:#0E0F0C}
-h1{margin-top:auto;font-size:${lang === 'ja' ? 170 : 210}px;line-height:.9;font-weight:800;letter-spacing:-.05em}
-p{margin-top:26px;font-size:44px;line-height:1.2;font-weight:500;max-width:1000px}
-.h{position:absolute;right:72px;top:80px;font:500 30px/1 ui-monospace,Menlo,monospace;color:#FF5A36}
-.bar{position:absolute;left:0;right:0;bottom:0;height:14px;background:#FF5A36}
-</style><body>
-<div class="keys">${LANGS.map(([code, key]) => `<i class="${code === lang ? 'on' : ''}">${key}</i>`).join('')}</div>
-<div class="h">@${shared.person.telegram}</div>
-<h1>${esc(c.hero.name)}</h1><p>${esc(c.meta.ogTagline)}</p><div class="bar"></div></body></html>`;
+const unb = new URL('../node_modules/@fontsource-variable/unbounded/', import.meta.url);
+const unbFace = readFileSync(new URL('wght.css', unb), 'utf8')
+  .replaceAll('Unbounded Variable', 'U')
+  .replaceAll('url(./files/', `url(${unb.href}files/`);
 
-mkdirSync('work', { recursive: true });
+const page = (lang, c) => `<!doctype html><html lang="${lang}"><meta charset="utf-8"><style>
+${fontFace}${unbFace}
+*{margin:0;box-sizing:border-box}
+body{width:1200px;height:630px;padding:60px 72px;overflow:hidden;position:relative;color:#E9ECFF;display:flex;flex-direction:column;
+font-family:G,'Hiragino Sans',sans-serif;background:radial-gradient(700px 420px at 85% 10%,rgba(139,124,255,.45),transparent 70%),#06081C}
+.floor{position:absolute;left:-30%;right:-30%;bottom:-80px;height:330px;transform:perspective(420px) rotateX(62deg);transform-origin:50% 100%;
+background-image:linear-gradient(rgba(198,255,61,.75) 2px,transparent 2px),linear-gradient(90deg,rgba(198,255,61,.75) 2px,transparent 2px);background-size:64px 64px;
+-webkit-mask-image:linear-gradient(to top,#000 10%,transparent 85%)}
+.kata{position:absolute;right:50px;top:40px;writing-mode:vertical-rl;font:900 170px/1 'Hiragino Sans',sans-serif;color:transparent;-webkit-text-stroke:2px rgba(139,124,255,.5)}
+.keys{display:flex;gap:10px;position:relative}
+.keys i{display:grid;place-items:center;width:62px;height:66px;border:2px solid rgba(139,124,255,.35);border-radius:16px;
+background:rgba(20,26,70,.7);font:600 28px/1 G,'Hiragino Sans',sans-serif;font-style:normal;color:#E9ECFF}
+.keys i.on{background:#C6FF3D;border-color:#C6FF3D;color:#06081C;box-shadow:0 0 30px rgba(198,255,61,.7)}
+h1{position:relative;margin-top:auto;font:900 ${lang === 'ja' ? 170 : 196}px/.9 ${lang === 'tt' ? 'G' : 'U'},'Hiragino Sans',sans-serif;letter-spacing:-.055em;
+background:linear-gradient(180deg,#fff 0%,#dfe3f0 24%,#7d8399 47%,#f6f8fc 53%,#b4bacb 72%,#fff 100%);-webkit-background-clip:text;color:transparent;
+filter:drop-shadow(0 18px 34px rgba(139,124,255,.55))}
+p{position:relative;margin-top:22px;font-size:42px;line-height:1.2;font-weight:600;max-width:900px}
+.h{position:absolute;right:72px;bottom:64px;padding:12px 18px;border-radius:14px;background:#C6FF3D;color:#06081C;font:700 28px/1 ui-monospace,Menlo,monospace;transform:rotate(-3deg)}
+</style><body><div class="floor"></div><div class="kata">バキル</div>
+<div class="keys">${LANGS.map(([code, key]) => `<i class="${code === lang ? 'on' : ''}">${key}</i>`).join('')}</div>
+<h1>${esc(c.hero.name)}</h1><p>${esc(c.meta.ogTagline)}</p><div class="h">@${shared.person.telegram}</div></body></html>`;
+
 const browser = await puppeteer.launch({ executablePath: CHROME, args: ['--allow-file-access-from-files'] });
 const tab = await browser.newPage();
 await tab.setViewport({ width: 1200, height: 630 });

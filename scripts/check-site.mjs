@@ -53,13 +53,13 @@ for (const view of VIEWS) {
     const report = await page.evaluate(() => {
       const vw = document.documentElement.clientWidth;
       const wide = [...document.querySelectorAll('body *')]
-        .filter((el) => !el.closest('.intro, .vc-inner, .badges, .cursor') && el.getClientRects().length)
+        .filter((el) => !el.closest('.intro, .vc-inner, .badges, .cursor, .stage-fx, .tapes') && el.getClientRects().length)
         .filter((el) => {
           const r = el.getBoundingClientRect();
           return r.right > vw + 1 || r.left < -1;
         })
         .map((el) => `${el.tagName.toLowerCase()}.${el.className}`.slice(0, 60));
-      const clipped = [...document.querySelectorAll('.key, .btn, .pill, .vc-btn, .cap, h2, h3, .stat dt, .mo-btns span')]
+      const clipped = [...document.querySelectorAll('.key, .btn, .pill, .vc-btn, .holo, h2, h3, .stat dt, .mo-btns span')]
         .filter((el) => !el.closest('.mock-page') && el.scrollWidth > el.clientWidth + 1)
         .map((el) => `${el.tagName.toLowerCase()}.${el.className}: ${el.textContent.trim().slice(0, 30)}`);
       const small = [...document.querySelectorAll('a, button')]

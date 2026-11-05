@@ -15,6 +15,8 @@ const REQUIRED = {
 const FAMILIES = {
   'golos-text': { langs: ['русский', 'татарский', 'турецкий', 'немецкий'], patches: ['src/fonts/onest-gbreve.woff2'] },
   'jetbrains-mono': { langs: ['турецкий', 'немецкий'], patches: [] },
+  // Unbounded — заголовки; татарских букв в нём нет, на /tt/ заголовки идут в Golos Text
+  unbounded: { langs: ['русский', 'турецкий', 'немецкий'], patches: [] },
 };
 let failed = false;
 

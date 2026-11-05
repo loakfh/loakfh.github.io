@@ -36,6 +36,11 @@ const contactText = [
 const sections = ['about', 'projects', 'achievements', 'ai', 'contact'] as const;
 const num = (i: number) => String(i).padStart(2, '0');
 // Приветствия для интро: текущий язык — последним.
+const codes = ['KZN', 'AYT', 'MOW', 'VIE'];
+const route = c.contact.card.route.map((city: string, i: number) => ({ code: codes[i], city }));
+const sep = '  ✦  ';
+const tapeHello = Array(4).fill(LANGS.map((l) => l.hello).join(sep)).join(sep) + sep;
+const tapeWords = Array(4).fill(c.ui.tape.join(sep)).join(sep) + sep;
 const hellos = [...LANGS.filter((l) => l.code !== lang), meta].map((l) => ({ text: l.hello, lang: l.code }));
 ---
 <Base
@@ -82,12 +87,18 @@ const hellos = [...LANGS.filter((l) => l.code !== lang), meta].map((l) => ({ tex
   </header>
 
   <main id="main">
+    <div class="stage">
+    <div class="stage-fx" aria-hidden="true">
+      <i class="blob blob-a"></i><i class="blob blob-b"></i>
+      <div class="floor"></div>
+      <div class="kata" lang="ja">バキル</div>
+    </div>
     <section class="hero wrap" id="hero">
       <div class="hero-text">
         <p class="status"><span class="dot" aria-hidden="true"></span>{c.hero.status}</p>
         <h1 class="name">
           <span class="sr-only">{c.hero.name}</span>
-          <span aria-hidden="true" id="nameFx">{c.hero.name}</span>
+          <span aria-hidden="true" class="chrome" id="nameFx">{c.hero.name}</span>
         </h1>
         <p class="tagline">{c.hero.tagline}</p>
         <div class="hero-actions">
@@ -122,10 +133,16 @@ const hellos = [...LANGS.filter((l) => l.code !== lang), meta].map((l) => ({ tex
           />
         </div>
         <ul class="badges">
-          {c.hero.badges.map((b: string) => <li class="cap">{b}</li>)}
+          {c.hero.badges.map((b: string) => <li class="holo">{b}</li>)}
         </ul>
       </div>
     </section>
+    </div>
+
+    <div class="tapes" aria-hidden="true">
+      <div class="tape tape-a"><span>{tapeHello}</span></div>
+      <div class="tape tape-b"><span>{tapeWords}</span></div>
+    </div>
 
     <section class="wrap sec" id="about">
       <header class="sec-head reveal">
@@ -268,7 +285,7 @@ const hellos = [...LANGS.filter((l) => l.code !== lang), meta].map((l) => ({ tex
       <div class="beyond">
         {
           c.beyond.items.map((b: any, i: number) => (
-            <article class="card human reveal">
+            <article class={`card human reveal${photos.beyond[i].style === 'lego' ? ' lego' : ''}`}>
               <img
                 src={photos.beyond[i].src}
                 width={photos.beyond[i].width}
@@ -318,14 +335,35 @@ const hellos = [...LANGS.filter((l) => l.code !== lang), meta].map((l) => ({ tex
 
         <div class="vc reveal" id="vc" data-copy={contactText} data-url={pageUrl} data-title={c.meta.title}>
           <div class="vc-inner">
-            <button class="vc-face vc-front" type="button" id="vcFront" aria-label={c.contact.card.flip}>
-              <span class="vc-keys" aria-hidden="true">{LANGS.map((l) => <i>{l.key}</i>)}</span>
-              <span class="vc-name">{c.hero.name}</span>
-              <span class="vc-role">{c.contact.card.role}</span>
-              <span class="vc-handle mono">@{person.telegram}</span>
-              <span class="vc-hint">{c.contact.card.flipHint} ↻</span>
+            <button class="vc-face vc-front ticket" type="button" id="vcFront" aria-label={c.contact.card.flip}>
+              <span class="tk-main">
+                <span class="tk-route" aria-hidden="true">
+                  {route.map((r, i) => (
+                    <>
+                      {i > 0 && <i class="tk-dash" />}
+                      <span><b>{r.code}</b> {r.city}</span>
+                    </>
+                  ))}
+                </span>
+                <span class="tk-lbl">{c.contact.card.passenger}</span>
+                <span class="vc-name">{c.hero.name}</span>
+                <span class="vc-role">{c.contact.card.role}</span>
+                <span class="tk-fields">
+                  {c.hero.stats.map((st: any) => (
+                    <span><b>{st.value}<small>{st.unit}</small></b><em>{plain(st.label)}</em></span>
+                  ))}
+                </span>
+              </span>
+              <span class="tk-stub">
+                <span class="tk-stamps" aria-hidden="true">
+                  {c.hero.badges.map((b: string) => <span class="stamp">{b}</span>)}
+                </span>
+                <span class="tk-bar" aria-hidden="true"></span>
+                <span class="tk-gate">{c.contact.card.gate} · Telegram @{person.telegram}</span>
+                <span class="vc-hint">{c.contact.card.flipHint} ↻</span>
+              </span>
             </button>
-            <div class="vc-face vc-back" id="vcBack" inert>
+            <div class="vc-face vc-back ticket" id="vcBack" inert>
               <div class="vc-qr" role="img" aria-label={c.contact.card.qrAlt} set:html={qr} />
               <div class="vc-actions">
                 <button class="vc-btn" type="button" id="vcCopy">{c.contact.card.copy}</button>

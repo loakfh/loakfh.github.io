@@ -19,7 +19,14 @@
       "achievements": "Başarılar",
       "ai": "YZ",
       "contact": "İletişim"
-    }
+    },
+    "tape": [
+      "Ürünler",
+      "Siteler",
+      "YZ",
+      "Müşteri görüşmesi",
+      "Lansman"
+    ]
   },
   "hero": {
     "status": "Projelere açığım",
@@ -265,7 +272,15 @@
       "qrAlt": "Bu siteye bağlantı içeren QR kodu",
       "copy": "Kişiyi kopyala",
       "share": "Paylaş",
-      "vcard": "vCard indir"
+      "vcard": "vCard indir",
+      "passenger": "Yolcu",
+      "gate": "Kapı",
+      "route": [
+        "Kazan",
+        "Antalya",
+        "Moskova",
+        "Viyana"
+      ]
     }
   },
   "footer": {

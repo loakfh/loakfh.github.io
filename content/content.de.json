@@ -19,7 +19,14 @@
       "achievements": "Erfolge",
       "ai": "KI",
       "contact": "Kontakt"
-    }
+    },
+    "tape": [
+      "Produkte",
+      "Websites",
+      "KI",
+      "Kundeninterviews",
+      "Launch"
+    ]
   },
   "hero": {
     "status": "Offen für Projekte",
@@ -265,7 +272,15 @@
       "qrAlt": "QR-Code mit Link zu dieser Website",
       "copy": "Kontakt kopieren",
       "share": "Teilen",
-      "vcard": "vCard herunterladen"
+      "vcard": "vCard herunterladen",
+      "passenger": "Passagier",
+      "gate": "Gate",
+      "route": [
+        "Kasan",
+        "Antalya",
+        "Moskau",
+        "Wien"
+      ]
     }
   },
   "footer": {
