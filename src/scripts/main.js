@@ -42,10 +42,18 @@ const store = {
     if (i >= hellos.length) return close();
     word.textContent = hellos[i].text;
     word.lang = hellos[i].lang;
-  }, 230);
+  }, 150);
   box.addEventListener('click', close);
   addEventListener('keydown', close);
 })();
+
+/* ---------- светлая и тёмная тема ---------- */
+$('theme')?.addEventListener('click', () => {
+  const root = document.documentElement;
+  const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+  root.dataset.theme = next;
+  store.set('localStorage', 'theme', next);
+});
 
 /* ---------- переключатель языков: запоминаем выбор ---------- */
 document.querySelectorAll('.key').forEach((key) => {
@@ -109,109 +117,42 @@ if ('IntersectionObserver' in window) {
   document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-in'));
 }
 
-/* ---------- подсветка карточек за курсором ---------- */
-if (fineHover && !calm) {
-  document.querySelectorAll('.card').forEach((card) => {
-    card.addEventListener(
-      'pointermove',
-      (e) => {
-        const r = card.getBoundingClientRect();
-        card.style.setProperty('--mx', `${e.clientX - r.left}px`);
-        card.style.setProperty('--my', `${e.clientY - r.top}px`);
-      },
-      { passive: true },
-    );
-  });
-}
-
-/* ---------- плавающая кнопка: после hero, но не поверх контактов ---------- */
+/* ---------- плавающая кнопка: после первого экрана, но не поверх контактов ---------- */
 (function fab() {
   const btn = $('fab');
   const hero = $('hero');
   const contact = $('contact');
   if (!btn || !hero || !contact || !('IntersectionObserver' in window)) return;
-  // и не поверх пайплайна: там свой главный экран
-  const seen = { hero: true, contact: false, pipe: false };
-  const sync = () => btn.classList.toggle('is-on', !seen.hero && !seen.contact && !seen.pipe);
+  const seen = { hero: true, contact: false };
+  const sync = () => btn.classList.toggle('is-on', !seen.hero && !seen.contact);
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       seen[entry.target.id] = entry.isIntersecting;
     });
     sync();
   });
-  [hero, contact, $('pipe')].forEach((el) => el && io.observe(el));
+  io.observe(hero);
+  io.observe(contact);
 })();
 
-/* ---------- «Запустить пайплайн» ---------- */
-(function pipeline() {
-  const pipe = $('pipe');
-  const run = $('pipeRun');
-  const log = $('pipeLog');
-  if (!pipe || !run || !log) return;
-  const steps = [...pipe.querySelectorAll('.step')];
-  const STEP_MS = 1500;
-  let timers = [];
-
-  const paint = (stage) => {
-    pipe.dataset.stage = String(stage);
-    steps.forEach((step, i) => {
-      step.classList.toggle('is-active', i + 1 === stage && pipe.hasAttribute('data-running'));
-      step.classList.toggle('is-done', i + 1 < stage || (i + 1 === stage && !pipe.hasAttribute('data-running')));
+/* ---------- книжная полка: листается кнопками, колесом и пальцем ---------- */
+(function shelf() {
+  const list = $('shelf');
+  if (!list) return;
+  document.querySelectorAll('.shelf-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const step = list.clientWidth * 0.8;
+      list.scrollBy({ left: Number(btn.dataset.dir) * step, behavior: calm ? 'auto' : 'smooth' });
     });
-    if (stage > 0) log.textContent = steps[stage - 1].dataset.log;
-  };
-
-  const reset = () => {
-    timers.forEach(clearTimeout);
-    timers = [];
-    pipe.removeAttribute('data-running');
-    paint(0);
-    log.textContent = log.dataset.idle;
-    run.textContent = pipe.dataset.run;
-    run.disabled = false;
-  };
-
-  const finish = () => {
-    pipe.removeAttribute('data-running');
-    paint(steps.length);
-    run.textContent = pipe.dataset.rerun;
-    run.disabled = false;
-  };
-
-  const start = () => {
-    reset();
-    if (calm) return finish(); // без анимации — сразу итог
-    pipe.setAttribute('data-running', '');
-    run.disabled = true;
-    steps.forEach((_, i) => {
-      timers.push(setTimeout(() => paint(i + 1), 350 + i * STEP_MS));
-    });
-    timers.push(setTimeout(finish, 350 + steps.length * STEP_MS));
-  };
-
-  // Без JS страница показывает готовый результат; с JS начинаем с «до».
-  reset();
-  run.addEventListener('click', () => {
-    // на телефоне подводим макет под шапку, чтобы шаги и результат были на одном экране
-    if (pipe.querySelector('.mock').getBoundingClientRect().top < 60 || innerHeight < 800) {
-      pipe.scrollIntoView({ block: 'start', behavior: calm ? 'auto' : 'smooth' });
-    }
-    if (calm && pipe.dataset.stage === String(steps.length)) return reset();
-    start();
   });
 })();
 
-/* ---------- цифровая визитка ---------- */
-(function card() {
+/* ---------- билет: скопировать контакт, поделиться ---------- */
+(function ticket() {
   const vc = $('vc');
   if (!vc) return;
-  const front = $('vcFront');
-  const back = $('vcBack');
   const toast = $('vcToast');
   let toastTimer;
-  let gyroOn = false;
-  let visible = false;
-
   const say = (text) => {
     toast.textContent = text;
     clearTimeout(toastTimer);
@@ -219,26 +160,6 @@ if (fineHover && !calm) {
       toast.textContent = '';
     }, 2400);
   };
-
-  const flip = (toBack) => {
-    vc.classList.toggle('is-flipped', toBack);
-    front.inert = toBack;
-    back.inert = !toBack;
-    (toBack ? $('vcCopy') : front).focus({ preventScroll: true });
-  };
-
-  front.addEventListener('click', () => {
-    flip(true);
-    askGyro();
-  });
-  $('vcFlipBack').addEventListener('click', () => flip(false));
-  back.addEventListener('click', (e) => {
-    if (!e.target.closest('button, a')) flip(false);
-  });
-  vc.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && vc.classList.contains('is-flipped')) flip(false);
-  });
-
   const copy = async (text) => {
     try {
       await navigator.clipboard.writeText(text);
@@ -247,7 +168,6 @@ if (fineHover && !calm) {
       say(toast.dataset.fail);
     }
   };
-
   $('vcCopy').addEventListener('click', () => copy(vc.dataset.copy));
   $('vcShare').addEventListener('click', async () => {
     if (navigator.share) {
@@ -260,77 +180,21 @@ if (fineHover && !calm) {
       copy(vc.dataset.url);
     }
   });
-
-  if (calm) return;
-
-  /* наклон: курсор на десктопе, гироскоп на телефоне */
-  const tilt = (x, y) => {
-    vc.style.setProperty('--ry', `${(x * 20).toFixed(2)}deg`);
-    vc.style.setProperty('--rx', `${(-y * 16).toFixed(2)}deg`);
-    vc.style.setProperty('--gx', `${(50 + x * 60).toFixed(1)}%`);
-    vc.style.setProperty('--gy', `${(50 + y * 60).toFixed(1)}%`);
-  };
-
-  if (fineHover) {
-    vc.addEventListener(
-      'pointermove',
-      (e) => {
-        const r = vc.getBoundingClientRect();
-        vc.classList.add('is-tilting');
-        tilt((e.clientX - r.left) / r.width - 0.5, (e.clientY - r.top) / r.height - 0.5);
-      },
-      { passive: true },
-    );
-    vc.addEventListener('pointerleave', () => {
-      vc.classList.remove('is-tilting');
-      tilt(0, 0);
-    });
-    return;
-  }
-
-  const clamp = (v) => Math.max(-0.5, Math.min(0.5, v));
-  const onTilt = (e) => {
-    if (!visible || e.gamma == null) return;
-    vc.classList.add('is-tilting');
-    tilt(clamp(e.gamma / 50), clamp((e.beta - 45) / 60));
-  };
-  const listen = () => {
-    if (gyroOn) return;
-    gyroOn = true;
-    addEventListener('deviceorientation', onTilt, { passive: true });
-  };
-  // iOS отдаёт гироскоп только после разрешения, спрошенного по нажатию.
-  function askGyro() {
-    const D = window.DeviceOrientationEvent;
-    if (calm || fineHover || gyroOn || !D || typeof D.requestPermission !== 'function') return;
-    D.requestPermission()
-      .then((state) => state === 'granted' && listen())
-      .catch(() => {});
-  }
-  if (window.DeviceOrientationEvent && typeof window.DeviceOrientationEvent.requestPermission !== 'function') listen();
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(([entry]) => {
-      visible = entry.isIntersecting;
-    }).observe(vc);
-  } else {
-    visible = true;
-  }
 })();
 
-/* ---------- курсор в стиле сайта: точка, кольцо и мягкая подсветка ---------- */
+/* ---------- курсор: точка и кольцо, без свечения ---------- */
 (function cursor() {
   const box = $('cursor');
   if (!box || !fineHover || calm) return;
   const root = document.documentElement;
   const ring = box.querySelector('.cursor-ring');
-  const glow = box.querySelector('.cursor-glow');
   const dot = box.querySelector('.cursor-dot');
-  const HOT = 'a, button, .card, .key, .vc-front, [role="button"]';
+  const HOT = 'a, button, .pc, .book, [role="button"]';
   let x = innerWidth / 2;
   let y = innerHeight / 2;
   let rx = x;
   let ry = y;
-  let started = false;
+  let running = false;
 
   root.classList.add('has-cursor');
   addEventListener(
@@ -339,15 +203,12 @@ if (fineHover && !calm) {
       if (e.pointerType !== 'mouse') return;
       x = e.clientX;
       y = e.clientY;
-      if (!started) {
-        started = true;
-        rx = x;
-        ry = y;
+      box.classList.add('is-on');
+      box.classList.toggle('is-hot', !!(e.target.closest && e.target.closest(HOT)));
+      if (!running) {
+        running = true;
         requestAnimationFrame(tick);
       }
-      box.classList.add('is-on');
-      const hot = e.target.closest && e.target.closest(HOT);
-      box.classList.toggle('is-hot', !!hot);
     },
     { passive: true },
   );
@@ -356,13 +217,16 @@ if (fineHover && !calm) {
   addEventListener('pointerdown', () => box.classList.add('is-down'));
   addEventListener('pointerup', () => box.classList.remove('is-down'));
 
+  // кадры рисуем, только пока кольцо догоняет точку — без вечного цикла
   function tick() {
-    // кольцо догоняет точку с небольшой задержкой
-    rx += (x - rx) * 0.2;
-    ry += (y - ry) * 0.2;
+    rx += (x - rx) * 0.25;
+    ry += (y - ry) * 0.25;
     dot.style.transform = `translate(${x}px, ${y}px)`;
     ring.style.transform = `translate(${rx}px, ${ry}px)`;
-    glow.style.transform = `translate(${rx}px, ${ry}px)`;
-    requestAnimationFrame(tick);
+    if (Math.abs(x - rx) > 0.3 || Math.abs(y - ry) > 0.3) {
+      requestAnimationFrame(tick);
+    } else {
+      running = false;
+    }
   }
 })();

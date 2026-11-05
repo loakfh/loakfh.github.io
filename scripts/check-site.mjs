@@ -53,14 +53,14 @@ for (const view of VIEWS) {
     const report = await page.evaluate(() => {
       const vw = document.documentElement.clientWidth;
       const wide = [...document.querySelectorAll('body *')]
-        .filter((el) => !el.closest('.intro, .vc-inner, .badges, .cursor, .stage-fx, .tapes') && el.getClientRects().length)
+        .filter((el) => !el.closest('.intro, .badges, .cursor, .stage-fx, .tape, .bg-word, .shelf') && el.getClientRects().length)
         .filter((el) => {
           const r = el.getBoundingClientRect();
           return r.right > vw + 1 || r.left < -1;
         })
         .map((el) => `${el.tagName.toLowerCase()}.${el.className}`.slice(0, 60));
-      const clipped = [...document.querySelectorAll('.key, .btn, .pill, .vc-btn, .holo, h2, h3, .stat dt, .mo-btns span')]
-        .filter((el) => !el.closest('.mock-page') && el.scrollWidth > el.clientWidth + 1)
+      const clipped = [...document.querySelectorAll('.key, .btn, .tk-btn, .pc-go, .badges li, h2, h3, .stat dt, .book-title')]
+        .filter((el) => el.scrollWidth > el.clientWidth + 1)
         .map((el) => `${el.tagName.toLowerCase()}.${el.className}: ${el.textContent.trim().slice(0, 30)}`);
       const small = [...document.querySelectorAll('a, button')]
         .filter((el) => el.getClientRects().length && !el.closest('[inert]') && !el.classList.contains('skip'))
@@ -91,44 +91,33 @@ for (const view of VIEWS) {
     await page.screenshot({ path: `work/shots/${lang}-${view.name}-full.png`, fullPage: true });
 
     if (lang === 'ru' || lang === 'de') {
-      // пайплайн
-      await page.evaluate(() => document.getElementById('pipe').scrollIntoView({ block: 'center' }));
-      const before = await page.$eval('#pipe', (el) => el.dataset.stage);
-      await page.click('#pipeRun');
-      await sleep(900);
-      await page.screenshot({ path: `work/shots/${lang}-${view.name}-pipe-audit.png` });
-      await sleep(6200);
-      const after = await page.$eval('#pipe', (el) => el.dataset.stage);
-      const label = await page.$eval('#pipeRun', (el) => el.textContent.trim() + '|' + el.disabled);
-      note(before === '0' && after === '4' && label.endsWith('false'), `${id}: пайплайн 0 → 4 (${before} → ${after}, ${label})`);
-      await page.screenshot({ path: `work/shots/${lang}-${view.name}-pipe-done.png` });
+      // тема переключается и запоминается
+      const before = await page.evaluate(() => document.documentElement.dataset.theme);
+      await page.click('#theme');
+      const after = await page.evaluate(() => [document.documentElement.dataset.theme, localStorage.getItem('theme')]);
+      note(before !== after[0] && after[0] === after[1], `${id}: тема ${before} → ${after[0]}`);
+      await page.screenshot({ path: `work/shots/${lang}-${view.name}-${after[0]}-top.png` });
+      await page.screenshot({ path: `work/shots/${lang}-${view.name}-${after[0]}-full.png`, fullPage: true });
+      await page.click('#theme');
 
-      // визитка
+      // полка листается
+      await page.evaluate(() => document.getElementById('books').scrollIntoView({ block: 'center' }));
+      const x0 = await page.$eval('#shelf', (el) => el.scrollLeft);
+      await page.click('.shelf-btn[data-dir="1"]');
+      await sleep(700);
+      const x1 = await page.$eval('#shelf', (el) => el.scrollLeft);
+      note(x1 > x0, `${id}: полка листается (${x0} → ${x1})`);
+
+      // билет: кнопки помещаются, «Скопировать контакт» работает
       await page.evaluate(() => document.getElementById('vc').scrollIntoView({ block: 'center' }));
-      await sleep(300);
-      await page.screenshot({ path: `work/shots/${lang}-${view.name}-card-front.png` });
-      await page.click('#vcFront');
-      await sleep(900);
-      const flipped = await page.$eval('#vc', (el) => el.classList.contains('is-flipped') && !document.getElementById('vcBack').inert);
-      note(flipped, `${id}: визитка переворачивается`);
-      const backFits = await page.evaluate(() => {
-        const box = document.getElementById('vcBack').getBoundingClientRect();
-        return [...document.querySelectorAll('#vcBack .vc-btn, #vcBack .vc-qr')].every((el) => {
-          const r = el.getBoundingClientRect();
-          return r.top >= box.top - 1 && r.bottom <= box.bottom + 1 && r.left >= box.left - 1 && r.right <= box.right + 1;
-        });
-      });
-      note(backFits, `${id}: оборот визитки помещается`);
-      await page.screenshot({ path: `work/shots/${lang}-${view.name}-card-back.png` });
+      await sleep(400);
+      await page.screenshot({ path: `work/shots/${lang}-${view.name}-ticket.png` });
       await page.bringToFront();
       await page.click('#vcCopy');
       await sleep(200);
       const toast = await page.$eval('#vcToast', (el) => el.textContent);
       const clip = await page.evaluate(() => navigator.clipboard.readText()).catch(() => '');
       note(clip.includes('t.me/Loakfh2'), `${id}: «Скопировать контакт» → «${toast}»`);
-      await page.click('#vcFlipBack');
-      await sleep(300);
-      note(await page.$eval('#vc', (el) => !el.classList.contains('is-flipped')), `${id}: визитка возвращается`);
     }
     await page.close();
   }
@@ -165,8 +154,7 @@ for (const [accept, expected] of [['de-DE', 'de'], ['ja', 'ja'], ['tt-RU', 'tt']
     opaque: [...document.querySelectorAll('.reveal')].every((el) => getComputedStyle(el).opacity === '1'),
   }));
   note(!calm.intro && calm.opaque, 'reduced-motion: нет интро, блоки видны без анимации');
-  await page.click('#pipeRun');
-  note((await page.$eval('#pipe', (el) => el.dataset.stage)) === '4', 'reduced-motion: пайплайн сразу показывает итог');
+
   await page.close();
 }
 

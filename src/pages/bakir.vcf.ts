@@ -4,7 +4,7 @@ import { getContent, shared, siteUrl } from '../lib/i18n';
 // vCard для кнопки «Скачать vCard». Данные — из content.shared.json.
 export const GET: APIRoute = () => {
   const { person, site } = shared;
-  const role = getContent(site.defaultLang as any).contact.card.role;
+  const role = getContent(site.defaultLang as any).contact.role;
   const lines = [
     'BEGIN:VCARD',
     'VERSION:3.0',

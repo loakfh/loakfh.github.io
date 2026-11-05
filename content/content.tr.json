@@ -17,7 +17,7 @@
       "about": "Hakkımda",
       "projects": "Projeler",
       "achievements": "Başarılar",
-      "ai": "YZ",
+      "books": "Kitaplar",
       "contact": "İletişim"
     },
     "tape": [
@@ -26,12 +26,14 @@
       "YZ",
       "Müşteri görüşmesi",
       "Lansman"
-    ]
+    ],
+    "langLabel": "Altısını da konuşuyorum",
+    "theme": "Temayı değiştir"
   },
   "hero": {
     "status": "Projelere açığım",
     "name": "Bakir",
-    "tagline": "Yapay zekâ ile ürünler ve web siteleri yapıyorum — kullanıcı görüşmesinden lansmana kadar.",
+    "tagline": "15 yaşımdan beri kendi projelerimi başlatıyorum.",
     "cta": "Telegram'dan yaz",
     "secondary": "Projelere bak",
     "stats": [
@@ -69,14 +71,6 @@
       {
         "k": "Eğitim",
         "v": "11. sınıf, Viyana'ya başvuru"
-      },
-      {
-        "k": "İngilizce",
-        "v": "IELTS 8.0"
-      },
-      {
-        "k": "Diller",
-        "v": "Rusça, İngilizce, Tatarca, Türkçe, Japonca, Almanca"
       },
       {
         "k": "Kod",
@@ -185,105 +179,51 @@
       }
     ]
   },
-  "ai": {
-    "title": "Yapay zekâ ile nasıl çalışıyorum",
-    "lead": "Siteyi tek bir komut değil, sırayla dört ajan kurar. Her biri bir öncekini denetler.",
-    "steps": [
-      {
-        "name": "Denetim",
-        "text": "Eski sitede müşteriyi neyin engellediğini bulur.",
-        "log": "Denetçi: küçük yazı, üç düğme, teklif yok."
-      },
-      {
-        "name": "Metinler",
-        "text": "Tek teklif ve tek düğme yazar — doğrulanmış bilgilerle.",
-        "log": "Yazar: tek başlık, tek eylem."
-      },
-      {
-        "name": "Kurulum",
-        "text": "Sayfayı kurar: önce telefon, hızlı, fazlalıksız.",
-        "log": "Kurucu: sayfa telefona göre kuruldu."
-      },
-      {
-        "name": "Eleştiri",
-        "text": "Müşterinin gözüyle bakar ve düzeltmeye geri gönderir.",
-        "log": "Eleştirmen: teklif görünür, tek düğme, okunaklı."
-      }
-    ],
-    "run": "Hattı çalıştır",
-    "rerun": "Yeniden çalıştır",
-    "idle": "Basın — site gözünüzün önünde kurulsun.",
-    "mockCaption": "Temsili bir örnek, gerçek müşteri değil.",
-    "note": "Siteyi kendim, telefondan teslim alırım: ajanın “hazır” demesi henüz teslim değildir.",
-    "mock": {
-      "oldTitle": "Sitemize hoş geldiniz!",
-      "oldText": "Her müşteriye özel yaklaşımı ve hizmet sektöründe uzun yıllara dayanan deneyimi olan, dinamik biçimde gelişen bir şirketiz.",
-      "oldButtons": [
-        "Detay",
-        "Bilgi",
-        "Talep"
-      ],
-      "newTitle": "Evinizin yanında kurslar",
-      "newText": "İlk ders ücretsiz",
-      "newButton": "Kaydol",
-      "checks": [
-        "Tek teklif",
-        "Tek düğme",
-        "Telefonda okunur"
-      ]
-    }
-  },
   "beyond": {
     "title": "İş dışında",
-    "items": [
-      {
-        "title": "Basketbol",
-        "text": "Basketbol kulübünde takım kaptanıydım. Çocukluğumdan beri spor yapıyorum.",
-        "alt": "Basketbol"
-      },
-      {
-        "title": "Kitaplar",
-        "text": "Psikoloji, iş dünyası, davranış bilimleri, ekonomi.",
-        "alt": "Kitaplar"
-      },
-      {
-        "title": "Diller",
-        "text": "Altı dil konuşuyorum ve yenilerini öğrenmeye devam ediyorum.",
-        "alt": "Diller"
-      },
-      {
-        "title": "LEGO",
-        "text": "LEGO'ya bayılıyorum.",
-        "alt": "LEGO"
-      }
-    ]
+    "sport": {
+      "title": "Spor",
+      "text": "Çocukluğumdan beri spor yapıyorum. Basketbol kulübünde takım kaptanıydım.",
+      "chips": [
+        "Doğa yürüyüşü",
+        "Bisiklet",
+        "Basketbol",
+        "Spor salonu"
+      ]
+    },
+    "lego": {
+      "title": "LEGO",
+      "text": "LEGO'ya bayılıyorum."
+    }
   },
   "contact": {
     "title": "Bana yazın",
-    "lead": "En hızlı Telegram'dan yanıt veririm.",
-    "telegram": "Telegram",
+    "lead": "Bir projeniz, fikriniz ya da ekibinizde yeriniz mi var? Yazın — en hızlı Telegram'dan yanıt veririm.",
+    "cta": "Bir projen mi var? Birlikte uçalım.",
+    "telegram": "Telegram'dan yaz",
+    "copy": "Kişiyi kopyala",
+    "share": "Paylaş",
+    "vcard": "vCard indir",
     "github": "GitHub",
-    "email": "E-posta",
-    "card": {
-      "role": "Yapay zekâ ile ürünler ve siteler",
-      "flip": "Kartviziti çevir",
-      "flipHint": "çevirmek için dokunun",
-      "flipBack": "Geri",
-      "qrAlt": "Bu siteye bağlantı içeren QR kodu",
-      "copy": "Kişiyi kopyala",
-      "share": "Paylaş",
-      "vcard": "vCard indir",
-      "passenger": "Yolcu",
-      "gate": "Kapı",
-      "route": [
-        "Kazan",
-        "Antalya",
-        "Moskova",
-        "Viyana"
-      ]
-    }
+    "role": "Yapay zekâ ile ürünler ve siteler",
+    "passenger": "Yolcu",
+    "gate": "Kapı",
+    "route": [
+      "Kazan",
+      "Antalya",
+      "Moskova",
+      "Viyana"
+    ],
+    "qrAlt": "Bu siteye bağlantı içeren QR kodu"
   },
   "footer": {
     "text": "Taslak: metnin bir kısmı geçicidir."
+  },
+  "books": {
+    "title": "Kitaplar",
+    "lead": "Okuduklarım: psikoloji, iş dünyası, davranış bilimleri, ekonomi.",
+    "prev": "Geri",
+    "next": "İleri",
+    "note": "[ЗАГЛУШКА] liste kontrol edilecek"
   }
 }

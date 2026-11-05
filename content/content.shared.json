@@ -16,44 +16,161 @@
       "width": 960,
       "height": 1200
     },
-    "beyond": [
-      {
-        "src": "/assets/photos/beyond-basketball.svg",
+    "beyond": {
+      "sport": {
+        "src": "/assets/photos/beyond-sport.svg",
         "width": 800,
         "height": 600
       },
-      {
-        "src": "/assets/photos/beyond-books.svg",
-        "width": 800,
-        "height": 600
-      },
-      {
-        "src": "/assets/photos/beyond-languages.svg",
-        "width": 800,
-        "height": 600
-      },
-      {
+      "lego": {
         "src": "/assets/photos/beyond-lego.svg",
         "width": 800,
-        "height": 600,
-        "style": "lego"
+        "height": 600
       }
-    ]
+    }
   },
-  "projectLinks": [
-    [
-      "https://trajectoria-mvp.vercel.app/"
-    ],
-    [
-      "https://psy-companion.vercel.app/"
-    ],
-    [],
-    [],
-    [
-      "https://loakfh.github.io/neuron-kurkino/",
-      "https://loakfh.github.io/alternativa-himki/",
-      "https://loakfh.github.io/merch-demo/"
-    ],
-    []
+  "projects": [
+    {
+      "id": "trajectory",
+      "links": [
+        "https://trajectoria-mvp.vercel.app/"
+      ],
+      "icon": "/assets/projects/trajectory-icon.png",
+      "logotype": "/assets/projects/trajectory-logotype-light.svg",
+      "shot": "/assets/projects/trajectory.jpg"
+    },
+    {
+      "id": "teya",
+      "links": [
+        "https://psy-companion.vercel.app/"
+      ],
+      "icon": "/assets/projects/teya-icon.png",
+      "shot": "/assets/projects/teya.jpg"
+    },
+    {
+      "id": "bakir-os",
+      "links": []
+    },
+    {
+      "id": "flab",
+      "links": []
+    },
+    {
+      "id": "sites",
+      "links": [
+        "https://loakfh.github.io/neuron-kurkino/",
+        "https://loakfh.github.io/alternativa-himki/",
+        "https://loakfh.github.io/merch-demo/"
+      ],
+      "shots": [
+        "/assets/projects/demo-neuron.jpg",
+        "/assets/projects/demo-alternativa.jpg",
+        "/assets/projects/demo-merch.jpg"
+      ]
+    },
+    {
+      "id": "kino",
+      "links": []
+    }
+  ],
+  "books": [
+    {
+      "ru": "Спроси маму",
+      "orig": "The Mom Test",
+      "author": "Роб Фитцпатрик",
+      "authorEn": "Rob Fitzpatrick",
+      "color": "#FF4F1F"
+    },
+    {
+      "ru": "Что дальше?",
+      "orig": "What Next?",
+      "author": "Юрий Дроган и др.",
+      "authorEn": "Yuri Drogan et al.",
+      "color": "#1F3FFF"
+    },
+    {
+      "ru": "Венчурное мышление",
+      "orig": "The Venture Mindset",
+      "author": "Илья Стребулаев, Алекс Данг",
+      "authorEn": "Ilya Strebulaev, Alex Dang",
+      "color": "#141414"
+    },
+    {
+      "ru": "Сам себе MBA",
+      "orig": "The Personal MBA",
+      "author": "Джош Кауфман",
+      "authorEn": "Josh Kaufman",
+      "color": "#E8B21E"
+    },
+    {
+      "ru": "Гибкое сознание",
+      "orig": "Mindset",
+      "author": "Кэрол Дуэк",
+      "authorEn": "Carol Dweck",
+      "color": "#2E8B57"
+    },
+    {
+      "ru": "Сила привычки",
+      "orig": "The Power of Habit",
+      "author": "Чарлз Дахигг",
+      "authorEn": "Charles Duhigg",
+      "color": "#C2185B"
+    },
+    {
+      "ru": "Никаких правил",
+      "orig": "No Rules Rules",
+      "author": "Рид Хастингс, Эрин Мейер",
+      "authorEn": "Reed Hastings, Erin Meyer",
+      "color": "#B00610"
+    },
+    {
+      "ru": "Хорошая стратегия, плохая стратегия",
+      "orig": "Good Strategy Bad Strategy",
+      "author": "Ричард Румельт",
+      "authorEn": "Richard Rumelt",
+      "color": "#3949AB"
+    },
+    {
+      "ru": "Фрикономика",
+      "orig": "Freakonomics",
+      "author": "Стивен Левитт, Стивен Дабнер",
+      "authorEn": "Steven Levitt, Stephen Dubner",
+      "color": "#F57C00"
+    },
+    {
+      "ru": "В работу с головой",
+      "orig": "Deep Work",
+      "author": "Кэл Ньюпорт",
+      "authorEn": "Cal Newport",
+      "color": "#263238"
+    },
+    {
+      "ru": "Цифровой минимализм",
+      "orig": "Digital Minimalism",
+      "author": "Кэл Ньюпорт",
+      "authorEn": "Cal Newport",
+      "color": "#607D8B"
+    },
+    {
+      "ru": "Семь навыков высокоэффективных людей",
+      "orig": "The 7 Habits of Highly Effective People",
+      "author": "Стивен Кови",
+      "authorEn": "Stephen Covey",
+      "color": "#00897B"
+    },
+    {
+      "ru": "Внутренняя инженерия",
+      "orig": "Inner Engineering",
+      "author": "Садхгуру",
+      "authorEn": "Sadhguru",
+      "color": "#8E24AA"
+    },
+    {
+      "ru": "Вертикальный прогресс",
+      "orig": "Vertical Progress",
+      "author": "Дмитрий Чернышёв",
+      "authorEn": "Dmitry Chernyshev",
+      "color": "#5D4037"
+    }
   ]
 }

@@ -17,7 +17,7 @@
       "about": "About",
       "projects": "Projects",
       "achievements": "Achievements",
-      "ai": "AI",
+      "books": "Books",
       "contact": "Contact"
     },
     "tape": [
@@ -26,12 +26,14 @@
       "AI",
       "Customer discovery",
       "Launch"
-    ]
+    ],
+    "langLabel": "I speak all 6",
+    "theme": "Switch theme"
   },
   "hero": {
     "status": "Open to projects",
     "name": "Bakir",
-    "tagline": "I build products and websites with AI — from user interviews to launch.",
+    "tagline": "Launching my own projects since I was 15.",
     "cta": "Message me on Telegram",
     "secondary": "See projects",
     "stats": [
@@ -71,20 +73,12 @@
         "v": "11th grade, applying to Vienna"
       },
       {
-        "k": "English",
-        "v": "IELTS 8.0"
-      },
-      {
-        "k": "Languages",
-        "v": "Russian, English, Tatar, Turkish, Japanese, German"
-      },
-      {
         "k": "Code",
         "v": "Python, HTML, databases, AI-assisted coding"
       },
       {
         "k": "Discovery",
-        "v": "200+ interviews"
+        "v": "200+ user interviews"
       },
       {
         "k": "City",
@@ -185,105 +179,51 @@
       }
     ]
   },
-  "ai": {
-    "title": "How I work with AI",
-    "lead": "A site is built not by one prompt but by four agents in turn. Each one checks the one before.",
-    "steps": [
-      {
-        "name": "Audit",
-        "text": "Finds what gets in the customer's way on the old site.",
-        "log": "Auditor: tiny text, three buttons, no offer."
-      },
-      {
-        "name": "Copy",
-        "text": "Writes one offer and one button — from verified facts.",
-        "log": "Writer: one headline, one action."
-      },
-      {
-        "name": "Build",
-        "text": "Assembles the page: phone first, fast, nothing extra.",
-        "log": "Builder: page assembled for phones."
-      },
-      {
-        "name": "Critique",
-        "text": "Looks with the customer's eyes and sends it back for fixes.",
-        "log": "Critic: offer visible, one button, readable."
-      }
-    ],
-    "run": "Run the pipeline",
-    "rerun": "Run again",
-    "idle": "Press it and watch the site come together.",
-    "mockCaption": "An illustrative example, not a real client.",
-    "note": "I accept the site myself, on a phone: an agent saying “done” is not sign-off.",
-    "mock": {
-      "oldTitle": "Welcome to our website!",
-      "oldText": "We are a dynamically developing company with an individual approach to every client and many years of experience in the services market.",
-      "oldButtons": [
-        "More",
-        "Learn",
-        "Request"
-      ],
-      "newTitle": "Clubs close to home",
-      "newText": "First class is free",
-      "newButton": "Sign up",
-      "checks": [
-        "One offer",
-        "One button",
-        "Readable on a phone"
-      ]
-    }
-  },
   "beyond": {
     "title": "Beyond work",
-    "items": [
-      {
-        "title": "Basketball",
-        "text": "Captain of my basketball club team. I've done sport since I was a kid.",
-        "alt": "Basketball"
-      },
-      {
-        "title": "Books",
-        "text": "Psychology, business, behavioural science, economics.",
-        "alt": "Books"
-      },
-      {
-        "title": "Languages",
-        "text": "I speak six and keep learning new ones.",
-        "alt": "Languages"
-      },
-      {
-        "title": "LEGO",
-        "text": "I just love LEGO.",
-        "alt": "LEGO"
-      }
-    ]
+    "sport": {
+      "title": "Sport",
+      "text": "Into sport since childhood. Captain of my basketball club team.",
+      "chips": [
+        "Hiking",
+        "Cycling",
+        "Basketball",
+        "Gym"
+      ]
+    },
+    "lego": {
+      "title": "LEGO",
+      "text": "I just love LEGO."
+    }
   },
   "contact": {
     "title": "Message me",
-    "lead": "Telegram is where I reply fastest.",
-    "telegram": "Telegram",
+    "lead": "Got a project, an idea or a spot on your team? Message me — Telegram is where I reply fastest.",
+    "cta": "Got a project? Let's fly together.",
+    "telegram": "Message me on Telegram",
+    "copy": "Copy contact",
+    "share": "Share",
+    "vcard": "Download vCard",
     "github": "GitHub",
-    "email": "Email",
-    "card": {
-      "role": "Products and websites with AI",
-      "flip": "Flip the card",
-      "flipHint": "tap to flip",
-      "flipBack": "Back",
-      "qrAlt": "QR code linking to this site",
-      "copy": "Copy contact",
-      "share": "Share",
-      "vcard": "Download vCard",
-      "passenger": "Passenger",
-      "gate": "Gate",
-      "route": [
-        "Kazan",
-        "Antalya",
-        "Moscow",
-        "Vienna"
-      ]
-    }
+    "role": "Products and websites with AI",
+    "passenger": "Passenger",
+    "gate": "Gate",
+    "route": [
+      "Kazan",
+      "Antalya",
+      "Moscow",
+      "Vienna"
+    ],
+    "qrAlt": "QR code linking to this site"
   },
   "footer": {
     "text": "Draft: some of the text is placeholder."
+  },
+  "books": {
+    "title": "Books",
+    "lead": "What I've read: psychology, business, behavioural science, economics.",
+    "prev": "Back",
+    "next": "Next",
+    "note": "[ЗАГЛУШКА] list to confirm"
   }
 }

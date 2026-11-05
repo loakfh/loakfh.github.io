@@ -34,24 +34,23 @@ const unbFace = readFileSync(new URL('wght.css', unb), 'utf8')
 const page = (lang, c) => `<!doctype html><html lang="${lang}"><meta charset="utf-8"><style>
 ${fontFace}${unbFace}
 *{margin:0;box-sizing:border-box}
-body{width:1200px;height:630px;padding:60px 72px;overflow:hidden;position:relative;color:#E9ECFF;display:flex;flex-direction:column;
-font-family:G,'Hiragino Sans',sans-serif;background:radial-gradient(700px 420px at 85% 10%,rgba(139,124,255,.45),transparent 70%),#06081C}
-.floor{position:absolute;left:-30%;right:-30%;bottom:-80px;height:330px;transform:perspective(420px) rotateX(62deg);transform-origin:50% 100%;
-background-image:linear-gradient(rgba(198,255,61,.75) 2px,transparent 2px),linear-gradient(90deg,rgba(198,255,61,.75) 2px,transparent 2px);background-size:64px 64px;
--webkit-mask-image:linear-gradient(to top,#000 10%,transparent 85%)}
-.kata{position:absolute;right:50px;top:40px;writing-mode:vertical-rl;font:900 170px/1 'Hiragino Sans',sans-serif;color:transparent;-webkit-text-stroke:2px rgba(139,124,255,.5)}
-.keys{display:flex;gap:10px;position:relative}
-.keys i{display:grid;place-items:center;width:62px;height:66px;border:2px solid rgba(139,124,255,.35);border-radius:16px;
-background:rgba(20,26,70,.7);font:600 28px/1 G,'Hiragino Sans',sans-serif;font-style:normal;color:#E9ECFF}
-.keys i.on{background:#C6FF3D;border-color:#C6FF3D;color:#06081C;box-shadow:0 0 30px rgba(198,255,61,.7)}
-h1{position:relative;margin-top:auto;font:900 ${lang === 'ja' ? 170 : 196}px/.9 ${lang === 'tt' ? 'G' : 'U'},'Hiragino Sans',sans-serif;letter-spacing:-.055em;
-background:linear-gradient(180deg,#fff 0%,#dfe3f0 24%,#7d8399 47%,#f6f8fc 53%,#b4bacb 72%,#fff 100%);-webkit-background-clip:text;color:transparent;
-filter:drop-shadow(0 18px 34px rgba(139,124,255,.55))}
-p{position:relative;margin-top:22px;font-size:42px;line-height:1.2;font-weight:600;max-width:900px}
-.h{position:absolute;right:72px;bottom:64px;padding:12px 18px;border-radius:14px;background:#C6FF3D;color:#06081C;font:700 28px/1 ui-monospace,Menlo,monospace;transform:rotate(-3deg)}
-</style><body><div class="floor"></div><div class="kata">バキル</div>
+body{width:1200px;height:630px;padding:56px 70px;overflow:hidden;position:relative;color:#141414;background:#F1EEE6;font-family:G,'Hiragino Sans',sans-serif}
+.kata{position:absolute;right:-10px;top:-10px;writing-mode:vertical-rl;font:900 300px/1 'Hiragino Sans',sans-serif;color:transparent;-webkit-text-stroke:2px rgba(20,20,20,.1)}
+.stripes{position:absolute;right:-60px;top:-40px;width:330px;height:130%;transform:skewX(-18deg);background:linear-gradient(90deg,#FF4F1F 0 20%,transparent 20% 30%,#1F3FFF 30% 44%,transparent 44% 54%,#141414 54% 60%,transparent 60%)}
+.keys{position:relative;display:flex;gap:10px}
+.keys i{display:grid;place-items:center;width:58px;height:62px;border:3px solid #141414;border-radius:14px;background:#fff;box-shadow:4px 4px 0 #141414;font:700 26px/1 G,'Hiragino Sans',sans-serif;font-style:normal}
+.keys i.on{background:#FF4F1F}
+.bib{position:relative;margin-top:44px;width:760px;padding:22px 30px 26px;background:#fff;border:3px solid #141414;border-radius:20px;box-shadow:10px 10px 0 #141414;transform:rotate(-1.5deg)}
+.bib b{position:absolute;width:18px;height:18px;border-radius:50%;border:4px solid #9a9a9a;background:#e6e6e6}
+.top{display:flex;justify-content:space-between;padding:0 26px;font:700 18px/1 ui-monospace,Menlo,monospace;color:#C2330A;letter-spacing:.08em}
+h1{margin-top:6px;text-align:center;font:900 ${lang === 'ja' ? 150 : 170}px/1 ${lang === 'tt' ? 'G' : 'U'},'Hiragino Sans',sans-serif;letter-spacing:-.055em}
+p{position:relative;margin-top:30px;font-size:40px;font-weight:800;max-width:760px}
+.h{position:absolute;right:70px;bottom:56px;padding:12px 18px;border:3px solid #141414;border-radius:14px;background:#FF4F1F;font:700 28px/1 ui-monospace,Menlo,monospace;box-shadow:5px 5px 0 #141414}
+</style><body><div class="kata">バキル</div><div class="stripes"></div>
 <div class="keys">${LANGS.map(([code, key]) => `<i class="${code === lang ? 'on' : ''}">${key}</i>`).join('')}</div>
-<h1>${esc(c.hero.name)}</h1><p>${esc(c.meta.ogTagline)}</p><div class="h">@${shared.person.telegram}</div></body></html>`;
+<div class="bib"><b style="top:12px;left:12px"></b><b style="top:12px;right:12px"></b><b style="bottom:12px;left:12px"></b><b style="bottom:12px;right:12px"></b>
+<div class="top"><span>MOW → VIE</span><span>${esc(c.ui.langLabel)}</span></div><h1>${esc(c.hero.name)}</h1></div>
+<p>${esc(c.hero.tagline)}</p><div class="h">@${shared.person.telegram}</div></body></html>`;
 
 const browser = await puppeteer.launch({ executablePath: CHROME, args: ['--allow-file-access-from-files'] });
 const tab = await browser.newPage();

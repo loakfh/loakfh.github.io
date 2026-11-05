@@ -39,8 +39,9 @@ const preload = [
     <link rel="canonical" href={canonical} />
     {LANGS.map((l) => <link rel="alternate" hreflang={l.code} href={siteUrl(`/${l.code}/`)} />)}
     <link rel="alternate" hreflang="x-default" href={siteUrl(`/${shared.site.defaultLang}/`)} />
-    <meta name="theme-color" content="#06081C" />
-    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#F1EEE6" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#06081C" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
     {preload.map((href) => <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />)}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -61,6 +62,11 @@ const preload = [
       (function () {
         var d = document.documentElement;
         d.classList.add('js');
+        // тема: сохранённый выбор, иначе — как в системе; ставим до отрисовки, чтобы не мигало
+        var theme = null;
+        try { theme = localStorage.getItem('theme'); } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        d.setAttribute('data-theme', theme);
         try {
           var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
           if (!calm && !sessionStorage.getItem('intro')) d.classList.add('intro-on');

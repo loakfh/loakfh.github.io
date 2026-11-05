@@ -17,7 +17,7 @@
       "about": "Über mich",
       "projects": "Projekte",
       "achievements": "Erfolge",
-      "ai": "KI",
+      "books": "Bücher",
       "contact": "Kontakt"
     },
     "tape": [
@@ -26,12 +26,14 @@
       "KI",
       "Kundeninterviews",
       "Launch"
-    ]
+    ],
+    "langLabel": "Ich spreche alle 6",
+    "theme": "Design wechseln"
   },
   "hero": {
     "status": "Offen für Projekte",
     "name": "Bakir",
-    "tagline": "Ich baue Produkte und Websites mit KI — vom Nutzerinterview bis zum Launch.",
+    "tagline": "Ich starte eigene Projekte, seit ich 15 bin.",
     "cta": "Auf Telegram schreiben",
     "secondary": "Projekte ansehen",
     "stats": [
@@ -69,14 +71,6 @@
       {
         "k": "Ausbildung",
         "v": "11. Klasse, Bewerbung in Wien"
-      },
-      {
-        "k": "Englisch",
-        "v": "IELTS 8.0"
-      },
-      {
-        "k": "Sprachen",
-        "v": "Russisch, Englisch, Tatarisch, Türkisch, Japanisch, Deutsch"
       },
       {
         "k": "Code",
@@ -185,105 +179,51 @@
       }
     ]
   },
-  "ai": {
-    "title": "Wie ich mit KI arbeite",
-    "lead": "Eine Website entsteht nicht aus einem Prompt, sondern durch vier Agenten nacheinander. Jeder prüft den vorherigen.",
-    "steps": [
-      {
-        "name": "Audit",
-        "text": "Findet, was den Kunden auf der alten Website stört.",
-        "log": "Auditor: winziger Text, drei Buttons, kein Angebot."
-      },
-      {
-        "name": "Texte",
-        "text": "Schreibt ein Angebot und einen Button — aus geprüften Fakten.",
-        "log": "Autor: eine Überschrift, eine Handlung."
-      },
-      {
-        "name": "Aufbau",
-        "text": "Baut die Seite: zuerst fürs Handy, schnell, ohne Ballast.",
-        "log": "Builder: Seite fürs Handy gebaut."
-      },
-      {
-        "name": "Kritik",
-        "text": "Schaut mit den Augen des Kunden und schickt zur Überarbeitung zurück.",
-        "log": "Kritiker: Angebot sichtbar, ein Button, lesbar."
-      }
-    ],
-    "run": "Pipeline starten",
-    "rerun": "Noch einmal starten",
-    "idle": "Drücken — und die Website entsteht vor deinen Augen.",
-    "mockCaption": "Ein fiktives Beispiel, kein echter Kunde.",
-    "note": "Ich nehme die Website selbst ab, am Handy: „fertig“ vom Agenten ist noch keine Abnahme.",
-    "mock": {
-      "oldTitle": "Willkommen auf unserer Website!",
-      "oldText": "Wir sind ein sich dynamisch entwickelndes Unternehmen mit individuellem Ansatz für jeden Kunden und langjähriger Erfahrung auf dem Dienstleistungsmarkt.",
-      "oldButtons": [
-        "Mehr",
-        "Infos",
-        "Anfrage"
-      ],
-      "newTitle": "Kurse in deiner Nähe",
-      "newText": "Die erste Stunde ist gratis",
-      "newButton": "Anmelden",
-      "checks": [
-        "Ein Angebot",
-        "Ein Button",
-        "Am Handy lesbar"
-      ]
-    }
-  },
   "beyond": {
     "title": "Neben der Arbeit",
-    "items": [
-      {
-        "title": "Basketball",
-        "text": "Ich war Kapitän meiner Mannschaft im Basketballverein. Sport mache ich seit meiner Kindheit.",
-        "alt": "Basketball"
-      },
-      {
-        "title": "Bücher",
-        "text": "Psychologie, Business, Verhaltenswissenschaften, Wirtschaft.",
-        "alt": "Bücher"
-      },
-      {
-        "title": "Sprachen",
-        "text": "Ich spreche sechs und lerne ständig neue.",
-        "alt": "Sprachen"
-      },
-      {
-        "title": "LEGO",
-        "text": "Ich liebe LEGO einfach.",
-        "alt": "LEGO"
-      }
-    ]
+    "sport": {
+      "title": "Sport",
+      "text": "Sport seit meiner Kindheit. Ich war Kapitän meiner Mannschaft im Basketballverein.",
+      "chips": [
+        "Wandern",
+        "Radfahren",
+        "Basketball",
+        "Fitnessstudio"
+      ]
+    },
+    "lego": {
+      "title": "LEGO",
+      "text": "Ich liebe LEGO einfach."
+    }
   },
   "contact": {
     "title": "Schreib mir",
-    "lead": "Auf Telegram antworte ich am schnellsten.",
-    "telegram": "Telegram",
+    "lead": "Du hast ein Projekt, eine Idee oder einen Platz im Team? Schreib mir — auf Telegram antworte ich am schnellsten.",
+    "cta": "Ein Projekt? Lass uns zusammen fliegen.",
+    "telegram": "Auf Telegram schreiben",
+    "copy": "Kontakt kopieren",
+    "share": "Teilen",
+    "vcard": "vCard herunterladen",
     "github": "GitHub",
-    "email": "E-Mail",
-    "card": {
-      "role": "Produkte und Websites mit KI",
-      "flip": "Visitenkarte umdrehen",
-      "flipHint": "tippen zum Umdrehen",
-      "flipBack": "Zurück",
-      "qrAlt": "QR-Code mit Link zu dieser Website",
-      "copy": "Kontakt kopieren",
-      "share": "Teilen",
-      "vcard": "vCard herunterladen",
-      "passenger": "Passagier",
-      "gate": "Gate",
-      "route": [
-        "Kasan",
-        "Antalya",
-        "Moskau",
-        "Wien"
-      ]
-    }
+    "role": "Produkte und Websites mit KI",
+    "passenger": "Passagier",
+    "gate": "Gate",
+    "route": [
+      "Kasan",
+      "Antalya",
+      "Moskau",
+      "Wien"
+    ],
+    "qrAlt": "QR-Code mit Link zu dieser Website"
   },
   "footer": {
     "text": "Entwurf: Ein Teil des Textes sind Platzhalter."
+  },
+  "books": {
+    "title": "Bücher",
+    "lead": "Was ich gelesen habe: Psychologie, Business, Verhaltenswissenschaften, Wirtschaft.",
+    "prev": "Zurück",
+    "next": "Weiter",
+    "note": "[ЗАГЛУШКА] Liste prüfen"
   }
 }

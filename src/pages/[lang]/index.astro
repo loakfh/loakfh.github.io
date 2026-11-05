@@ -10,8 +10,9 @@ export function getStaticPaths() {
 const lang = Astro.params.lang as LangCode;
 const meta = LANGS.find((l) => l.code === lang)!;
 const c = getContent(lang);
-const { person, photos, projectLinks } = shared;
+const { person, photos, projects, books } = shared;
 const f = (text: string) => fmt(text, c.ui.placeholder);
+const cyrillic = lang === 'ru' || lang === 'tt';
 
 const pageUrl = siteUrl(`/${lang}/`);
 const tgUrl = `https://t.me/${person.telegram}`;
@@ -20,11 +21,11 @@ const qr = await QRCode.toString(pageUrl, {
   type: 'svg',
   margin: 0,
   errorCorrectionLevel: 'M',
-  color: { dark: '#0E0F0C', light: '#EDEAE0' },
+  color: { dark: '#11131C', light: '#00000000' },
 });
 const contactText = [
   c.hero.name,
-  c.contact.card.role,
+  c.contact.role,
   `Telegram: @${person.telegram} — ${tgUrl}`,
   `GitHub: ${ghUrl}`,
   person.email,
@@ -33,15 +34,35 @@ const contactText = [
   .filter(Boolean)
   .join('\n');
 
-const sections = ['about', 'projects', 'achievements', 'ai', 'contact'] as const;
+const sections = ['about', 'projects', 'achievements', 'books', 'contact'] as const;
 const num = (i: number) => String(i).padStart(2, '0');
-// Приветствия для интро: текущий язык — последним.
+// Большие японские слова на фоне секций — декорация, скрыта от скринридеров.
+const bgWords: Record<string, string> = {
+  about: '自己紹介',
+  projects: 'プロジェクト',
+  achievements: '実績',
+  beyond: '趣味',
+  books: '本棚',
+  contact: '連絡',
+};
 const codes = ['KZN', 'AYT', 'MOW', 'VIE'];
-const route = c.contact.card.route.map((city: string, i: number) => ({ code: codes[i], city }));
+const route = c.contact.route.map((city: string, i: number) => ({ code: codes[i], city }));
 const sep = '  ✦  ';
-const tapeHello = Array(4).fill(LANGS.map((l) => l.hello).join(sep)).join(sep) + sep;
-const tapeWords = Array(4).fill(c.ui.tape.join(sep)).join(sep) + sep;
+const tapeHello = Array(6).fill(LANGS.map((l) => l.hello).join(sep)).join(sep) + sep;
+// Приветствия для интро: текущий язык — последним.
 const hellos = [...LANGS.filter((l) => l.code !== lang), meta].map((l) => ({ text: l.hello, lang: l.code }));
+// Проект = тексты из языкового файла + ссылки, логотипы и скриншоты из общего.
+const item = (id: string) => {
+  const i = projects.findIndex((p: any) => p.id === id);
+  const text = c.projects.items[i];
+  return { ...text, ...projects[i], labels: text.links };
+};
+// Цвет текста на обложке: тёмный на светлых обложках, светлый на тёмных.
+const ink = (hex: string) => {
+  const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b > 0.5 ? '#141414' : '#ffffff';
+};
+const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', 'flab', 'sites', 'kino'].map(item);
 ---
 <Base
   lang={lang}
@@ -65,86 +86,94 @@ const hellos = [...LANGS.filter((l) => l.code !== lang), meta].map((l) => ({ tex
       <nav class="nav" aria-label={c.ui.menu}>
         {sections.map((id) => <a href={`#${id}`}>{c.ui.nav[id]}</a>)}
       </nav>
-      <nav class="keys" aria-label={c.ui.langSwitch}>
-        {
-          LANGS.map((l) => (
-            <a
-              class="key"
-              href={`/${l.code}/`}
-              hreflang={l.code}
-              lang={l.code}
-              data-lang={l.code}
-              aria-label={l.name}
-              title={l.name}
-              aria-current={l.code === lang ? 'page' : undefined}
-            >
-              <span aria-hidden="true">{l.key}</span>
-            </a>
-          ))
-        }
-      </nav>
+      <button class="theme" type="button" id="theme" aria-label={c.ui.theme} title={c.ui.theme}>
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" /><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" /></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" /></svg>
+      </button>
+      <div class="langs">
+        <span class="langs-label" id="langsLabel">{c.ui.langLabel}</span>
+        <nav class="keys" aria-labelledby="langsLabel">
+          {
+            LANGS.map((l) => (
+              <a
+                class="key"
+                href={`/${l.code}/`}
+                hreflang={l.code}
+                lang={l.code}
+                data-lang={l.code}
+                aria-label={l.name}
+                title={l.name}
+                aria-current={l.code === lang ? 'page' : undefined}
+              >
+                <span aria-hidden="true">{l.key}</span>
+              </a>
+            ))
+          }
+        </nav>
+      </div>
     </div>
   </header>
 
   <main id="main">
     <div class="stage">
-    <div class="stage-fx" aria-hidden="true">
-      <i class="blob blob-a"></i><i class="blob blob-b"></i>
-      <div class="floor"></div>
-      <div class="kata" lang="ja">バキル</div>
-    </div>
-    <section class="hero wrap" id="hero">
-      <div class="hero-text">
-        <p class="status"><span class="dot" aria-hidden="true"></span>{c.hero.status}</p>
-        <h1 class="name">
-          <span class="sr-only">{c.hero.name}</span>
-          <span aria-hidden="true" class="chrome" id="nameFx">{c.hero.name}</span>
-        </h1>
-        <p class="tagline">{c.hero.tagline}</p>
-        <div class="hero-actions">
-          <a class="btn btn-main" href={tgUrl} rel="me noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.500 3.300 2.900 10.500c-.900.400-.900 1.600.100 1.900l4.700 1.500 1.800 5.600c.200.700 1.100.900 1.600.400l2.600-2.500 4.700 3.500c.600.400 1.400.100 1.600-.600l3-16c.200-.800-.700-1.400-1.500-1zM9.800 14.300l8-5.800-6.300 6.800-.300 3.100-1.400-4.100z" /></svg>
-            {c.hero.cta}
-          </a>
-          <a class="link-arrow" href="#projects">{c.hero.secondary}<span aria-hidden="true"> ↓</span></a>
-        </div>
-        <dl class="stats">
-          {
-            c.hero.stats.map((s: any) => (
-              <div class="stat">
-                <dt set:html={f(s.label)} />
-                <dd class="stat-num">
-                  <span data-count={s.value}>{s.value}</span>
-                  {s.unit && <small class="unit">{s.unit}</small>}
-                </dd>
-              </div>
-            ))
-          }
-        </dl>
+      <div class="stage-fx" aria-hidden="true">
+        <span class="kata" lang="ja">バキル</span>
+        <i class="stripes"></i>
+        <svg class="profile" viewBox="0 0 1280 120" preserveAspectRatio="none">
+          <path class="profile-fill" d="M0 110 L120 90 L220 100 L330 60 L420 75 L540 30 L640 55 L760 20 L880 50 L1000 15 L1120 45 L1280 25 L1280 120 L0 120Z" />
+          <path class="profile-line" d="M0 110 L120 90 L220 100 L330 60 L420 75 L540 30 L640 55 L760 20 L880 50 L1000 15 L1120 45 L1280 25" />
+        </svg>
       </div>
-      <div class="hero-photo">
-        <div class="frame">
-          <img
-            src={photos.hero.src}
-            width={photos.hero.width}
-            height={photos.hero.height}
-            alt={c.hero.photoAlt}
-            decoding="async"
-          />
+      <section class="hero wrap" id="hero">
+        <div class="hero-text">
+          <div class="bib">
+            <i class="pin p1"></i><i class="pin p2"></i><i class="pin p3"></i><i class="pin p4"></i>
+            <p class="bib-top">
+              <span class="status"><span class="dot" aria-hidden="true"></span>{c.hero.status}</span>
+              <span aria-hidden="true">MOW → VIE</span>
+            </p>
+            <h1 class="name">
+              <span class="sr-only">{c.hero.name}</span>
+              <span aria-hidden="true" id="nameFx">{c.hero.name}</span>
+            </h1>
+            <dl class="stats">
+              {
+                c.hero.stats.map((s: any) => (
+                  <div class="stat">
+                    <dt set:html={f(s.label)} />
+                    <dd class="stat-num">
+                      <span data-count={s.value}>{s.value}</span>
+                      {s.unit && <small class="unit">{s.unit}</small>}
+                    </dd>
+                  </div>
+                ))
+              }
+            </dl>
+          </div>
+          <p class="tagline">{c.hero.tagline}</p>
+          <div class="hero-actions">
+            <a class="btn btn-main" href={tgUrl} rel="me noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.500 3.300 2.900 10.500c-.900.400-.900 1.600.100 1.900l4.700 1.500 1.800 5.600c.200.700 1.100.900 1.600.400l2.600-2.500 4.700 3.500c.600.400 1.400.100 1.600-.600l3-16c.200-.800-.700-1.400-1.500-1zM9.800 14.300l8-5.800-6.300 6.800-.300 3.100-1.400-4.100z" /></svg>
+              {c.hero.cta}
+            </a>
+            <a class="link-arrow" href="#projects">{c.hero.secondary}<span aria-hidden="true"> ↓</span></a>
+          </div>
         </div>
-        <ul class="badges">
-          {c.hero.badges.map((b: string) => <li class="holo">{b}</li>)}
-        </ul>
-      </div>
-    </section>
+        <div class="hero-photo">
+          <div class="frame">
+            <img src={photos.hero.src} width={photos.hero.width} height={photos.hero.height} alt={c.hero.photoAlt} decoding="async" />
+          </div>
+          <ul class="badges">
+            {c.hero.badges.map((b: string) => <li>{b}</li>)}
+          </ul>
+        </div>
+      </section>
     </div>
 
-    <div class="tapes" aria-hidden="true">
-      <div class="tape tape-a"><span>{tapeHello}</span></div>
-      <div class="tape tape-b"><span>{tapeWords}</span></div>
-    </div>
+    <div class="tape-wrap" aria-hidden="true"><div class="tape"><span>{tapeHello}</span></div></div>
 
     <section class="wrap sec" id="about">
+      <span class="bg-word" aria-hidden="true" lang="ja">{bgWords.about}</span>
       <header class="sec-head reveal">
         <span class="idx" aria-hidden="true">{num(1)}</span>
         <h2>{c.about.title}</h2>
@@ -156,7 +185,7 @@ const hellos = [...LANGS.filter((l) => l.code !== lang), meta].map((l) => ({ tex
         <dl class="facts">
           {
             c.about.facts.map((fact: any) => (
-              <div class="card fact reveal">
+              <div class="fact reveal">
                 <dt>{fact.k}</dt>
                 <dd set:html={f(fact.v)} />
               </div>
@@ -167,48 +196,78 @@ const hellos = [...LANGS.filter((l) => l.code !== lang), meta].map((l) => ({ tex
     </section>
 
     <section class="wrap sec" id="projects">
+      <span class="bg-word" aria-hidden="true" lang="ja">{bgWords.projects}</span>
       <header class="sec-head reveal">
         <span class="idx" aria-hidden="true">{num(2)}</span>
         <h2>{c.projects.title}</h2>
       </header>
-      <div class="projects">
-        {
-          c.projects.items.map((p: any, i: number) => (
-            <article class="card project reveal">
-              <p class="tag">{p.tag}</p>
-              <h3>{p.name}</h3>
-              <dl class="flow">
-                <div>
-                  <dt>{c.projects.task}</dt>
-                  <dd set:html={f(p.task)} />
-                </div>
-                <div>
-                  <dt>{c.projects.did}</dt>
-                  <dd set:html={f(p.did)} />
-                </div>
-                <div class="flow-result">
-                  <dt>{c.projects.result}</dt>
-                  <dd set:html={f(p.result)} />
-                </div>
-              </dl>
-              {projectLinks[i]?.length > 0 && (
-                <ul class="links">
-                  {projectLinks[i].map((url: string, j: number) => (
-                    <li>
-                      <a class="pill" href={url} target="_blank" rel="noopener">
-                        {p.links[j]}<span aria-hidden="true"> ↗</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </article>
-          ))
-        }
+      <div class="bento">
+        <article class="pc p-traj reveal">
+          <p class="pc-chip"><img class="pc-ico" src={traj.icon} width="40" height="40" alt="" loading="lazy" />{traj.tag}</p>
+          {traj.links.map((url: string, j: number) => <a class="pc-go" href={url} target="_blank" rel="noopener">{traj.labels[j]} ↗</a>)}
+          <h3><img class="pc-logotype" src={traj.logotype} width="280" height="80" alt={traj.name} loading="lazy" /></h3>
+          <p class="pc-text" set:html={f(traj.task)} />
+          <p class="pc-did" set:html={f(traj.did)} />
+          <div class="pc-shot"><img src={traj.shot} width="640" height="400" alt="" loading="lazy" /></div>
+          <p class="pc-res" set:html={f(traj.result)} />
+        </article>
+
+        <article class="pc p-teya reveal">
+          <p class="pc-chip"><img class="pc-ico" src={teya.icon} width="40" height="40" alt="" loading="lazy" />{teya.tag}</p>
+          <h3>{teya.name}</h3>
+          <p class="pc-text" set:html={f(teya.task)} />
+          <div class="pc-shot"><img src={teya.shot} width="640" height="400" alt="" loading="lazy" /></div>
+          <p class="pc-did" set:html={f(teya.did)} />
+          {teya.links.map((url: string, j: number) => <a class="pc-go" href={url} target="_blank" rel="noopener">{teya.labels[j]} ↗</a>)}
+          <p class="pc-res" set:html={f(teya.result)} />
+        </article>
+
+        <article class="pc p-os reveal">
+          <p class="pc-chip"><span class="pc-ico pc-ico-os" aria-hidden="true">OS</span>{os.tag}</p>
+          <h3>{os.name}</h3>
+          <p class="pc-text" set:html={f(os.task)} />
+          <div class="chat" aria-hidden="true">
+            <span class="b me">💡 + 1</span>
+            <span class="b bot">✓</span>
+            <span class="b me">🎙 0:42</span>
+            <span class="b bot">✍ …</span>
+          </div>
+          <p class="pc-did" set:html={f(os.did)} />
+          <p class="pc-res" set:html={f(os.result)} />
+        </article>
+
+        <article class="pc p-sites reveal">
+          <p class="pc-chip">{sites.tag}</p>
+          <h3>{sites.name}</h3>
+          <p class="pc-text" set:html={f(sites.did)} />
+          <div class="fan">
+            {sites.shots.map((src: string, j: number) => (
+              <a href={sites.links[j]} target="_blank" rel="noopener" aria-label={sites.labels[j]}>
+                <img src={src} width="640" height="400" alt="" loading="lazy" />
+              </a>
+            ))}
+          </div>
+          <p class="pc-res" set:html={f(sites.result)} />
+        </article>
+
+        <article class="pc p-flab reveal">
+          <p class="pc-chip">{flab.tag}</p>
+          <h3 class="wordmark">Foundation<i>Lab</i></h3>
+          <p class="pc-text" set:html={f(flab.did)} />
+          <p class="pc-res" set:html={f(flab.result)} />
+        </article>
+
+        <article class="pc p-kino reveal">
+          <p class="pc-chip">{kino.tag}</p>
+          <h3>{kino.name}</h3>
+          <p class="pc-text" set:html={f(kino.did)} />
+          <p class="pc-res" set:html={f(kino.result)} />
+        </article>
       </div>
     </section>
 
     <section class="wrap sec" id="achievements">
+      <span class="bg-word" aria-hidden="true" lang="ja">{bgWords.achievements}</span>
       <header class="sec-head reveal">
         <span class="idx" aria-hidden="true">{num(3)}</span>
         <h2>{c.achievements.title}</h2>
@@ -216,7 +275,7 @@ const hellos = [...LANGS.filter((l) => l.code !== lang), meta].map((l) => ({ tex
       <div class="achievements">
         {
           c.achievements.items.map((a: any) => (
-            <article class="card achievement reveal">
+            <article class="medal reveal">
               <p class="big" set:html={f(a.badge)} />
               <p class="tag">{a.label}</p>
               <h3 set:html={f(a.title)} />
@@ -227,153 +286,98 @@ const hellos = [...LANGS.filter((l) => l.code !== lang), meta].map((l) => ({ tex
       </div>
     </section>
 
-    <section class="wrap sec" id="ai">
+    <section class="wrap sec" id="beyond">
+      <span class="bg-word" aria-hidden="true" lang="ja">{bgWords.beyond}</span>
       <header class="sec-head reveal">
         <span class="idx" aria-hidden="true">{num(4)}</span>
-        <h2>{c.ai.title}</h2>
-      </header>
-      <p class="lead reveal">{c.ai.lead}</p>
-      <div class="pipe reveal" id="pipe" data-stage="4" data-run={c.ai.run} data-rerun={c.ai.rerun}>
-        <div class="pipe-side">
-          <ol class="steps">
-            {
-              c.ai.steps.map((s: any, i: number) => (
-                <li class="step" data-step={i + 1} data-log={s.log}>
-                  <span class="step-n" aria-hidden="true">{i + 1}</span>
-                  <div>
-                    <h3>{s.name}</h3>
-                    <p>{s.text}</p>
-                  </div>
-                </li>
-              ))
-            }
-          </ol>
-          <button class="btn btn-main" type="button" id="pipeRun">{c.ai.run}</button>
-          <p class="log" id="pipeLog" role="status" data-idle={c.ai.idle}>{c.ai.idle}</p>
-        </div>
-        <figure class="mock">
-          <div class="mock-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="mock-page" aria-hidden="true">
-            <div class="mock-old">
-              <p class="mo-title">{c.ai.mock.oldTitle}<b class="pin">1</b></p>
-              <p class="mo-text">{c.ai.mock.oldText}<b class="pin">2</b></p>
-              <p class="mo-btns">
-                {c.ai.mock.oldButtons.map((b: string) => <span>{b}</span>)}
-                <b class="pin">3</b>
-              </p>
-            </div>
-            <div class="mock-new">
-              <p class="mn-title">{c.ai.mock.newTitle}</p>
-              <p class="mn-text">{c.ai.mock.newText}</p>
-              <p class="mn-btn"><span>{c.ai.mock.newButton}</span></p>
-              <ul class="mn-checks">
-                {c.ai.mock.checks.map((t: string) => <li>{t}</li>)}
-              </ul>
-            </div>
-          </div>
-          <figcaption>{c.ai.mockCaption}</figcaption>
-        </figure>
-      </div>
-      <p class="note reveal">{c.ai.note}</p>
-    </section>
-
-    <section class="wrap sec" id="beyond">
-      <header class="sec-head reveal">
-        <span class="idx" aria-hidden="true">{num(5)}</span>
         <h2>{c.beyond.title}</h2>
       </header>
       <div class="beyond">
-        {
-          c.beyond.items.map((b: any, i: number) => (
-            <article class={`card human reveal${photos.beyond[i].style === 'lego' ? ' lego' : ''}`}>
-              <img
-                src={photos.beyond[i].src}
-                width={photos.beyond[i].width}
-                height={photos.beyond[i].height}
-                alt={b.alt}
-                loading="lazy"
-                decoding="async"
-              />
-              <h3>{b.title}</h3>
-              <p class="muted" set:html={f(b.text)} />
-            </article>
-          ))
-        }
+        <article class="sport reveal">
+          <img src={photos.beyond.sport.src} width={photos.beyond.sport.width} height={photos.beyond.sport.height} alt="" loading="lazy" />
+          <div class="sport-text">
+            <h3>{c.beyond.sport.title}</h3>
+            <p>{c.beyond.sport.text}</p>
+            <ul class="chips">{c.beyond.sport.chips.map((t: string) => <li>{t}</li>)}</ul>
+          </div>
+        </article>
+        <article class="lego reveal">
+          <img src={photos.beyond.lego.src} width={photos.beyond.lego.width} height={photos.beyond.lego.height} alt="" loading="lazy" />
+          <h3>{c.beyond.lego.title}</h3>
+          <p>{c.beyond.lego.text}</p>
+        </article>
       </div>
     </section>
 
+    <section class="sec books-sec" id="books">
+      <div class="wrap books-head">
+        <span class="bg-word" aria-hidden="true" lang="ja">{bgWords.books}</span>
+        <header class="sec-head reveal">
+          <span class="idx" aria-hidden="true">{num(5)}</span>
+          <h2>{c.books.title}</h2>
+          <span class="shelf-nav">
+            <button type="button" class="shelf-btn" data-dir="-1" aria-label={c.books.prev}>←</button>
+            <button type="button" class="shelf-btn" data-dir="1" aria-label={c.books.next}>→</button>
+          </span>
+        </header>
+        <p class="lead reveal">{c.books.lead} <span set:html={f(c.books.note)} /></p>
+      </div>
+      <ul class="shelf" id="shelf" tabindex="0" aria-label={c.books.title}>
+        {
+          books.map((b: any) => (
+            <li class="book" style={`--book:${b.color};--book-ink:${ink(b.color)}`}>
+              <span class="book-title">{cyrillic ? b.ru : b.orig}</span>
+              <span class="book-author">{cyrillic ? b.author : b.authorEn}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
     <section class="wrap sec contact" id="contact">
+      <span class="bg-word" aria-hidden="true" lang="ja">{bgWords.contact}</span>
       <header class="sec-head reveal">
         <span class="idx" aria-hidden="true">{num(6)}</span>
         <h2>{c.contact.title}</h2>
       </header>
-      <div class="contact-grid">
-        <div class="contact-text reveal">
-          <p class="lead">{c.contact.lead}</p>
-          <ul class="contact-links">
-            <li>
-              <a class="btn btn-main" href={tgUrl} rel="me noopener">
-                {c.contact.telegram}<span class="mono">@{person.telegram}</span>
-              </a>
-            </li>
-            <li>
-              <a class="btn btn-ghost" href={ghUrl} rel="me noopener" target="_blank">
-                {c.contact.github}<span class="mono">{person.github}</span>
-              </a>
-            </li>
-            {
-              person.email && (
-                <li>
-                  <a class="btn btn-ghost" href={`mailto:${person.email}`}>
-                    {c.contact.email}<span class="mono">{person.email}</span>
-                  </a>
-                </li>
-              )
-            }
-          </ul>
-        </div>
+      <p class="lead reveal">{c.contact.lead}</p>
 
-        <div class="vc reveal" id="vc" data-copy={contactText} data-url={pageUrl} data-title={c.meta.title}>
-          <div class="vc-inner">
-            <button class="vc-face vc-front ticket" type="button" id="vcFront" aria-label={c.contact.card.flip}>
-              <span class="tk-main">
-                <span class="tk-route" aria-hidden="true">
-                  {route.map((r, i) => (
-                    <>
-                      {i > 0 && <i class="tk-dash" />}
-                      <span><b>{r.code}</b> {r.city}</span>
-                    </>
-                  ))}
-                </span>
-                <span class="tk-lbl">{c.contact.card.passenger}</span>
-                <span class="vc-name">{c.hero.name}</span>
-                <span class="vc-role">{c.contact.card.role}</span>
-                <span class="tk-fields">
-                  {c.hero.stats.map((st: any) => (
-                    <span><b>{st.value}<small>{st.unit}</small></b><em>{plain(st.label)}</em></span>
-                  ))}
-                </span>
-              </span>
-              <span class="tk-stub">
-                <span class="tk-stamps" aria-hidden="true">
-                  {c.hero.badges.map((b: string) => <span class="stamp">{b}</span>)}
-                </span>
-                <span class="tk-bar" aria-hidden="true"></span>
-                <span class="tk-gate">{c.contact.card.gate} · Telegram @{person.telegram}</span>
-                <span class="vc-hint">{c.contact.card.flipHint} ↻</span>
-              </span>
-            </button>
-            <div class="vc-face vc-back ticket" id="vcBack" inert>
-              <div class="vc-qr" role="img" aria-label={c.contact.card.qrAlt} set:html={qr} />
-              <div class="vc-actions">
-                <button class="vc-btn" type="button" id="vcCopy">{c.contact.card.copy}</button>
-                <button class="vc-btn" type="button" id="vcShare">{c.contact.card.share}</button>
-                <a class="vc-btn" href="/bakir.vcf" download="bakir.vcf">{c.contact.card.vcard}</a>
-                <button class="vc-btn vc-btn-quiet" type="button" id="vcFlipBack">↺ {c.contact.card.flipBack}</button>
-              </div>
+      <div class="ticket reveal" id="vc" data-copy={contactText} data-url={pageUrl} data-title={c.meta.title}>
+        <div class="tk-main">
+          <p class="tk-route" aria-hidden="true">
+            {route.map((r, i) => (
+              <>
+                {i > 0 && <i class="tk-dash" />}
+                <span><b>{r.code}</b> {r.city}</span>
+              </>
+            ))}
+          </p>
+          <div class="tk-row">
+            <div>
+              <p class="tk-lbl">{c.contact.passenger}</p>
+              <p class="tk-name">{c.hero.name}</p>
+              <p class="tk-cta">{c.contact.cta}</p>
             </div>
+            <dl class="tk-fields">
+              {c.hero.stats.map((st: any) => (
+                <div><dt>{plain(st.label)}</dt><dd><b>{st.value}<small>{st.unit}</small></b></dd></div>
+              ))}
+            </dl>
+          </div>
+          <div class="tk-btns">
+            <a class="tk-btn tk-btn-main" href={tgUrl} rel="me noopener">{c.contact.telegram}<span class="mono">@{person.telegram}</span></a>
+            <button class="tk-btn" type="button" id="vcCopy">{c.contact.copy}</button>
+            <button class="tk-btn" type="button" id="vcShare">{c.contact.share}</button>
+            <a class="tk-btn tk-btn-line" href="/bakir.vcf" download="bakir.vcf">{c.contact.vcard}</a>
+            <a class="tk-btn tk-btn-line" href={ghUrl} rel="me noopener" target="_blank">{c.contact.github}</a>
+            {person.email && <a class="tk-btn tk-btn-line" href={`mailto:${person.email}`}>{person.email}</a>}
           </div>
           <p class="vc-toast" id="vcToast" role="status" data-ok={c.ui.copied} data-fail={c.ui.copyFailed}></p>
+        </div>
+        <div class="tk-stub">
+          <div class="tk-qr" role="img" aria-label={c.contact.qrAlt} set:html={qr} />
+          <span class="tk-bar" aria-hidden="true"></span>
+          <p class="tk-gate">{c.contact.gate} · Telegram @{person.telegram}</p>
         </div>
       </div>
     </section>
@@ -389,7 +393,7 @@ const hellos = [...LANGS.filter((l) => l.code !== lang), meta].map((l) => ({ tex
     {c.ui.floatCta}
   </a>
 
-  <div class="cursor" id="cursor" aria-hidden="true"><i class="cursor-glow"></i><i class="cursor-ring"></i><i class="cursor-dot"></i></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><i class="cursor-ring"></i><i class="cursor-dot"></i></div>
 
   <script>
     import '../../scripts/main.js';
