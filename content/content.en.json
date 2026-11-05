@@ -118,7 +118,7 @@
         "tag": "My own project · AI for psychologists",
         "task": "After a session, a psychologist needs to record and make sense of the case quickly.",
         "did": "I ran in-depth interviews with psychologists and launched the product: the psychologist dictates their thoughts, and Teya turns them into a structured note and a running case memory.",
-        "result": "[ЗАГЛУШКА] result: pilot, users.",
+        "result": "",
         "links": [
           "Open Teya"
         ]
@@ -142,9 +142,13 @@
         "tag": "EdTech startup · product manager",
         "task": "Launch AI products for education.",
         "did": "I ran the AI tutor and the AI personal-brand projects: user interviews, hypotheses, launch.",
-        "result": "[ЗАГЛУШКА] result in numbers.",
+        "result": "",
         "links": [
           "Open LabF"
+        ],
+        "parts": [
+          "LabF AI tutor",
+          "Personal brand with AI · “Slovami klientov”"
         ]
       },
       {
@@ -164,7 +168,7 @@
         "tag": "Turkey · first project, at 15",
         "task": "Launch my first project of my own.",
         "did": "Evening open-air screenings in Altınkum with Croissant Atelier café: “The Little Prince”, “Up”, free entry.",
-        "result": "[ЗАГЛУШКА] number of screenings and viewers.",
+        "result": "",
         "links": []
       }
     ]
@@ -176,7 +180,8 @@
         "badge": "1st place",
         "label": "Case championship",
         "title": "SKOLKOVO Start",
-        "text": "Nationwide case championship in Russia."
+        "text": "Nationwide case championship in Russia.",
+        "role": "Captain + product"
       },
       {
         "badge": "Lecture at HSE",
@@ -188,13 +193,15 @@
         "badge": "Special award",
         "label": "Olympiad · Trajectory",
         "title": "All-Russian Entrepreneurship Olympiad",
-        "text": "My first olympiad ever. I was team captain."
+        "text": "My first olympiad ever.",
+        "role": "Captain + product"
       },
       {
         "badge": "Participant",
         "label": "Trajectory",
         "title": "Startup Village 2026",
-        "text": "Project pitch, SKOLKOVO, May 2026."
+        "text": "Project pitch, SKOLKOVO, May 2026.",
+        "role": "Captain + product"
       }
     ]
   },
@@ -218,9 +225,7 @@
       "text": "I just love LEGO."
     },
     "games": {
-      "title": "PS5",
-      "text": "I play on PlayStation 5. Favourites:",
-      "more": "[ЗАГЛУШКА] more games"
+      "title": "Games"
     }
   },
   "contact": {
@@ -243,6 +248,6 @@
     "lead": "What I've read: psychology, business, behavioural science, economics.",
     "prev": "Back",
     "next": "Next",
-    "note": "[ЗАГЛУШКА] list to confirm"
+    "note": ""
   }
 }

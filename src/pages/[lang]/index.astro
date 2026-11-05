@@ -10,7 +10,7 @@ export function getStaticPaths() {
 const lang = Astro.params.lang as LangCode;
 const meta = LANGS.find((l) => l.code === lang)!;
 const c = getContent(lang);
-const { person, photos, projects, books, games } = shared;
+const { person, photos, projects, books, games, stickers } = shared;
 const f = (text: string) => fmt(text, c.ui.placeholder);
 const cyrillic = lang === 'ru' || lang === 'tt';
 
@@ -179,6 +179,7 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
         <h2>{c.about.title}</h2>
       </header>
       <div class="about">
+        <img class="sticker st-robot" src={stickers.robot} width="420" height="332" alt="" loading="lazy" draggable="false" />
         <div class="prose reveal">
           {c.about.paragraphs.map((p: string) => <p set:html={f(p)} />)}
         </div>
@@ -221,7 +222,7 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
           <p class="pc-text" set:html={f(teya.task)} />
           <div class="pc-shot"><img src={teya.shot} width="640" height="400" alt="" loading="lazy" /></div>
           {teya.links.map((url: string, j: number) => <a class="pc-go" href={url} target="_blank" rel="noopener">{teya.labels[j]} ↗</a>)}
-          <p class="pc-res" set:html={f(teya.result)} />
+          {teya.result && <p class="pc-res" set:html={f(teya.result)} />}
         </article>
 
         <article class="pc p-os reveal">
@@ -249,11 +250,23 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
 
         <article class="pc p-flab reveal">
           <p class="pc-chip">{flab.tag}</p>
-          <h3 class="wordmark">Foundation<i>Lab</i></h3>
+          <h3><img class="flab-logo" src={flab.logo} width="640" height="60" alt={flab.name} loading="lazy" /></h3>
           <p class="pc-text" set:html={f(flab.did)} />
-          <div class="pc-shot"><img src={flab.shot} width="1000" height="559" alt="" loading="lazy" /></div>
-          {flab.links.map((url: string, j: number) => <a class="pc-go" href={url} target="_blank" rel="noopener">{flab.labels[j]} ↗</a>)}
-          <p class="pc-res" set:html={f(flab.result)} />
+          <div class="flab-parts">
+            <figure class="flab-part">
+              <figcaption>{flab.parts[0]}</figcaption>
+              <div class="pc-shot"><img src={flab.shot} width="1200" height="601" alt="" loading="lazy" /></div>
+              {flab.links.map((url: string, j: number) => <a class="pc-go" href={url} target="_blank" rel="noopener">{flab.labels[j]} ↗</a>)}
+            </figure>
+            <figure class="flab-part">
+              <figcaption>{flab.parts[1]}</figcaption>
+              <div class="flab-brand">
+                <img src={flab.brandShots[0]} width="1000" height="567" alt="" loading="lazy" />
+                <img src={flab.brandShots[1]} width="1000" height="736" alt="" loading="lazy" />
+              </div>
+            </figure>
+          </div>
+          {flab.result && <p class="pc-res" set:html={f(flab.result)} />}
         </article>
 
         <article class="pc p-kino reveal">
@@ -263,7 +276,7 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
           <div class="fan fan-posters" aria-hidden="true">
             {kino.shots.map((src: string) => <span><img src={src} width="420" height="700" alt="" loading="lazy" /></span>)}
           </div>
-          <p class="pc-res" set:html={f(kino.result)} />
+          {kino.result && <p class="pc-res" set:html={f(kino.result)} />}
         </article>
       </div>
     </section>
@@ -283,6 +296,7 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
               <p class="tag">{a.label}</p>
               <h3 set:html={f(a.title)} />
               <p class="muted" set:html={f(a.text)} />
+              {a.role && <p class="medal-role">{a.role}</p>}
             </article>
           ))
         }
@@ -305,6 +319,7 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
             <button class="gal-btn gal-prev" type="button" data-dir="-1" aria-label={c.beyond.sport.prev}>←</button>
             <button class="gal-btn gal-next" type="button" data-dir="1" aria-label={c.beyond.sport.next}>→</button>
           </div>
+          <img class="sticker st-statham" src={stickers.statham} width="420" height="421" alt="" loading="lazy" draggable="false" />
           <div class="sport-text">
             <h3>{c.beyond.sport.title}</h3>
             <p>{c.beyond.sport.text}</p>
@@ -316,11 +331,11 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
             <p class="lego-text">{c.beyond.lego.text}</p>
           </article>
           <article class="ps5 reveal">
-            <p class="ps5-top"><span class="ps5-mark" aria-hidden="true">PS5</span><span>{c.beyond.games.text}</span></p>
+            <h3 class="ps5-title">{c.beyond.games.title}</h3>
             <ul class="games">
-              {games.map((g: any) => <li style={`--g:${g.color};--gi:${g.ink}`}><span>{g.title}</span></li>)}
-              <li class="game-more"><span set:html={f(c.beyond.games.more)} /></li>
+              {games.map((g: any) => <li title={g.title}><span class="case-band" aria-hidden="true">PS5</span><img src={g.cover} width="360" height="540" alt={g.title} loading="lazy" /></li>)}
             </ul>
+            <p class="ps5-mark">PS5</p>
           </article>
         </div>
       </div>
@@ -337,7 +352,7 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
             <button type="button" class="shelf-btn" data-dir="1" aria-label={c.books.next}>→</button>
           </span>
         </header>
-        <p class="lead reveal">{c.books.lead} <span set:html={f(c.books.note)} /></p>
+        <p class="lead reveal">{c.books.lead}{c.books.note && <> <span set:html={f(c.books.note)} /></>}</p>
       </div>
       <ul class="shelf" id="shelf" tabindex="0" aria-label={c.books.title}>
         {
@@ -361,6 +376,7 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
       <p class="lead reveal">{c.contact.lead}</p>
 
       <div class="ticket reveal" id="vc" data-copy={contactText} data-url={pageUrl} data-title={c.meta.title}>
+        <img class="sticker st-jojo" src={stickers.jojo} width="420" height="642" alt="" loading="lazy" draggable="false" />
         <div class="tk-main">
           <p class="tk-lbl">{c.hero.name} · {c.contact.role}</p>
           <a class="tk-mail" href={`mailto:${person.email}`}>{person.email.split('@')[0]}@<wbr />{person.email.split('@')[1]}</a>

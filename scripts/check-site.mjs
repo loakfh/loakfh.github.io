@@ -108,6 +108,15 @@ for (const view of VIEWS) {
       const x1 = await page.$eval('#shelf', (el) => el.scrollLeft);
       note(x1 > x0, `${id}: полка листается (${x0} → ${x1})`);
 
+      // галерея спорта листается кнопкой «вперёд»
+      await page.evaluate(() => document.getElementById('gallery').scrollIntoView({ block: 'center' }));
+      await sleep(300);
+      const g0 = await page.$eval('#gallery', (el) => el.scrollLeft);
+      await page.click('.gal-next');
+      await sleep(700);
+      const g1 = await page.$eval('#gallery', (el) => el.scrollLeft);
+      note(g1 > g0, `${id}: галерея спорта листается (${g0} → ${g1})`);
+
       // билет: кнопки помещаются, «Скопировать контакт» работает
       await page.evaluate(() => document.getElementById('vc').scrollIntoView({ block: 'center' }));
       await sleep(400);

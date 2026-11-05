@@ -118,7 +118,7 @@
         "tag": "Eigenes Projekt · KI für Psychologen",
         "task": "Nach einer Sitzung muss ein Psychologe den Fall schnell festhalten und durchdenken.",
         "did": "Ich habe Tiefeninterviews mit Psychologen geführt und das Produkt gestartet: Der Psychologe diktiert seine Gedanken, Teya macht daraus eine strukturierte Notiz und ein Fallgedächtnis.",
-        "result": "[ЗАГЛУШКА] Ergebnis: Pilot, Nutzer.",
+        "result": "",
         "links": [
           "Teya öffnen"
         ]
@@ -142,9 +142,13 @@
         "tag": "EdTech-Startup · Produktmanager",
         "task": "KI-Produkte für Bildung starten.",
         "did": "Ich habe die Projekte KI-Tutor und Personal Brand mit KI geführt: Nutzerinterviews, Hypothesen, Launch.",
-        "result": "[ЗАГЛУШКА] Ergebnis in Zahlen.",
+        "result": "",
         "links": [
           "LabF öffnen"
+        ],
+        "parts": [
+          "LabF KI-Tutor",
+          "Personal Brand mit KI · „Slovami klientov“"
         ]
       },
       {
@@ -164,7 +168,7 @@
         "tag": "Türkei · erstes Projekt, mit 15",
         "task": "Mein erstes eigenes Projekt starten.",
         "did": "Abendliche Open-Air-Kinovorführungen in Altınkum mit dem Café Croissant Atelier: „Der kleine Prinz“, „Oben“, Eintritt frei.",
-        "result": "[ЗАГЛУШКА] Zahl der Vorführungen und Zuschauer.",
+        "result": "",
         "links": []
       }
     ]
@@ -176,7 +180,8 @@
         "badge": "1. Platz",
         "label": "Fallstudien-Meisterschaft",
         "title": "SKOLKOVO Start",
-        "text": "Landesweite Fallstudien-Meisterschaft in Russland."
+        "text": "Landesweite Fallstudien-Meisterschaft in Russland.",
+        "role": "Kapitän + Produkt"
       },
       {
         "badge": "Vortrag an der HSE",
@@ -188,13 +193,15 @@
         "badge": "Sonderpreis",
         "label": "Olympiade · Trajektorie",
         "title": "Allrussische Olympiade für Unternehmertum",
-        "text": "Meine erste Olympiade überhaupt. Ich war Teamkapitän."
+        "text": "Meine erste Olympiade überhaupt.",
+        "role": "Kapitän + Produkt"
       },
       {
         "badge": "Teilnehmer",
         "label": "Trajektorie",
         "title": "Startup Village 2026",
-        "text": "Projektpitch, SKOLKOVO, Mai 2026."
+        "text": "Projektpitch, SKOLKOVO, Mai 2026.",
+        "role": "Kapitän + Produkt"
       }
     ]
   },
@@ -218,9 +225,7 @@
       "text": "Ich liebe LEGO einfach."
     },
     "games": {
-      "title": "PS5",
-      "text": "Ich spiele auf der PlayStation 5. Lieblingsspiele:",
-      "more": "[ЗАГЛУШКА] weitere Spiele"
+      "title": "Spiele"
     }
   },
   "contact": {
@@ -243,6 +248,6 @@
     "lead": "Was ich gelesen habe: Psychologie, Business, Verhaltenswissenschaften, Wirtschaft.",
     "prev": "Zurück",
     "next": "Weiter",
-    "note": "[ЗАГЛУШКА] Liste prüfen"
+    "note": ""
   }
 }

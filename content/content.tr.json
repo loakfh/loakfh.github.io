@@ -118,7 +118,7 @@
         "tag": "Kendi projem · psikologlar için YZ",
         "task": "Psikoloğun seanstan sonra vakayı hızlıca kaydetmesi ve üzerine düşünmesi gerekir.",
         "did": "Psikologlarla derinlemesine görüşmeler yaptım ve ürünü başlattım: psikolog düşüncelerini sesli anlatır, Teya bunları yapılandırılmış bir nota ve vaka hafızasına dönüştürür.",
-        "result": "[ЗАГЛУШКА] sonuç: pilot, kullanıcılar.",
+        "result": "",
         "links": [
           "Teya'yı aç"
         ]
@@ -142,9 +142,13 @@
         "tag": "EdTech girişimi · ürün yöneticisi",
         "task": "Eğitim için yapay zekâ ürünleri başlatmak.",
         "did": "YZ özel öğretmen ve YZ ile kişisel marka projelerini yürüttüm: kullanıcı görüşmeleri, hipotezler, lansman.",
-        "result": "[ЗАГЛУШКА] rakamlarla sonuç.",
+        "result": "",
         "links": [
           "LabF'yi aç"
+        ],
+        "parts": [
+          "LabF YZ özel öğretmen",
+          "YZ ile kişisel marka · “Slovami klientov”"
         ]
       },
       {
@@ -164,7 +168,7 @@
         "tag": "Türkiye · ilk proje, 15 yaşında",
         "task": "Kendi ilk projemi başlatmak.",
         "did": "Altınkum'da Croissant Atelier kafesiyle akşam açık hava film gösterimleri: “Küçük Prens”, “Yukarı Bak”, giriş ücretsiz.",
-        "result": "[ЗАГЛУШКА] gösterim ve izleyici sayısı.",
+        "result": "",
         "links": []
       }
     ]
@@ -176,7 +180,8 @@
         "badge": "Birincilik",
         "label": "Vaka şampiyonası",
         "title": "SKOLKOVO Start",
-        "text": "Rusya çapında vaka şampiyonası."
+        "text": "Rusya çapında vaka şampiyonası.",
+        "role": "Kaptan + ürün"
       },
       {
         "badge": "HSE'de ders",
@@ -188,13 +193,15 @@
         "badge": "Özel ödül",
         "label": "Olimpiyat · Trayektoriya",
         "title": "Tüm Rusya Girişimcilik Olimpiyatı",
-        "text": "Hayatımdaki ilk olimpiyat. Takım kaptanıydım."
+        "text": "Hayatımdaki ilk olimpiyat.",
+        "role": "Kaptan + ürün"
       },
       {
         "badge": "Katılımcı",
         "label": "Trayektoriya",
         "title": "Startup Village 2026",
-        "text": "Proje sunumu, SKOLKOVO, Mayıs 2026."
+        "text": "Proje sunumu, SKOLKOVO, Mayıs 2026.",
+        "role": "Kaptan + ürün"
       }
     ]
   },
@@ -218,9 +225,7 @@
       "text": "LEGO'ya bayılıyorum."
     },
     "games": {
-      "title": "PS5",
-      "text": "PlayStation 5'te oynuyorum. Favorilerim:",
-      "more": "[ЗАГЛУШКА] diğer oyunlar"
+      "title": "Oyunlar"
     }
   },
   "contact": {
@@ -243,6 +248,6 @@
     "lead": "Okuduklarım: psikoloji, iş dünyası, davranış bilimleri, ekonomi.",
     "prev": "Geri",
     "next": "İleri",
-    "note": "[ЗАГЛУШКА] liste kontrol edilecek"
+    "note": ""
   }
 }

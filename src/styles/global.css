@@ -1102,25 +1102,89 @@ h3 {
   color: var(--acc-ink);
 }
 
-/* Foundation Lab */
+/* Foundation Lab — их чёрно-белый: белый лист, чёрный моно-логотип */
 .p-flab {
-  background: #edebff;
-  color: #1c1a3a;
+  --fl-bg: #ffffff;
+  --fl-ink: #0a0a0a;
+  background: var(--fl-bg);
+  color: var(--fl-ink);
 }
 
-.wordmark {
-  font: 900 30px/1 var(--font) !important;
-  letter-spacing: -0.05em !important;
+:root[data-theme='dark'] .p-flab {
+  --fl-bg: #0a0a0a;
+  --fl-ink: #ffffff;
+  border-color: #ffffff;
 }
 
-.wordmark i {
-  font-style: normal;
-  color: #4a39e6;
+:root[data-theme='dark'] .flab-logo {
+  filter: invert(1);
 }
 
-.p-flab .pc-res {
-  background: #1c1a3a;
-  color: #edebff;
+.flab-logo {
+  width: min(100%, 320px);
+  height: auto;
+}
+
+.p-flab .pc-chip {
+  font-family: var(--mono);
+}
+
+.flab-parts {
+  display: grid;
+  gap: 18px;
+}
+
+.flab-part {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.flab-part figcaption {
+  justify-self: start;
+  padding: 4px 10px;
+  border: 1.5px solid var(--fl-ink);
+  border-radius: 99px;
+  font: 700 12px/1.3 var(--mono);
+  letter-spacing: 0.02em;
+}
+
+.p-flab .pc-shot {
+  border: 1.5px solid var(--fl-ink);
+  border-radius: 10px;
+}
+
+/* два скрина «Словами клиентов» внахлёст */
+.flab-brand {
+  position: relative;
+  aspect-ratio: 16 / 11;
+}
+
+.flab-brand img {
+  position: absolute;
+  width: 78%;
+  border: 1.5px solid var(--fl-ink);
+  border-radius: 10px;
+  box-shadow: 0 16px 30px -16px rgba(0, 0, 0, 0.6);
+  transition: transform 0.25s var(--ease);
+}
+
+.flab-brand img:first-child {
+  left: 0;
+  top: 0;
+  rotate: -2.5deg;
+}
+
+.flab-brand img:last-child {
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  rotate: 2deg;
+}
+
+.p-flab .pc-go {
+  background: var(--fl-ink);
+  color: var(--fl-bg);
 }
 
 /* Кино под открытым небом — плёнка и янтарь */
@@ -1194,6 +1258,18 @@ h3 {
   vertical-align: middle;
 }
 
+.medal-role {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 10px;
+  border: 2px solid var(--line);
+  border-radius: 99px;
+  background: var(--acc);
+  color: var(--acc-ink);
+  font: 700 12px/1.3 var(--mono);
+  letter-spacing: 0.02em;
+}
+
 .medal h3 {
   margin: 4px 0 6px;
   font-size: 18px;
@@ -1210,12 +1286,13 @@ h3 {
 }
 
 .sport {
+  position: relative;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   border: 2px solid var(--line);
   border-radius: 18px;
   background: var(--card);
   box-shadow: 6px 6px 0 var(--shadow);
-  overflow: hidden;
 }
 
 
@@ -1309,19 +1386,20 @@ h3 {
   opacity: 0.8;
 }
 
-.ps5-top {
-  display: grid;
-  gap: 4px;
-  font-size: 15px;
-  font-weight: 600;
+.ps5-title {
+  font: 900 24px/1.1 var(--display);
+  letter-spacing: -0.04em;
 }
 
 .ps5-mark {
+  margin-top: 14px;
+  text-align: right;
   font: 900 28px/1 var(--display);
   letter-spacing: -0.04em;
   color: #0070d1;
 }
 
+/* коробки игр: синяя полоса PS5 сверху, под ней обложка */
 .games {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1330,58 +1408,26 @@ h3 {
 }
 
 .games li {
-  display: flex;
-  align-items: flex-end;
-  aspect-ratio: 3 / 4;
-  padding: 8px;
-  border-radius: 8px;
-  background:
-    linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.55)),
-    radial-gradient(circle at 70% 25%, rgba(255, 255, 255, 0.18), transparent 50%),
-    var(--g);
-  color: var(--gi);
-  font: 800 12.5px/1.1 var(--font);
-  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.6);
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #0070d1;
+  box-shadow: 0 10px 18px -8px rgba(0, 0, 0, 0.55);
   transition: transform 0.2s var(--ease);
 }
 
-.games li::before {
-  content: 'PS5';
-  position: absolute;
-  font: 800 8px/1 var(--mono);
-  letter-spacing: 0.1em;
-  background: #0070d1;
+.case-band {
+  display: block;
+  padding: 3px 6px;
   color: #fff;
-  padding: 2px 4px;
-  border-radius: 3px;
-  translate: 0 -6px;
-  transform: translateY(calc(-1 * (100% + 0px)));
+  font: 800 9px/1.2 var(--mono);
+  letter-spacing: 0.12em;
 }
 
-.games li {
-  position: relative;
-}
-
-.games li::before {
-  top: 14px;
-  left: 8px;
-  transform: none;
-  translate: 0 0;
-}
-
-.game-more {
-  --g: transparent;
-  border: 2px dashed #9aa3b5;
-  box-shadow: none !important;
-  color: #4b5262 !important;
-  background: none !important;
-  align-items: center !important;
-  justify-content: center;
-  text-align: center;
-}
-
-.game-more::before {
-  display: none;
+.games img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
 }
 
 /* ---------- книжная полка ---------- */
@@ -1844,7 +1890,7 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .beyond {
-    grid-template-columns: 1.6fr 1fr;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
     align-items: start;
   }
   .book {
@@ -2057,17 +2103,6 @@ h3 {
   transition: transform 0.2s var(--ease);
 }
 
-/* ---------- Foundation Lab ---------- */
-.p-flab .pc-shot {
-  border: 1px solid #cfcaf5;
-  box-shadow: 0 18px 40px -22px rgba(28, 26, 58, 0.6);
-}
-
-.p-flab .pc-go {
-  background: #1c1a3a;
-  color: #edebff;
-}
-
 /* ---------- Кино: веер афиш ---------- */
 .fan-posters {
   height: clamp(230px, 52vw, 320px);
@@ -2134,7 +2169,10 @@ h3 {
 /* ---------- спорт: листающаяся галерея ---------- */
 .gallery-wrap {
   position: relative;
+  min-width: 0;
   border-bottom: 2px solid var(--line);
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
 }
 
 .gal-btn {
@@ -2351,7 +2389,7 @@ h3 {
     grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
     align-items: center;
   }
-  /* ряды: Траектория + Тея · Bakir OS + сайты · Foundation Lab + кино */
+  /* ряды: Траектория + Тея · Bakir OS + сайты · Foundation Lab (шире) + кино */
   .p-traj,
   .p-sites {
     grid-column: span 4;
@@ -2360,9 +2398,14 @@ h3 {
   .p-os {
     grid-column: span 2;
   }
-  .p-flab,
+  .p-flab {
+    grid-column: span 4;
+  }
   .p-kino {
-    grid-column: span 3;
+    grid-column: span 2;
+  }
+  .flab-parts {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
   .achievements {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2378,6 +2421,73 @@ h3 {
   }
 
   .beyond {
-    grid-template-columns: 1.7fr 1fr;
+    grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
   }
+}
+
+/* ---------- стикеры: наклеены на края блоков ---------- */
+.sticker {
+  position: absolute;
+  z-index: 6;
+  width: var(--w, 110px);
+  height: auto;
+  rotate: var(--r, 0deg);
+  filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.28));
+  transition: rotate 0.3s var(--ease), scale 0.3s var(--ease);
+}
+
+/* на телефоне — на нижние углы, чтобы не закрывать текст; с 920px — на верхние */
+.st-robot {
+  --w: clamp(78px, 22vw, 120px);
+  --r: 9deg;
+  right: 2px;
+  bottom: -44px;
+}
+
+.st-statham {
+  --w: clamp(92px, 26vw, 150px);
+  --r: -7deg;
+  right: 4px;
+  bottom: -40px;
+}
+
+.st-jojo {
+  --w: clamp(70px, 19vw, 112px);
+  --r: 12deg;
+  top: -62px;
+  right: 8px;
+}
+
+@media (min-width: 920px) {
+  .st-robot {
+    top: -48px;
+    bottom: auto;
+    right: -6px;
+  }
+  .st-statham {
+    right: -26px;
+    bottom: -34px;
+  }
+  .st-jojo {
+    top: -70px;
+    right: 210px;
+  }
+  .p-kino .fan-posters {
+    height: 220px;
+  }
+}
+
+.about {
+  position: relative;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sticker:hover {
+    rotate: 0deg;
+    scale: 1.08;
+  }
+}
+
+.flab-part .pc-go {
+  justify-self: start;
 }

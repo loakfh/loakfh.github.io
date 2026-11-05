@@ -72,7 +72,12 @@
       "links": [
         "https://flab-edtech-mvp.vercel.app/"
       ],
-      "shot": "/assets/projects/flab.webp"
+      "shot": "/assets/projects/flab-tutor.webp",
+      "logo": "/assets/projects/flab-logo.webp",
+      "brandShots": [
+        "/assets/projects/flab-brand-1.webp",
+        "/assets/projects/flab-brand-2.webp"
+      ]
     },
     {
       "id": "sites",
@@ -222,14 +227,21 @@
   ],
   "games": [
     {
-      "title": "Resident Evil",
-      "color": "#7A0E0E",
-      "ink": "#F2E6D8"
+      "title": "Resident Evil 2",
+      "cover": "/assets/games/re2.webp"
     },
     {
-      "title": "The Last of Us",
-      "color": "#2F3B2A",
-      "ink": "#E9E2C6"
+      "title": "The Last of Us Part I / II",
+      "cover": "/assets/games/tlou.webp"
+    },
+    {
+      "title": "Detroit: Become Human",
+      "cover": "/assets/games/detroit.webp"
     }
-  ]
+  ],
+  "stickers": {
+    "jojo": "/assets/stickers/jojo.webp",
+    "statham": "/assets/stickers/statham.webp",
+    "robot": "/assets/stickers/robot.webp"
+  }
 }
