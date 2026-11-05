@@ -1,11 +1,10 @@
 ---
 import '@fontsource-variable/golos-text/index.css';
 import '@fontsource-variable/jetbrains-mono/wght.css';
-import '@fontsource-variable/unbounded/wght.css';
 import '../styles/global.css';
 import { LANGS, shared, siteUrl } from '../lib/i18n';
-import unbCyr from '@fontsource-variable/unbounded/files/unbounded-cyrillic-wght-normal.woff2?url';
-import unbLat from '@fontsource-variable/unbounded/files/unbounded-latin-wght-normal.woff2?url';
+import unbCyr from '../fonts/unbounded-cyrillic-bold.woff2?url';
+import unbLat from '../fonts/unbounded-latin-bold.woff2?url';
 import golosCyr from '@fontsource-variable/golos-text/files/golos-text-cyrillic-wght-normal.woff2?url';
 import golosLat from '@fontsource-variable/golos-text/files/golos-text-latin-wght-normal.woff2?url';
 
@@ -42,7 +41,8 @@ const preload = [
     <meta name="theme-color" content="#F1EEE6" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#06081C" media="(prefers-color-scheme: dark)" />
     <meta name="color-scheme" content="light dark" />
-    {preload.map((href) => <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />)}
+    <link rel="preload" href={`/assets/photos/hero.webp`} as="image" fetchpriority="high" />
+    {preload.slice(0, 1).map((href) => <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />)}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta property="og:type" content="website" />

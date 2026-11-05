@@ -29,7 +29,7 @@ const fontFace =
 const unb = new URL('../node_modules/@fontsource-variable/unbounded/', import.meta.url);
 const unbFace = readFileSync(new URL('wght.css', unb), 'utf8')
   .replaceAll('Unbounded Variable', 'U')
-  .replaceAll('url(./files/', `url(${unb.href}files/`);
+  .replaceAll('url(./files/', `url(${unb.href}files/`); // для картинок соцсетей берём полный пакет
 
 const page = (lang, c) => `<!doctype html><html lang="${lang}"><meta charset="utf-8"><style>
 ${fontFace}${unbFace}

@@ -13,8 +13,8 @@
   "photos": {
     "hero": {
       "src": "/assets/photos/hero.webp",
-      "width": 800,
-      "height": 1000
+      "width": 560,
+      "height": 700
     },
     "beyond": {
       "sport": [

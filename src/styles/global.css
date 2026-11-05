@@ -11,6 +11,35 @@
   unicode-range: U+011E-011F;
 }
 
+/* Unbounded — своя урезанная сборка: только жирные начертания (700–900) и буквы шести
+   языков сайта. Полный пакет весил ~200 КБ и тормозил первый экран. Пересборка — README. */
+@font-face {
+  font-family: 'Unbounded Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700 900;
+  src: url('../fonts/unbounded-latin-bold.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2190-2193, U+FEFF;
+}
+
+@font-face {
+  font-family: 'Unbounded Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700 900;
+  src: url('../fonts/unbounded-cyrillic-bold.woff2') format('woff2-variations');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116, U+20BD;
+}
+
+@font-face {
+  font-family: 'Unbounded Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700 900;
+  src: url('../fonts/unbounded-latin-ext-bold.woff2') format('woff2-variations');
+  unicode-range: U+011E-011F, U+0130, U+015E-015F;
+}
+
 /* Визуальный язык: «номер участника» велогонки + большие японские надписи на фоне.
    Две темы: светлая (бумага, оранжевый, кобальт) и тёмная (тёмно-синий, лайм, фиолетовый). */
 :root,

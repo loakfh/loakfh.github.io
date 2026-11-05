@@ -16,16 +16,16 @@ const FAMILIES = {
   'golos-text': { langs: ['русский', 'татарский', 'турецкий', 'немецкий'], patches: ['src/fonts/onest-gbreve.woff2'] },
   'jetbrains-mono': { langs: ['турецкий', 'немецкий'], patches: [] },
   // Unbounded — заголовки; татарских букв в нём нет, на /tt/ заголовки идут в Golos Text
-  unbounded: { langs: ['русский', 'турецкий', 'немецкий'], patches: [] },
+  unbounded: { langs: ['русский', 'турецкий', 'немецкий'], patches: [], dir: 'src/fonts', match: /^unbounded-.*-bold\.woff2$/ },
 };
 let failed = false;
 
-for (const [family, { langs, patches }] of Object.entries(FAMILIES)) {
-  const dir = `node_modules/@fontsource-variable/${family}/files`;
+for (const [family, { langs, patches, dir: ownDir, match }] of Object.entries(FAMILIES)) {
+  const dir = ownDir ?? `node_modules/@fontsource-variable/${family}/files`;
   // заплатки идут первыми — как в CSS, где они главнее основного шрифта
   const fonts = [
     ...patches,
-    ...readdirSync(dir).filter((f) => f.endsWith('-wght-normal.woff2')).map((f) => `${dir}/${f}`),
+    ...readdirSync(dir).filter((f) => (match ? match.test(f) : f.endsWith('-wght-normal.woff2'))).map((f) => `${dir}/${f}`),
   ].map((f) => fontkit.openSync(f));
   const glyph = (ch) => fonts.find((font) => font.hasGlyphForCodePoint(ch.codePointAt(0)))?.glyphForCodePoint(ch.codePointAt(0));
   for (const lang of langs) {
