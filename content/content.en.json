@@ -28,15 +28,27 @@
     "cta": "Message me on Telegram",
     "secondary": "See projects",
     "stats": [
-      "place at SKOLKOVO Start",
-      "user interviews",
-      "languages"
+      {
+        "value": 1,
+        "unit": "M ₽",
+        "label": "earned before 18"
+      },
+      {
+        "value": 200,
+        "unit": "+",
+        "label": "user interviews"
+      },
+      {
+        "value": 6,
+        "unit": "",
+        "label": "languages"
+      }
     ],
     "photoAlt": "Portrait of Bakir",
     "badges": [
-      "1st place · SKOLKOVO Start",
-      "Startup Village 2026",
-      "IELTS 8.0"
+      "My own startup projects",
+      "Product manager in EdTech",
+      "First launch: Turkey, at 15"
     ]
   },
   "about": {
@@ -84,7 +96,7 @@
         "tag": "My own project · EdTech",
         "task": "Connect a student, their parents, companies and universities through a “Digital DNA” — a living profile of interests, skills and strengths.",
         "did": "The idea, customer discovery and all the engineering. I built the team and pitched the project at Startup Village 2026.",
-        "result": "Written cooperation agreements with schools, companies and the mayor of Tyumen.",
+        "result": "6 written cooperation agreements with schools, companies and a senator.",
         "links": [
           "Open the MVP"
         ]
@@ -98,6 +110,14 @@
         "links": [
           "Open Teya"
         ]
+      },
+      {
+        "name": "Bakir OS",
+        "tag": "My own project · AI twin",
+        "task": "Keep ideas, finances, projects and messages in one place without losing context.",
+        "did": "I built a Telegram bot on Claude with a set of tools: it records ideas, tracks finances, transcribes voice messages, finds olympiads and grants, and remembers project context. The bot decides which tool to call.",
+        "result": "Running 24/7 since April 2026. I'm its user and its developer.",
+        "links": []
       },
       {
         "name": "Foundation Lab",
@@ -121,7 +141,7 @@
       },
       {
         "name": "Open-air cinema",
-        "tag": "Turkey · first project",
+        "tag": "Turkey · first project, at 15",
         "task": "Launch my first project of my own.",
         "did": "I organised evening open-air film screenings at a café.",
         "result": "[ЗАГЛУШКА] number of screenings and viewers.",

@@ -417,6 +417,13 @@ a {
   font-variant-numeric: tabular-nums;
 }
 
+.stat-num .unit {
+  margin-left: 4px;
+  font-size: 0.42em;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
 .stat:first-child .stat-num {
   color: var(--accent);
 }
@@ -1279,6 +1286,82 @@ h3 {
   opacity: 1;
   transform: none;
   visibility: visible;
+}
+
+/* ---------- курсор: только мышь, без reduced-motion (включает скрипт) ---------- */
+.cursor {
+  display: none;
+}
+
+.has-cursor,
+.has-cursor * {
+  cursor: none !important;
+}
+
+.has-cursor .cursor {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.has-cursor .cursor.is-on {
+  opacity: 1;
+}
+
+.cursor i {
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background: var(--accent);
+  box-shadow: 0 0 12px 2px color-mix(in srgb, var(--accent) 70%, transparent);
+}
+
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border: 1.5px solid color-mix(in srgb, var(--accent) 75%, transparent);
+  transition:
+    width 0.2s var(--ease),
+    height 0.2s var(--ease),
+    margin 0.2s var(--ease),
+    background 0.2s,
+    border-color 0.2s;
+}
+
+/* мягкое пятно света вокруг курсора — подсвечивает то, что под ним */
+.cursor-glow {
+  width: 420px;
+  height: 420px;
+  margin: -210px 0 0 -210px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 16%, transparent), transparent 65%);
+  mix-blend-mode: screen;
+}
+
+.cursor.is-hot .cursor-ring {
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  border-color: var(--accent);
+}
+
+.cursor.is-down .cursor-ring {
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
 }
 
 /* ---------- интро ---------- */

@@ -10,21 +10,6 @@
     "github": "loakfh",
     "email": ""
   },
-  "stats": [
-    {
-      "value": 1,
-      "placeholder": false
-    },
-    {
-      "value": 200,
-      "suffix": "+",
-      "placeholder": false
-    },
-    {
-      "value": 6,
-      "placeholder": false
-    }
-  ],
   "photos": {
     "hero": {
       "src": "/assets/photos/hero.svg",
@@ -61,6 +46,7 @@
     [
       "https://psy-companion.vercel.app/"
     ],
+    [],
     [],
     [
       "https://loakfh.github.io/neuron-kurkino/",

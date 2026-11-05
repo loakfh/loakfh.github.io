@@ -10,7 +10,7 @@ export function getStaticPaths() {
 const lang = Astro.params.lang as LangCode;
 const meta = LANGS.find((l) => l.code === lang)!;
 const c = getContent(lang);
-const { person, stats, photos, projectLinks } = shared;
+const { person, photos, projectLinks } = shared;
 const f = (text: string) => fmt(text, c.ui.placeholder);
 
 const pageUrl = siteUrl(`/${lang}/`);
@@ -99,11 +99,12 @@ const hellos = [...LANGS.filter((l) => l.code !== lang), meta].map((l) => ({ tex
         </div>
         <dl class="stats">
           {
-            stats.map((s, i) => (
+            c.hero.stats.map((s: any) => (
               <div class="stat">
-                <dt set:html={f(c.hero.stats[i])} />
-                <dd class="stat-num" data-count={s.placeholder ? undefined : s.value} data-suffix={s.suffix}>
-                  {s.placeholder ? '00' : `${s.value}${s.suffix ?? ''}`}
+                <dt set:html={f(s.label)} />
+                <dd class="stat-num">
+                  <span data-count={s.value}>{s.value}</span>
+                  {s.unit && <small class="unit">{s.unit}</small>}
                 </dd>
               </div>
             ))
@@ -349,6 +350,8 @@ const hellos = [...LANGS.filter((l) => l.code !== lang), meta].map((l) => ({ tex
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.500 3.300 2.900 10.500c-.900.400-.900 1.600.100 1.900l4.700 1.500 1.800 5.600c.200.700 1.100.900 1.600.400l2.600-2.500 4.700 3.500c.600.400 1.400.100 1.600-.600l3-16c.200-.800-.700-1.400-1.500-1zM9.800 14.300l8-5.800-6.300 6.800-.300 3.100-1.400-4.100z" /></svg>
     {c.ui.floatCta}
   </a>
+
+  <div class="cursor" id="cursor" aria-hidden="true"><i class="cursor-glow"></i><i class="cursor-ring"></i><i class="cursor-dot"></i></div>
 
   <script>
     import '../../scripts/main.js';

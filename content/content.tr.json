@@ -28,15 +28,27 @@
     "cta": "Telegram'dan yaz",
     "secondary": "Projelere bak",
     "stats": [
-      "SKOLKOVO Start'ta sıralama",
-      "kullanıcı görüşmesi",
-      "dil"
+      {
+        "value": 1,
+        "unit": "milyon ₽",
+        "label": "18'imden önce kazandım"
+      },
+      {
+        "value": 200,
+        "unit": "+",
+        "label": "kullanıcı görüşmesi"
+      },
+      {
+        "value": 6,
+        "unit": "",
+        "label": "dil"
+      }
     ],
     "photoAlt": "Bakir'in portresi",
     "badges": [
-      "Birincilik · SKOLKOVO Start",
-      "Startup Village 2026",
-      "IELTS 8.0"
+      "Kendi girişim projelerim",
+      "EdTech'te ürün yöneticisi",
+      "İlk lansman: Türkiye, 15 yaşında"
     ]
   },
   "about": {
@@ -84,7 +96,7 @@
         "tag": "Kendi projem · EdTech",
         "task": "Öğrenciyi, ebeveyni, şirketleri ve üniversiteleri “Dijital DNA” ile buluşturmak: ilgi alanlarının, becerilerin ve güçlü yönlerin canlı profili.",
         "did": "Fikir, müşteri görüşmeleri ve tüm teknik geliştirme. Ekibi kurdum ve projeyi Startup Village 2026'da sundum.",
-        "result": "Okullar, şirketler ve Tümen belediye başkanı ile yazılı iş birliği anlaşmaları.",
+        "result": "Okullar, şirketler ve bir senatörle 6 yazılı iş birliği anlaşması.",
         "links": [
           "MVP'yi aç"
         ]
@@ -98,6 +110,14 @@
         "links": [
           "Teya'yı aç"
         ]
+      },
+      {
+        "name": "Bakir OS",
+        "tag": "Kendi projem · YZ ikizi",
+        "task": "Fikirleri, finansları, projeleri ve yazışmaları tek yerde tutmak, bağlamı kaybetmemek.",
+        "did": "Claude üzerinde araç setine sahip bir Telegram botu kurdum: fikirleri kaydeder, finansları tutar, sesli mesajları yazıya döker, olimpiyat ve hibe bulur, proje bağlamını hatırlar. Hangi aracı kullanacağına bot kendisi karar verir.",
+        "result": "Nisan 2026'dan beri 7/24 çalışıyor. Hem kullanıcısı hem geliştiricisiyim.",
+        "links": []
       },
       {
         "name": "Foundation Lab",
@@ -121,7 +141,7 @@
       },
       {
         "name": "Açık hava sineması",
-        "tag": "Türkiye · ilk proje",
+        "tag": "Türkiye · ilk proje, 15 yaşında",
         "task": "Kendi ilk projemi başlatmak.",
         "did": "Bir kafede akşamları açık hava film gösterimleri düzenledim.",
         "result": "[ЗАГЛУШКА] gösterim ve izleyici sayısı.",

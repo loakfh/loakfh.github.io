@@ -86,7 +86,7 @@ const countUp = (el) => {
   const start = performance.now();
   const tick = (now) => {
     const t = Math.min(1, (now - start) / 900);
-    el.textContent = Math.round(target * (1 - Math.pow(1 - t, 3))) + (el.dataset.suffix || '');
+    el.textContent = String(Math.round(target * (1 - Math.pow(1 - t, 3))));
     if (t < 1) requestAnimationFrame(tick);
   };
   requestAnimationFrame(tick);
@@ -314,5 +314,55 @@ if (fineHover && !calm) {
     }).observe(vc);
   } else {
     visible = true;
+  }
+})();
+
+/* ---------- курсор в стиле сайта: точка, кольцо и мягкая подсветка ---------- */
+(function cursor() {
+  const box = $('cursor');
+  if (!box || !fineHover || calm) return;
+  const root = document.documentElement;
+  const ring = box.querySelector('.cursor-ring');
+  const glow = box.querySelector('.cursor-glow');
+  const dot = box.querySelector('.cursor-dot');
+  const HOT = 'a, button, .card, .key, .vc-front, [role="button"]';
+  let x = innerWidth / 2;
+  let y = innerHeight / 2;
+  let rx = x;
+  let ry = y;
+  let started = false;
+
+  root.classList.add('has-cursor');
+  addEventListener(
+    'pointermove',
+    (e) => {
+      if (e.pointerType !== 'mouse') return;
+      x = e.clientX;
+      y = e.clientY;
+      if (!started) {
+        started = true;
+        rx = x;
+        ry = y;
+        requestAnimationFrame(tick);
+      }
+      box.classList.add('is-on');
+      const hot = e.target.closest && e.target.closest(HOT);
+      box.classList.toggle('is-hot', !!hot);
+    },
+    { passive: true },
+  );
+  document.addEventListener('pointerleave', () => box.classList.remove('is-on'));
+  addEventListener('blur', () => box.classList.remove('is-on'));
+  addEventListener('pointerdown', () => box.classList.add('is-down'));
+  addEventListener('pointerup', () => box.classList.remove('is-down'));
+
+  function tick() {
+    // кольцо догоняет точку с небольшой задержкой
+    rx += (x - rx) * 0.2;
+    ry += (y - ry) * 0.2;
+    dot.style.transform = `translate(${x}px, ${y}px)`;
+    ring.style.transform = `translate(${rx}px, ${ry}px)`;
+    glow.style.transform = `translate(${rx}px, ${ry}px)`;
+    requestAnimationFrame(tick);
   }
 })();
