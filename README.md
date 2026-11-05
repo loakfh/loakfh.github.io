@@ -46,8 +46,8 @@ npm run preview    # посмотреть собранный сайт
 `content.shared.json` → `photos` и `projects`. Обложки книг — `public/assets/books/`,
 поле `cover` у книги; без него обложка рисуется из названия и цвета.
 Обложки игр — `public/assets/games/`, список — `content.shared.json` → `games`.
-Стикеры — `public/assets/stickers/` (вырезаны с прозрачным фоном скриптом
-`work/prep-r5.py`), куда приклеены — классы `.st-*` в `global.css`.
+Стикеры — `public/assets/stickers/` (WebP с прозрачным фоном), куда приклеены —
+классы `.st-*` в `global.css`.
 
 Цифры первого экрана — `hero.stats` в каждом языковом файле: `value` (число, к нему идёт
 анимация счёта), `unit` (мелкая подпись рядом: «млн ₽», «+»), `label` (подпись снизу).
