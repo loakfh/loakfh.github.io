@@ -10,7 +10,7 @@ export function getStaticPaths() {
 const lang = Astro.params.lang as LangCode;
 const meta = LANGS.find((l) => l.code === lang)!;
 const c = getContent(lang);
-const { person, photos, projects, books } = shared;
+const { person, photos, projects, books, games } = shared;
 const f = (text: string) => fmt(text, c.ui.placeholder);
 const cyrillic = lang === 'ru' || lang === 'tt';
 
@@ -298,20 +298,31 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
       </header>
       <div class="beyond">
         <article class="sport reveal">
-          <ul class="gallery" tabindex="0" aria-label={c.beyond.sport.title}>
-            {photos.beyond.sport.map((ph: any, j: number) => <li><img src={ph.src} width="640" height="800" alt={c.beyond.sport.chips[j] ?? ''} loading="lazy" /></li>)}
-          </ul>
+          <div class="gallery-wrap">
+            <ul class="gallery" id="gallery" tabindex="0" aria-label={c.beyond.sport.title}>
+              {photos.beyond.sport.map((ph: any, j: number) => <li><img src={ph.src} width="640" height="800" alt={c.beyond.sport.chips[j] ?? ''} loading="lazy" draggable="false" /></li>)}
+            </ul>
+            <button class="gal-btn gal-prev" type="button" data-dir="-1" aria-label={c.beyond.sport.prev}>←</button>
+            <button class="gal-btn gal-next" type="button" data-dir="1" aria-label={c.beyond.sport.next}>→</button>
+          </div>
           <div class="sport-text">
             <h3>{c.beyond.sport.title}</h3>
             <p>{c.beyond.sport.text}</p>
             <ul class="chips">{c.beyond.sport.chips.map((t: string) => <li>{t}</li>)}</ul>
           </div>
         </article>
-        <article class="lego reveal">
-          <img src={photos.beyond.lego.src} width={photos.beyond.lego.width} height={photos.beyond.lego.height} alt="LEGO" loading="lazy" />
-          <h3>{c.beyond.lego.title}</h3>
-          <p>{c.beyond.lego.text}</p>
-        </article>
+        <div class="side">
+          <article class="lego reveal">
+            <p class="lego-text">{c.beyond.lego.text}</p>
+          </article>
+          <article class="ps5 reveal">
+            <p class="ps5-top"><span class="ps5-mark" aria-hidden="true">PS5</span><span>{c.beyond.games.text}</span></p>
+            <ul class="games">
+              {games.map((g: any) => <li style={`--g:${g.color};--gi:${g.ink}`}><span>{g.title}</span></li>)}
+              <li class="game-more"><span set:html={f(c.beyond.games.more)} /></li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
 

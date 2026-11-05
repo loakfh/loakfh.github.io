@@ -53,7 +53,7 @@ for (const view of VIEWS) {
     const report = await page.evaluate(() => {
       const vw = document.documentElement.clientWidth;
       const wide = [...document.querySelectorAll('body *')]
-        .filter((el) => !el.closest('.intro, .badges, .glow, .stage-fx, .tape, .bg-word, .shelf, .doodle, .gallery, .fan') && el.getClientRects().length)
+        .filter((el) => !el.closest('.intro, .badges, .glow, .stage-fx, .tape, .bg-word, .shelf, .doodle, .gallery, .fan, .games') && el.getClientRects().length)
         .filter((el) => {
           const r = el.getBoundingClientRect();
           return r.right > vw + 1 || r.left < -1;

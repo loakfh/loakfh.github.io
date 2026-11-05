@@ -209,11 +209,18 @@
         "バスケットボール",
         "SUP",
         "ジム"
-      ]
+      ],
+      "prev": "前へ",
+      "next": "次へ"
     },
     "lego": {
       "title": "LEGO",
       "text": "とにかくLEGOが大好きです。"
+    },
+    "games": {
+      "title": "PS5",
+      "text": "PlayStation 5で遊んでいます。お気に入り：",
+      "more": "[ЗАГЛУШКА] ほかのゲーム"
     }
   },
   "contact": {

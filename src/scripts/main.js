@@ -147,6 +147,69 @@ if ('IntersectionObserver' in window) {
   });
 })();
 
+/* ---------- фоновые слова загораются, когда секция доезжает до экрана ---------- */
+if ('IntersectionObserver' in window) {
+  const lit = new IntersectionObserver(
+    (entries) => entries.forEach((e) => e.target.classList.toggle('is-lit', e.isIntersecting)),
+    { rootMargin: '-25% 0px -25% 0px' },
+  );
+  document.querySelectorAll('.sec').forEach((sec) => lit.observe(sec));
+}
+
+/* ---------- галерея спорта: кнопки, колесо и перетаскивание мышью ---------- */
+(function gallery() {
+  const g = $('gallery');
+  if (!g) return;
+  const prev = document.querySelector('.gal-prev');
+  const next = document.querySelector('.gal-next');
+  const step = () => (g.querySelector('li')?.offsetWidth || 240) + 10;
+  const sync = () => {
+    prev.disabled = g.scrollLeft < 4;
+    next.disabled = g.scrollLeft > g.scrollWidth - g.clientWidth - 4;
+  };
+  [prev, next].forEach((btn) =>
+    btn.addEventListener('click', () => g.scrollBy({ left: Number(btn.dataset.dir) * step(), behavior: calm ? 'auto' : 'smooth' })),
+  );
+  g.addEventListener('scroll', sync, { passive: true });
+  addEventListener('resize', sync);
+  sync();
+  // колесо мыши листает галерею вбок, пока есть куда; дальше прокручивается страница
+  g.addEventListener(
+    'wheel',
+    (e) => {
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+      const atStart = g.scrollLeft < 2 && e.deltaY < 0;
+      const atEnd = g.scrollLeft > g.scrollWidth - g.clientWidth - 2 && e.deltaY > 0;
+      if (atStart || atEnd) return;
+      e.preventDefault();
+      g.scrollLeft += e.deltaY;
+    },
+    { passive: false },
+  );
+  // перетаскивание мышью
+  let down = false;
+  let startX = 0;
+  let startLeft = 0;
+  g.addEventListener('pointerdown', (e) => {
+    if (e.pointerType !== 'mouse') return;
+    down = true;
+    startX = e.clientX;
+    startLeft = g.scrollLeft;
+    g.classList.add('is-drag');
+  });
+  addEventListener('pointermove', (e) => {
+    if (down) g.scrollLeft = startLeft - (e.clientX - startX);
+  });
+  addEventListener('pointerup', () => {
+    if (!down) return;
+    down = false;
+    g.classList.remove('is-drag');
+    // доводим до ближайшего фото
+    const s = step();
+    g.scrollTo({ left: Math.round(g.scrollLeft / s) * s, behavior: calm ? 'auto' : 'smooth' });
+  });
+})();
+
 /* ---------- билет: скопировать контакт, поделиться ---------- */
 (function ticket() {
   const vc = $('vc');

@@ -30,12 +30,7 @@
         {
           "src": "/assets/photos/sport-sup.webp"
         }
-      ],
-      "lego": {
-        "src": "/assets/photos/lego.webp",
-        "width": 800,
-        "height": 600
-      }
+      ]
     },
     "achievements": [
       {
@@ -113,18 +108,28 @@
       "cover": "/assets/books/the-mom-test.webp"
     },
     {
+      "ru": "Стартап: настольная книга основателя",
+      "orig": "The Startup Owner's Manual",
+      "author": "Стив Бланк, Боб Дорф",
+      "authorEn": "Steve Blank, Bob Dorf",
+      "color": "#C26A1B",
+      "cover": "/assets/books/the-startup-owners-manual.webp"
+    },
+    {
       "ru": "Что дальше?",
       "orig": "What Next?",
       "author": "Юрий Дроган и др.",
       "authorEn": "Yuri Drogan et al.",
-      "color": "#1F3FFF"
+      "color": "#1F3FFF",
+      "cover": "/assets/books/what-next.webp"
     },
     {
       "ru": "Венчурное мышление",
       "orig": "The Venture Mindset",
       "author": "Илья Стребулаев, Алекс Данг",
       "authorEn": "Ilya Strebulaev, Alex Dang",
-      "color": "#141414"
+      "color": "#141414",
+      "cover": "/assets/books/the-venture-mindset.webp"
     },
     {
       "ru": "Сам себе MBA",
@@ -211,7 +216,20 @@
       "orig": "Vertical Progress",
       "author": "Дмитрий Чернышёв",
       "authorEn": "Dmitry Chernyshev",
-      "color": "#5D4037"
+      "color": "#5D4037",
+      "cover": "/assets/books/vertical-progress.webp"
+    }
+  ],
+  "games": [
+    {
+      "title": "Resident Evil",
+      "color": "#7A0E0E",
+      "ink": "#F2E6D8"
+    },
+    {
+      "title": "The Last of Us",
+      "color": "#2F3B2A",
+      "ink": "#E9E2C6"
     }
   ]
 }

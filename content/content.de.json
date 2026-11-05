@@ -209,11 +209,18 @@
         "Basketball",
         "SUP",
         "Fitnessstudio"
-      ]
+      ],
+      "prev": "Zurück",
+      "next": "Weiter"
     },
     "lego": {
       "title": "LEGO",
       "text": "Ich liebe LEGO einfach."
+    },
+    "games": {
+      "title": "PS5",
+      "text": "Ich spiele auf der PlayStation 5. Lieblingsspiele:",
+      "more": "[ЗАГЛУШКА] weitere Spiele"
     }
   },
   "contact": {

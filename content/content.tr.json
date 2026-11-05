@@ -209,11 +209,18 @@
         "Basketbol",
         "SUP",
         "Spor salonu"
-      ]
+      ],
+      "prev": "Geri",
+      "next": "İleri"
     },
     "lego": {
       "title": "LEGO",
       "text": "LEGO'ya bayılıyorum."
+    },
+    "games": {
+      "title": "PS5",
+      "text": "PlayStation 5'te oynuyorum. Favorilerim:",
+      "more": "[ЗАГЛУШКА] diğer oyunlar"
     }
   },
   "contact": {

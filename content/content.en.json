@@ -209,11 +209,18 @@
         "Basketball",
         "SUP",
         "Gym"
-      ]
+      ],
+      "prev": "Back",
+      "next": "Next"
     },
     "lego": {
       "title": "LEGO",
       "text": "I just love LEGO."
+    },
+    "games": {
+      "title": "PS5",
+      "text": "I play on PlayStation 5. Favourites:",
+      "more": "[ЗАГЛУШКА] more games"
     }
   },
   "contact": {
