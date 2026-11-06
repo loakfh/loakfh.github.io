@@ -642,20 +642,46 @@ button {
   max-width: 400px;
 }
 
+/* фото вырезано по контуру: голова выглядывает из рамки, как наклейка,
+   за ней цветной круг; снизу и по бокам рамка режет фото, сверху открыта */
 .frame {
+  position: relative;
   aspect-ratio: 4 / 5;
+  margin-top: clamp(40px, 22%, 110px); /* место над рамкой для головы */
   border: 2px solid var(--line);
   border-radius: 18px;
-  overflow: hidden;
   background: var(--card);
   box-shadow: 8px 8px 0 var(--shadow-2);
   rotate: 2deg;
 }
 
-.frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.frame::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 4%;
+  width: 86%;
+  aspect-ratio: 1;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: var(--acc);
+}
+
+.frame-cut {
+  position: absolute;
+  inset: -36% 0 0 0;
+  overflow: hidden;
+  border-radius: 0 0 16px 16px;
+}
+
+.frame-cut img {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 104%;
+  height: auto;
+  translate: -50% 0;
+  filter: drop-shadow(0 14px 16px rgba(0, 0, 0, 0.35));
 }
 
 .badges {
@@ -1954,6 +1980,9 @@ h3 {
     justify-self: end;
     width: 100%;
   }
+  .frame {
+    margin-top: 0;
+  }
   .badges {
     position: absolute;
     inset: 0;
@@ -2508,5 +2537,8 @@ h3 {
   }
   .nav a {
     padding-inline: 9px;
+  }
+  .badges li:nth-child(2) {
+    right: -8px; /* чтобы плашка не уходила за край экрана */
   }
 }

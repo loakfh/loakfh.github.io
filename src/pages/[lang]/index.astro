@@ -159,9 +159,7 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
           </div>
         </div>
         <div class="hero-photo">
-          <div class="frame">
-            <img src={photos.hero.src} width={photos.hero.width} height={photos.hero.height} alt={c.hero.photoAlt} fetchpriority="high" />
-          </div>
+          <div class="frame"><div class="frame-cut"><img src={photos.hero.src} width={photos.hero.width} height={photos.hero.height} alt={c.hero.photoAlt} fetchpriority="high" /></div></div>
           <ul class="badges">
             {c.hero.badges.map((b: string) => <li>{b}</li>)}
           </ul>

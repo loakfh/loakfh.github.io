@@ -12,9 +12,9 @@
   },
   "photos": {
     "hero": {
-      "src": "/assets/photos/hero.webp",
-      "width": 560,
-      "height": 700
+      "src": "/assets/photos/hero-cutout.webp",
+      "width": 882,
+      "height": 1280
     },
     "beyond": {
       "sport": [
