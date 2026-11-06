@@ -1789,52 +1789,6 @@ h3 {
   visibility: visible;
 }
 
-/* ---------- курсор: обычная стрелка в цвет темы + мягкий след света ---------- */
-@media (hover: hover) and (pointer: fine) {
-  [data-theme='light'],
-  [data-theme='light'] * {
-    cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2226%22%20height%3D%2228%22%20viewBox%3D%220%200%2026%2028%22%3E%3Cpath%20d%3D%22M3%202v20.5l5.6-5.4%203.7%208.4%203.6-1.6-3.6-8.2h7.9z%22%20fill%3D%22%231F3FFF%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221.6%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E") 3 2, auto;
-  }
-  [data-theme='dark'],
-  [data-theme='dark'] * {
-    cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2226%22%20height%3D%2228%22%20viewBox%3D%220%200%2026%2028%22%3E%3Cpath%20d%3D%22M3%202v20.5l5.6-5.4%203.7%208.4%203.6-1.6-3.6-8.2h7.9z%22%20fill%3D%22%23FF7A2E%22%20stroke%3D%22%2306081C%22%20stroke-width%3D%221.6%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E") 3 2, auto;
-  }
-}
-
-.glow {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 89;
-  width: 140px;
-  height: 140px;
-  margin: -70px 0 0 -70px;
-  border-radius: 50%;
-  pointer-events: none;
-  background: radial-gradient(circle, var(--glow-c) 0%, transparent 65%);
-  opacity: 0;
-  transition: opacity 0.3s, width 0.25s var(--ease), height 0.25s var(--ease), margin 0.25s var(--ease);
-  will-change: transform;
-}
-
-[data-theme='light'] {
-  --glow-c: rgba(31, 63, 255, 0.22);
-}
-
-[data-theme='dark'] {
-  --glow-c: rgba(255, 122, 46, 0.3);
-}
-
-.glow.is-on {
-  opacity: 1;
-}
-
-.glow.is-hot {
-  width: 200px;
-  height: 200px;
-  margin: -100px 0 0 -100px;
-}
-
 /* ---------- интро ---------- */
 .intro {
   display: none;
@@ -2215,7 +2169,7 @@ h3 {
 .gal-btn {
   position: absolute;
   top: 50%;
-  z-index: 2;
+  z-index: 5; /* выше карточки фото, которая при наведении получает z-index: 3 */
   width: 46px;
   height: 46px;
   margin-top: -23px;
