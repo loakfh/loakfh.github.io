@@ -718,10 +718,15 @@ button {
 }
 
 /* ---------- секции ---------- */
+/* декор секций (фоновые слова, рисунки, стикеры) выходит за колонку текста;
+   обрезаем его только по краям экрана, а не по краям колонки */
+main {
+  overflow-x: clip;
+}
+
 .sec {
   position: relative;
   isolation: isolate;
-  overflow-x: clip; /* фоновое слово выезжает справа — не даём ему растянуть страницу */
   padding-block: clamp(64px, 12vw, 120px) 0;
 }
 
@@ -1929,6 +1934,9 @@ h3 {
   .nav {
     display: flex;
   }
+  .nav a {
+    white-space: nowrap; /* пункты меню не ломаются по буквам в узком окне */
+  }
   .top {
     position: sticky;
     top: 0;
@@ -2490,4 +2498,15 @@ h3 {
 
 .flab-part .pc-go {
   justify-self: start;
+}
+
+/* узкий ноутбук или окно не на весь экран: прячем подпись у языков,
+   чуть ужимаем меню, чтобы шапка влезала в одну строку */
+@media (min-width: 920px) and (max-width: 1119px) {
+  .langs-label {
+    display: none;
+  }
+  .nav a {
+    padding-inline: 9px;
+  }
 }
