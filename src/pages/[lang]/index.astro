@@ -288,13 +288,15 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
       <div class="achievements">
         {
           c.achievements.items.map((a: any, i: number) => (
-            <article class="medal reveal">
+            <article class={`medal reveal${achPhotos[i]?.wide ? ' medal-wide' : ''}`}>
               {achPhotos[i] && <img class="medal-photo" src={achPhotos[i].src} width="900" height="675" alt="" loading="lazy" />}
-              <p class="big" set:html={f(a.badge)} />
-              <p class="tag">{a.label}</p>
-              <h3 set:html={f(a.title)} />
-              <p class="muted" set:html={f(a.text)} />
-              {a.role && <p class="medal-role">{a.role}</p>}
+              <div class="medal-body">
+                <p class="big" set:html={f(a.badge)} />
+                <p class="tag">{a.label}</p>
+                <h3 set:html={f(a.title)} />
+                <p class="muted" set:html={f(a.text)} />
+                {a.role && <p class="medal-role">{a.role}</p>}
+              </div>
             </article>
           ))
         }

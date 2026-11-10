@@ -177,6 +177,13 @@
     "title": "Achievements",
     "items": [
       {
+        "badge": "Prize winner",
+        "label": "HSE case championship · Nov 2026",
+        "title": "KLYUCH: business track",
+        "text": "Prize winners of the business track, plus the “Innovation on the Store Shelf” nomination. Team “Nekulturny Kod” from Moscow, Tyumen, Tver and Zelenograd.",
+        "role": "Captain + product"
+      },
+      {
         "badge": "1st place",
         "label": "Case championship",
         "title": "SKOLKOVO Start",

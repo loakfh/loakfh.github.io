@@ -2496,3 +2496,35 @@ h3 {
     right: -8px; /* чтобы плашка не уходила за край экрана */
   }
 }
+
+/* свежая победа — на всю ширину сетки: фото слева, текст справа */
+.medal-wide {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 920px) {
+  .medal-wide {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    column-gap: 30px;
+    align-items: center;
+  }
+  .medal-wide .medal-photo {
+    width: calc(100% + 20px);
+    height: calc(100% + 42px);
+    margin: -22px 0 -20px -20px;
+    aspect-ratio: auto;
+    border-bottom: 0;
+    border-right: 2px solid var(--line);
+    border-radius: 14px 0 0 14px;
+  }
+  .medal-wide .medal-body {
+    padding: 10px 10px 10px 0;
+  }
+  .medal-wide .big {
+    font-size: clamp(30px, 3.2vw, 44px);
+  }
+  .medal-wide h3 {
+    font-size: 22px;
+  }
+}

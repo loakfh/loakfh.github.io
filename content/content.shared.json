@@ -34,6 +34,10 @@
     },
     "achievements": [
       {
+        "src": "/assets/photos/ach-klyuch.webp",
+        "wide": true
+      },
+      {
         "src": "/assets/photos/ach-skolkovo-start.webp"
       },
       {
