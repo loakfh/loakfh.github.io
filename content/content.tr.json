@@ -177,13 +177,6 @@
     "title": "Başarılar",
     "items": [
       {
-        "badge": "Derece",
-        "label": "HSE vaka şampiyonası · Kasım 2026",
-        "title": "KLYUCH: iş kolu",
-        "text": "İş kolunda dereceye girdik ve “Mağaza Rafında İnovasyon” ödülünü aldık. “Nekulturny Kod” takımı: Moskova, Tümen, Tver ve Zelenograd.",
-        "role": "Kaptan + ürün"
-      },
-      {
         "badge": "Birincilik",
         "label": "Vaka şampiyonası",
         "title": "SKOLKOVO Start",
@@ -208,6 +201,13 @@
         "label": "Trayektoriya",
         "title": "Startup Village 2026",
         "text": "Proje sunumu, SKOLKOVO, Mayıs 2026.",
+        "role": "Kaptan + ürün"
+      },
+      {
+        "badge": "Derece",
+        "label": "HSE vaka şampiyonası · Kasım 2026",
+        "title": "KLYUCH: iş kolu",
+        "text": "İş kolunda dereceye girdik ve “Mağaza Rafında İnovasyon” ödülünü aldık. “Nekulturny Kod” takımı: Moskova, Tümen, Tver ve Zelenograd.",
         "role": "Kaptan + ürün"
       }
     ]

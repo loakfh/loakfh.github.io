@@ -177,13 +177,6 @@
     "title": "Erfolge",
     "items": [
       {
-        "badge": "Preisträger",
-        "label": "HSE-Fallstudien-Meisterschaft · Nov. 2026",
-        "title": "KLYUCH: Business-Track",
-        "text": "Preisträger im Business-Track und Sonderpreis „Innovation im Ladenregal“. Team „Nekulturny Kod“ aus Moskau, Tjumen, Twer und Selenograd.",
-        "role": "Kapitän + Produkt"
-      },
-      {
         "badge": "1. Platz",
         "label": "Fallstudien-Meisterschaft",
         "title": "SKOLKOVO Start",
@@ -208,6 +201,13 @@
         "label": "Trajektorie",
         "title": "Startup Village 2026",
         "text": "Projektpitch, SKOLKOVO, Mai 2026.",
+        "role": "Kapitän + Produkt"
+      },
+      {
+        "badge": "Preisträger",
+        "label": "HSE-Fallstudien-Meisterschaft · Nov. 2026",
+        "title": "KLYUCH: Business-Track",
+        "text": "Preisträger im Business-Track und Sonderpreis „Innovation im Ladenregal“. Team „Nekulturny Kod“ aus Moskau, Tjumen, Twer und Selenograd.",
         "role": "Kapitän + Produkt"
       }
     ]
