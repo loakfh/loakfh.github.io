@@ -49,7 +49,8 @@
         "src": "/assets/photos/ach-klyuch.webp",
         "wide": true
       }
-    ]
+    ],
+    "certPython": "/assets/photos/cert-python.webp"
   },
   "projects": [
     {

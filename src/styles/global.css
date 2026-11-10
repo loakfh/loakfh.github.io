@@ -2528,3 +2528,15 @@ h3 {
     font-size: 22px;
   }
 }
+
+/* ссылка на диплом в карточке «Код» */
+.fact-doc {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  margin-top: 6px;
+  color: var(--acc-text);
+  font: 700 13px/1.3 var(--mono);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

@@ -187,6 +187,7 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
               <div class="fact reveal">
                 <dt>{fact.k}</dt>
                 <dd set:html={f(fact.v)} />
+                {fact.doc && <dd><a class="fact-doc" href={photos.certPython} target="_blank" rel="noopener">{fact.doc} ↗</a></dd>}
               </div>
             ))
           }
