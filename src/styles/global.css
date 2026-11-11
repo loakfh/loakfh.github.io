@@ -2540,3 +2540,37 @@ h3 {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+/* второе фото в карточке достижения — полароидом в углу главного */
+.medal-media {
+  position: relative;
+  margin: -22px -20px 16px;
+}
+
+.medal-media .medal-photo {
+  width: 100%;
+  margin: 0;
+}
+
+.medal-inset {
+  position: absolute;
+  z-index: 3;
+  right: 14px;
+  bottom: -22px;
+  width: 42%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 6px solid #fff;
+  border-bottom-width: 18px;
+  border-radius: 4px;
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.55);
+  rotate: 4deg;
+  transition: rotate 0.3s var(--ease), scale 0.3s var(--ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .medal:hover .medal-inset {
+    rotate: 0deg;
+    scale: 1.06;
+  }
+}

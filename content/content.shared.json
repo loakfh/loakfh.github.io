@@ -34,7 +34,8 @@
     },
     "achievements": [
       {
-        "src": "/assets/photos/ach-skolkovo-start.webp"
+        "src": "/assets/photos/ach-skolkovo-pitch.webp",
+        "inset": "/assets/photos/ach-skolkovo-start.webp"
       },
       {
         "src": "/assets/photos/ach-hse.webp"
