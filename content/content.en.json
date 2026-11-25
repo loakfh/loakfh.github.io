@@ -63,14 +63,14 @@
   "about": {
     "title": "About",
     "paragraphs": [
-      "I'm in 11th grade and applying to university in Vienna. I launched my first project in Turkey at 15: evening open-air film screenings.",
-      "Since then I've launched five projects of my own, worked as a product manager at an EdTech startup and recently captained a basketball team. I've run more than 200 user interviews.",
+      "I'm in 11th grade. I started out as a cleaner at a hair salon, then worked as a barista in Turkey, and in 10th grade became a product manager at an EdTech startup.",
+      "I launched my first project in Turkey at 15: evening open-air film screenings. Since then I've launched five projects of my own and run more than 200 user interviews. Recently I captained a basketball team.",
       "I lead teams from the inside: I understand almost every part of a startup, from customer discovery to code. Right now I'm looking for my niche."
     ],
     "facts": [
       {
         "k": "Studies",
-        "v": "11th grade, applying to Vienna"
+        "v": "11th grade, applying abroad"
       },
       {
         "k": "Projects",
@@ -91,7 +91,7 @@
       },
       {
         "k": "AI",
-        "v": "My own AI agent, multi-agent pipelines, AI in every project"
+        "v": "My own AI agent, multi-agent pipelines"
       }
     ]
   },
@@ -145,7 +145,8 @@
         "did": "I ran the AI tutor and the AI personal-brand projects: user interviews, hypotheses, launch.",
         "result": "",
         "links": [
-          "Open LabF"
+          "Open LabF",
+          "EGE trainer: 4 designs"
         ],
         "parts": [
           "LabF AI tutor",
@@ -217,7 +218,7 @@
     "title": "Beyond work",
     "sport": {
       "title": "Sport",
-      "text": "Into sport since childhood. Recently captained a basketball team.",
+      "text": "Into sport since childhood. Recently captained a basketball team. Volunteered at IRONMAN 70.3 Turkey in Antalya, at the reception desk.",
       "chips": [
         "Hiking",
         "Cycling",
@@ -253,7 +254,7 @@
   },
   "books": {
     "title": "Books",
-    "lead": "What I've read: psychology, business, behavioural science, economics.",
+    "lead": "What I've read: psychology, business, behavioural science, economics, finance.",
     "prev": "Back",
     "next": "Next",
     "note": ""

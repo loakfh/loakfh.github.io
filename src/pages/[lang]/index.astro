@@ -255,7 +255,9 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
             <figure class="flab-part">
               <figcaption>{flab.parts[0]}</figcaption>
               <div class="pc-shot"><img src={flab.shot} width="1200" height="601" alt="" loading="lazy" /></div>
-              {flab.links.map((url: string, j: number) => <a class="pc-go" href={url} target="_blank" rel="noopener">{flab.labels[j]} ↗</a>)}
+              <div class="flab-links">
+                {flab.links.map((url: string, j: number) => <a class="pc-go" href={url} target="_blank" rel="noopener">{flab.labels[j]} ↗</a>)}
+              </div>
             </figure>
             <figure class="flab-part">
               <figcaption>{flab.parts[1]}</figcaption>
@@ -322,7 +324,7 @@ const [traj, teya, os, flab, sites, kino] = ['trajectory', 'teya', 'bakir-os', '
         <article class="sport reveal">
           <div class="gallery-wrap">
             <ul class="gallery" id="gallery" tabindex="0" aria-label={c.beyond.sport.title}>
-              {photos.beyond.sport.map((ph: any, j: number) => <li><img src={ph.src} width="640" height="800" alt={c.beyond.sport.chips[j] ?? ''} loading="lazy" draggable="false" /></li>)}
+              {photos.beyond.sport.map((ph: any, j: number) => <li><img src={ph.src} width="640" height="800" alt={ph.alt ?? c.beyond.sport.chips[j] ?? ''} loading="lazy" draggable="false" /></li>)}
             </ul>
             <button class="gal-btn gal-prev" type="button" data-dir="-1" aria-label={c.beyond.sport.prev}>←</button>
             <button class="gal-btn gal-next" type="button" data-dir="1" aria-label={c.beyond.sport.next}>→</button>

@@ -63,14 +63,14 @@
   "about": {
     "title": "Über mich",
     "paragraphs": [
-      "Ich gehe in die 11. Klasse und bewerbe mich an einer Universität in Wien. Mein erstes Projekt habe ich mit 15 in der Türkei gestartet: abendliche Open-Air-Kinovorführungen.",
-      "Seitdem habe ich fünf eigene Projekte gestartet, als Produktmanager in einem EdTech-Startup gearbeitet und zuletzt ein Basketballteam angeführt. Ich habe über 200 Nutzerinterviews geführt.",
+      "Ich gehe in die 11. Klasse. Angefangen habe ich als Reinigungskraft in einem Friseursalon, dann war ich Barista in der Türkei, und in der 10. Klasse wurde ich Produktmanager in einem EdTech-Startup.",
+      "Mein erstes Projekt habe ich mit 15 in der Türkei gestartet: abendliche Open-Air-Kinovorführungen. Seitdem habe ich fünf eigene Projekte gestartet und über 200 Nutzerinterviews geführt. Zuletzt habe ich ein Basketballteam angeführt.",
       "Ich führe Teams von innen: Ich verstehe fast jeden Bereich eines Startups, von Kundeninterviews bis zum Code. Gerade suche ich meine Nische."
     ],
     "facts": [
       {
         "k": "Ausbildung",
-        "v": "11. Klasse, Bewerbung in Wien"
+        "v": "11. Klasse, Bewerbung im Ausland"
       },
       {
         "k": "Projekte",
@@ -91,7 +91,7 @@
       },
       {
         "k": "KI",
-        "v": "Eigener KI-Agent, Multi-Agenten-Pipelines, KI in jedem Projekt"
+        "v": "Eigener KI-Agent, Multi-Agenten-Pipelines"
       }
     ]
   },
@@ -145,7 +145,8 @@
         "did": "Ich habe die Projekte KI-Tutor und Personal Brand mit KI geführt: Nutzerinterviews, Hypothesen, Launch.",
         "result": "",
         "links": [
-          "LabF öffnen"
+          "LabF öffnen",
+          "EGE-Trainer: 4 Designs"
         ],
         "parts": [
           "LabF KI-Tutor",
@@ -217,7 +218,7 @@
     "title": "Neben der Arbeit",
     "sport": {
       "title": "Sport",
-      "text": "Sport seit meiner Kindheit. Zuletzt habe ich ein Basketballteam angeführt.",
+      "text": "Sport seit meiner Kindheit. Zuletzt habe ich ein Basketballteam angeführt. Beim IRONMAN 70.3 Turkey in Antalya war ich Volunteer am Empfang.",
       "chips": [
         "Wandern",
         "Radfahren",
@@ -253,7 +254,7 @@
   },
   "books": {
     "title": "Bücher",
-    "lead": "Was ich gelesen habe: Psychologie, Business, Verhaltenswissenschaften, Wirtschaft.",
+    "lead": "Was ich gelesen habe: Psychologie, Business, Verhaltenswissenschaften, Wirtschaft, Finanzen.",
     "prev": "Zurück",
     "next": "Weiter",
     "note": ""

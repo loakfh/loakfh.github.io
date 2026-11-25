@@ -29,6 +29,10 @@
         },
         {
           "src": "/assets/photos/sport-sup.webp"
+        },
+        {
+          "src": "/assets/photos/sport-ironman.webp",
+          "alt": "IRONMAN 70.3 Turkey"
         }
       ]
     },
@@ -76,7 +80,8 @@
     {
       "id": "flab",
       "links": [
-        "https://flab-edtech-mvp.vercel.app/"
+        "https://flab-edtech-mvp.vercel.app/",
+        "https://loakfh.github.io/ege-trenya/"
       ],
       "shot": "/assets/projects/flab-tutor.webp",
       "logo": "/assets/projects/flab-logo.webp",
@@ -229,6 +234,46 @@
       "authorEn": "Dmitry Chernyshev",
       "color": "#5D4037",
       "cover": "/assets/books/vertical-progress.webp"
+    },
+    {
+      "ru": "Рисование на правой стороне мозга",
+      "orig": "Drawing on the Right Side of the Brain",
+      "author": "Бетти Эдвардс",
+      "authorEn": "Betty Edwards",
+      "color": "#B98A6A",
+      "cover": "/assets/books/drawing-on-the-right-side-of-the-brain.webp"
+    },
+    {
+      "ru": "Культурный код",
+      "orig": "The Culture Code",
+      "author": "Клотер Рапай",
+      "authorEn": "Clotaire Rapaille",
+      "color": "#8FA3AD",
+      "cover": "/assets/books/the-culture-code.webp"
+    },
+    {
+      "ru": "Самый богатый человек в Вавилоне",
+      "orig": "The Richest Man in Babylon",
+      "author": "Джордж Клейсон",
+      "authorEn": "George S. Clason",
+      "color": "#F2D94E",
+      "cover": "/assets/books/the-richest-man-in-babylon.webp"
+    },
+    {
+      "ru": "Богатый папа, бедный папа",
+      "orig": "Rich Dad Poor Dad",
+      "author": "Роберт Кийосаки",
+      "authorEn": "Robert Kiyosaki",
+      "color": "#5B2A86",
+      "cover": "/assets/books/rich-dad-poor-dad.webp"
+    },
+    {
+      "ru": "Как играть и выигрывать на бирже",
+      "orig": "The New Trading for a Living",
+      "author": "Александр Элдер",
+      "authorEn": "Alexander Elder",
+      "color": "#8E1B1B",
+      "cover": "/assets/books/trading-for-a-living.webp"
     }
   ],
   "games": [

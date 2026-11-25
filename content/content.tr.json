@@ -63,14 +63,14 @@
   "about": {
     "title": "Hakkımda",
     "paragraphs": [
-      "11. sınıftayım ve Viyana'da üniversiteye başvuruyorum. İlk projemi 15 yaşında Türkiye'de başlattım: akşamları açık hava film gösterimleri.",
-      "O zamandan beri kendi beş projemi başlattım, bir EdTech girişiminde ürün yöneticisi olarak çalıştım ve yakın zamanda bir basketbol takımının kaptanlığını yaptım. 200'den fazla kullanıcı görüşmesi yaptım.",
+      "11. sınıftayım. İşe bir kuaförde temizlikçi olarak başladım, sonra Türkiye'de baristalık yaptım, 10. sınıfta ise bir EdTech girişiminde ürün yöneticisi oldum.",
+      "İlk projemi 15 yaşında Türkiye'de başlattım: akşamları açık hava film gösterimleri. O zamandan beri kendi beş projemi başlattım ve 200'den fazla kullanıcı görüşmesi yaptım. Yakın zamanda bir basketbol takımının kaptanlığını yaptım.",
       "Takımı içeriden yönetirim: müşteri görüşmesinden koda kadar bir girişimin neredeyse her alanını anlarım. Şu an kendi nişimi arıyorum."
     ],
     "facts": [
       {
         "k": "Eğitim",
-        "v": "11. sınıf, Viyana'ya başvuru"
+        "v": "11. sınıf, yurt dışına başvuru"
       },
       {
         "k": "Projeler",
@@ -91,7 +91,7 @@
       },
       {
         "k": "YZ",
-        "v": "Kendi YZ ajanım, çok ajanlı hatlar, her projede YZ"
+        "v": "Kendi YZ ajanım, çok ajanlı hatlar"
       }
     ]
   },
@@ -145,7 +145,8 @@
         "did": "YZ özel öğretmen ve YZ ile kişisel marka projelerini yürüttüm: kullanıcı görüşmeleri, hipotezler, lansman.",
         "result": "",
         "links": [
-          "LabF'yi aç"
+          "LabF'yi aç",
+          "EGE antrenörü: 4 tasarım"
         ],
         "parts": [
           "LabF YZ özel öğretmen",
@@ -217,7 +218,7 @@
     "title": "İş dışında",
     "sport": {
       "title": "Spor",
-      "text": "Çocukluğumdan beri spor yapıyorum. Yakın zamanda bir basketbol takımının kaptanıydım.",
+      "text": "Çocukluğumdan beri spor yapıyorum. Yakın zamanda bir basketbol takımının kaptanıydım. Antalya'daki IRONMAN 70.3 Turkey'de gönüllüydüm: resepsiyonda çalıştım.",
       "chips": [
         "Doğa yürüyüşü",
         "Bisiklet",
@@ -253,7 +254,7 @@
   },
   "books": {
     "title": "Kitaplar",
-    "lead": "Okuduklarım: psikoloji, iş dünyası, davranış bilimleri, ekonomi.",
+    "lead": "Okuduklarım: psikoloji, iş dünyası, davranış bilimleri, ekonomi, finans.",
     "prev": "Geri",
     "next": "İleri",
     "note": ""
